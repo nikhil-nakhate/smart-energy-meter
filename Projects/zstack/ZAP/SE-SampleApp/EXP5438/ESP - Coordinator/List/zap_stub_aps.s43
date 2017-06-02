@@ -1,0 +1,583 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      29/Jan/2012  16:16:36 /
+// IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\Source\zap_stub_aps.c                              /
+//    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"     /
+//                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI           /
+//                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE            /
+//                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE              /
+//                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE              /
+//                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                 /
+//                     -DZAP_AF_DATA_REQ_FRAG=FALSE                           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZC /
+//                     L.cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC             /
+//                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH        /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE) "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\Sourc /
+//                     e\zap_stub_aps.c" -D ZAP_DEVICETYPE=ZG_DEVICETYPE_COOR /
+//                     DINATOR -D TC_LINKKEY_JOIN -D ZCL_REPORT -D INTER_PAN  /
+//                     -lC "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zs /
+//                     tack\ZAP\SE-SampleApp\EXP5438\ESP -                    /
+//                     Coordinator\List\" -lA "C:\Texas                       /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\ESP - Coordinator\List\" --remarks     /
+//                     --diag_suppress Pe001,Pe193,Pe236,Pe826 -o "C:\Texas   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\ESP - Coordinator\Obj\" --debug        /
+//                     -D__MSP430F5438A__ -e --double=32 --clib -I "C:\Texas  /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\" -I "C:\Texas                         /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\Source\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\Source\" -I "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\hal\target\M /
+//                     SP5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ /
+//                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\. /
+//                     .\Components\hal\include\" -I "C:\Texas                /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\mac\include\ /
+//                     " -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z /
+//                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen /
+//                     ts\mt\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\osal\include\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp /
+//                     430\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projec /
+//                     ts\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Comp /
+//                     onents\services\saddr\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\services\sda /
+//                     ta\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Project /
+//                     s\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Compo /
+//                     nents\stack\af\" -I "C:\Texas                          /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\nwk\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sapi\" -I "C:\Texas                             /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\sec\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sys\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0 /
+//                     \Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\ /
+//                     ..\Components\stack\zcl\" -I "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\zdo\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \zmac\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\zmac\f8w\" --core=430X --data_model=small     /
+//                     -Ohz --multiplier=32 --multiplier_location=4C0         /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\EXP5438\ESP -                         /
+//                     Coordinator\List\zap_stub_aps.s43                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zap_stub_aps
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?cstart_init_zero
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC StubAPS_InterPan
+        FUNCTION StubAPS_InterPan,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION StubAPS_InterPanReq,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 14, STACK
+        PUBLIC StubAPS_RegisterApp
+        FUNCTION StubAPS_RegisterApp,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC zapStubAPS_Sync
+        FUNCTION zapStubAPS_Sync,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN zap_msg_allocate
+        FUNCTION zap_msg_allocate,0202H
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        EXTERN zapAppPort
+        EXTERN zapPhySend
+        FUNCTION zapPhySend,0202H
+        EXTERN zap_msg_deallocate
+        FUNCTION zap_msg_deallocate,0202H
+        EXTERN afFindEndPointDesc
+        FUNCTION afFindEndPointDesc,0202H
+
+// C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\Source\zap_stub_aps.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zap_stub_aps.c
+//    3   Revised:        $Date: 2010-01-18 12:20:01 -0800 (Mon, 18 Jan 2010) $
+//    4   Revision:       $Revision: 21540 $
+//    5 
+//    6   Description:
+//    7 
+//    8   This file defines the ZNP Application Processor API to the ZNP ZMAC layer.
+//    9 
+//   10   
+//   11   Copyright 2009 Texas Instruments Incorporated. All rights reserved.
+//   12 
+//   13   IMPORTANT: Your use of this Software is limited to those specific rights
+//   14   granted under the terms of a software license agreement between the user
+//   15   who downloaded the software, his/her employer (which must be your employer)
+//   16   and Texas Instruments Incorporated (the "License").  You may not use this
+//   17   Software unless you agree to abide by the terms of the License. The License
+//   18   limits your use, and you acknowledge, that the Software may not be modified,
+//   19   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   20   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   21   frequency transceiver, which is integrated into your product.  Other than for
+//   22   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   23   works of, modify, distribute, perform, display or sell this Software and/or
+//   24   its documentation for any purpose.
+//   25 
+//   26   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   27   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   28   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   29   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   30   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   31   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   32   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   33   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   34   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   35   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   36   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   37 
+//   38   Should you have any questions regarding your right to use this Software,
+//   39   contact Texas Instruments Incorporated at www.TI.com.
+//   40 
+//   41 **************************************************************************************************/
+//   42 
+//   43 /* ------------------------------------------------------------------------------------------------
+//   44  *                                          Includes
+//   45  * ------------------------------------------------------------------------------------------------
+//   46  */
+//   47 
+//   48 #include "mt.h"
+//   49 #include "mt_af.h"
+//   50 #include "mt_rpc.h"
+//   51 #include "stub_aps.h"
+//   52 #include "zap_app.h"
+//   53 #include "zap_phy.h"
+//   54 
+//   55 #if defined INTER_PAN
+//   56 /* ------------------------------------------------------------------------------------------------
+//   57  *                                           Constants
+//   58  * ------------------------------------------------------------------------------------------------
+//   59  */
+//   60 
+//   61 /* ------------------------------------------------------------------------------------------------
+//   62  *                                           Macros
+//   63  * ------------------------------------------------------------------------------------------------
+//   64  */
+//   65 
+//   66 /* ------------------------------------------------------------------------------------------------
+//   67  *                                           Global Variables
+//   68  * ------------------------------------------------------------------------------------------------
+//   69  */
+//   70 
+//   71 /* ------------------------------------------------------------------------------------------------
+//   72  *                                           Local Variables
+//   73  * ------------------------------------------------------------------------------------------------
+//   74  */
+//   75 
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero
+//   76 static uint8 appEndPoint = 0;   // Application endpoint.
+appEndPoint:
+        DS8 1
+//   77 
+//   78 /* ------------------------------------------------------------------------------------------------
+//   79  *                                           Local Functions
+//   80  * ------------------------------------------------------------------------------------------------
+//   81  */
+//   82 
+//   83 static uint8 StubAPS_InterPanReq(uint8 len, uint8 *req);
+//   84 
+//   85 /**************************************************************************************************
+//   86  * @fn          StubAPS_InterPanReq
+//   87  *
+//   88  * @brief       This function proxies a request to the MT_AfInterPanCtl.
+//   89  *
+//   90  * input parameters
+//   91  *
+//   92  * @param       len - Length of the request.
+//   93  * @param       req - Inter-Pan control command request according to the InterPanParam_t.
+//   94  *
+//   95  * output parameters
+//   96  *
+//   97  * None.
+//   98  *
+//   99  * @return      TRUE if the Inter-PAN control command suceeded, FALSE otherwise
+//  100  **************************************************************************************************
+//  101  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  102 static uint8 StubAPS_InterPanReq(uint8 len, uint8 *req)
+StubAPS_InterPanReq:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function StubAPS_InterPanReq
+//  103 {
+        FUNCALL StubAPS_InterPanReq, zap_msg_allocate
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL StubAPS_InterPanReq, osal_memcpy
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL StubAPS_InterPanReq, zapPhySend
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL StubAPS_InterPanReq, zap_msg_deallocate
+        LOCFRAME CSTACK, 14, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x2, SP
+          CFI CFA SP+14
+        MOV.B   R12, R10
+        MOV.W   R13, R8
+//  104   uint8 *pBuf = zap_msg_allocate(len, (uint8)MT_RPC_SYS_AF | (uint8)MT_RPC_CMD_SREQ,
+//  105                                                              (uint8)MT_AF_INTER_PAN_CTL);
+        MOV.B   #0x10, R14
+        MOV.B   #0x24, R13
+        CALLA   #zap_msg_allocate
+        MOV.W   R12, 0(SP)
+//  106   uint8 rtrn = FALSE;
+        MOV.B   #0x0, R11
+//  107 
+//  108   if (NULL != pBuf)
+        CMP.W   #0x0, R12
+        JEQ     ??StubAPS_InterPanReq_0
+//  109   {
+//  110     (void)osal_memcpy(pBuf, req, len);
+        MOV.B   R10, R14
+        MOV.W   R8, R13
+        CALLA   #osal_memcpy
+//  111     zapPhySend(zapAppPort, pBuf);
+        MOV.W   @SP, R13
+        MOV.B   &zapAppPort, R12
+        CALLA   #zapPhySend
+//  112     rtrn = *pBuf;
+        MOV.W   @SP, R15
+        MOV.B   @R15, R11
+//  113     zap_msg_deallocate(&pBuf);
+        MOV.W   SP, R12
+        CALLA   #zap_msg_deallocate
+//  114   }
+//  115 
+//  116   return rtrn;
+??StubAPS_InterPanReq_0:
+        MOV.B   R11, R12
+        ADD.W   #0x2, SP
+          CFI CFA SP+12
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//  117 }
+//  118 
+//  119 /**************************************************************************************************
+//  120  * @fn          StubAPS_InterPan
+//  121  *
+//  122  * @brief       This function checks to see if a PAN is an Inter-PAN.
+//  123  *
+//  124  * input parameters
+//  125  *
+//  126  * @param       panId - PAN ID
+//  127  * @param       endPoint - endpoint
+//  128  *
+//  129  * output parameters
+//  130  *
+//  131  * None.
+//  132  *
+//  133  * @return      TRUE if PAN is Inter-PAN, FALSE otherwise
+//  134  **************************************************************************************************
+//  135  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  136 uint8 StubAPS_InterPan( uint16 panId, uint8 endPoint )
+StubAPS_InterPan:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function StubAPS_InterPan
+//  137 {
+        FUNCALL StubAPS_InterPan, StubAPS_InterPanReq
+        LOCFRAME CSTACK, 8, STACK
+        SUB.W   #0x4, SP
+          CFI CFA SP+8
+//  138   uint8 req[4];
+//  139   req[0] = InterPanChk;
+        MOV.B   #0x3, 0(SP)
+//  140   req[1] = LO_UINT16(panId);
+        MOV.B   R12, 0x1(SP)
+//  141   req[2] = HI_UINT16(panId);
+        RPT     #0x8
+        RRUX.W  R12
+        MOV.B   R12, 0x2(SP)
+//  142   req[3] = endPoint;
+        MOV.B   R13, 0x3(SP)
+//  143   return !StubAPS_InterPanReq(4, req);
+        MOV.W   SP, R13
+        MOV.B   #0x4, R12
+        CALLA   #StubAPS_InterPanReq
+        CMP.B   #0x0, R12
+        JNE     ??StubAPS_InterPan_0
+        MOV.B   #0x1, R12
+        JMP     ??StubAPS_InterPan_1
+??StubAPS_InterPan_0:
+        MOV.B   #0x0, R12
+??StubAPS_InterPan_1:
+        ADD.W   #0x4, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//  144 }
+//  145 
+//  146 /**************************************************************************************************
+//  147  * @fn          StubAPS_RegisterApp
+//  148  *
+//  149  * @brief       This function registers the Application with the Stub APS layer.
+//  150  *
+//  151  *              NOTE: Since Stub APS messages don't include the application endpoint,
+//  152  *                    the application has to register its endpoint with Stub APS.
+//  153  *
+//  154  * input parameters
+//  155  *
+//  156  * @param       epDesc - application's endpoint descriptor
+//  157  *
+//  158  * output parameters
+//  159  *
+//  160  * None.
+//  161  *
+//  162  * @return      None.
+//  163  **************************************************************************************************
+//  164  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  165 void StubAPS_RegisterApp(endPointDesc_t *epDesc)
+StubAPS_RegisterApp:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function StubAPS_RegisterApp
+//  166 {
+        FUNCALL StubAPS_RegisterApp, StubAPS_InterPanReq
+        LOCFRAME CSTACK, 8, STACK
+        PUSH.W  R10
+          CFI R10L Frame(CFA, -6)
+          CFI CFA SP+6
+        SUB.W   #0x2, SP
+          CFI CFA SP+8
+        MOV.W   R12, R10
+//  167   uint8 req[2];
+//  168   req[0] = InterPanReg;
+        MOV.B   #0x2, 0(SP)
+//  169   req[1] = epDesc->endPoint;
+        MOV.B   @R12, 0x1(SP)
+//  170   if (StubAPS_InterPanReq(2, req) == SUCCESS)
+        MOV.W   SP, R13
+        MOV.B   #0x2, R12
+        CALLA   #StubAPS_InterPanReq
+        CMP.B   #0x0, R12
+        JNE     ??StubAPS_RegisterApp_0
+//  171   {
+//  172     appEndPoint = epDesc->endPoint;
+        MOV.B   @R10, &appEndPoint
+//  173   }
+//  174 }
+??StubAPS_RegisterApp_0:
+        ADD.W   #0x2, SP
+          CFI CFA SP+6
+        POP.W   R10
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//  175 
+//  176 /**************************************************************************************************
+//  177  * @fn          zapStubAPS_Sync
+//  178  *
+//  179  * @brief       This function syncs the AF registered endpoints (which are not NV restored on ZNP.)
+//  180  *
+//  181  * input parameters
+//  182  *
+//  183  * None.
+//  184  *
+//  185  * output parameters
+//  186  *
+//  187  * None.
+//  188  *
+//  189  * @return      None.
+//  190  **************************************************************************************************
+//  191  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  192 void zapStubAPS_Sync(void)
+zapStubAPS_Sync:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function zapStubAPS_Sync
+//  193 {
+//  194   endPointDesc_t *pEP;
+//  195 
+//  196   if ((appEndPoint != 0) && ((pEP = afFindEndPointDesc(appEndPoint))))
+        FUNCALL zapStubAPS_Sync, afFindEndPointDesc
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL zapStubAPS_Sync, StubAPS_RegisterApp
+        LOCFRAME CSTACK, 4, STACK
+        CMP.B   #0x0, &appEndPoint
+        JEQ     ??zapStubAPS_Sync_0
+        MOV.B   &appEndPoint, R12
+        CALLA   #afFindEndPointDesc
+        CMP.W   #0x0, R12
+        JEQ     ??zapStubAPS_Sync_0
+//  197   {
+//  198     StubAPS_RegisterApp(pEP);
+        CALLA   #StubAPS_RegisterApp
+//  199   }
+//  200 }
+??zapStubAPS_Sync_0:
+        RETA
+          CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  201 #endif
+//  202 
+//  203 /**************************************************************************************************
+//  204 */
+// 
+// 172 bytes in segment CODE
+//   1 byte  in segment DATA16_Z
+// 
+// 172 bytes of CODE memory
+//   1 byte  of DATA memory
+//
+//Errors: none
+//Warnings: none

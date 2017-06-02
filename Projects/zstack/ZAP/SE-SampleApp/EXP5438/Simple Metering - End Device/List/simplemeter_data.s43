@@ -1,0 +1,1548 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Jan/2012  01:17:02 /
+// IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\Source\SimpleMeter\simplemeter_data.c /
+//    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"     /
+//                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI           /
+//                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE            /
+//                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE              /
+//                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE              /
+//                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                 /
+//                     -DZAP_AF_DATA_REQ_FRAG=FALSE                           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZC /
+//                     L.cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC             /
+//                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH        /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE) "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\Source\SimpleMeter\simplemeter_data.c" -D      /
+//                     ZAP_DEVICETYPE=ZG_DEVICETYPE_ENDDEVICE -D              /
+//                     TC_LINKKEY_JOIN -D ZCL_REPORT -lC "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\Simple Metering - End Device\List\"    /
+//                     -lA "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zs /
+//                     tack\ZAP\SE-SampleApp\EXP5438\Simple Metering - End    /
+//                     Device\List\" --remarks --diag_suppress                /
+//                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\Simple Metering - End Device\Obj\"     /
+//                     --debug -D__MSP430F5438__ -e --double=32 --clib -I     /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\Source\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\Source\" -I "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\hal\target\M /
+//                     SP5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ /
+//                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\. /
+//                     .\Components\hal\include\" -I "C:\Texas                /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\mac\include\ /
+//                     " -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z /
+//                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen /
+//                     ts\mt\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\osal\include\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp /
+//                     430\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projec /
+//                     ts\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Comp /
+//                     onents\services\saddr\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\services\sda /
+//                     ta\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Project /
+//                     s\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Compo /
+//                     nents\stack\af\" -I "C:\Texas                          /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\nwk\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sapi\" -I "C:\Texas                             /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\sec\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sys\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0 /
+//                     \Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\ /
+//                     ..\Components\stack\zcl\" -I "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\zdo\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \zmac\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\zmac\f8w\" --core=430X --data_model=small     /
+//                     -Ohz --multiplier=32 --multiplier_location=4C0         /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\EXP5438\Simple Metering - End         /
+//                     Device\List\simplemeter_data.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME simplemeter_data
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?cstart_init_copy
+        EXTERN ?cstart_init_zero
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC simpleMeterAttrs
+        PUBLIC simpleMeterCurPartProfileIntStartTimeDelivered
+        PUBLIC simpleMeterCurPartProfileIntStartTimeReceived
+        PUBLIC simpleMeterCurPartProfileIntValueDelivered
+        PUBLIC simpleMeterCurPartProfileIntValueReceived
+        PUBLIC simpleMeterCurrentMaxDemandDelivered
+        PUBLIC simpleMeterCurrentMaxDemandReceived
+        PUBLIC simpleMeterCurrentSummationDelivered
+        PUBLIC simpleMeterCurrentSummationReceived
+        PUBLIC simpleMeterCurrentTier1SummationDelivered
+        PUBLIC simpleMeterCurrentTier1SummationReceived
+        PUBLIC simpleMeterCurrentTier2SummationDelivered
+        PUBLIC simpleMeterCurrentTier2SummationReceived
+        PUBLIC simpleMeterCurrentTier3SummationDelivered
+        PUBLIC simpleMeterCurrentTier3SummationReceived
+        PUBLIC simpleMeterCurrentTier4SummationDelivered
+        PUBLIC simpleMeterCurrentTier4SummationReceived
+        PUBLIC simpleMeterCurrentTier5SummationDelivered
+        PUBLIC simpleMeterCurrentTier5SummationReceived
+        PUBLIC simpleMeterCurrentTier6SummationDelivered
+        PUBLIC simpleMeterCurrentTier6SummationReceived
+        PUBLIC simpleMeterCurrentdayConsumptionDelivered
+        PUBLIC simpleMeterCurrentdayConsumptionReceived
+        PUBLIC simpleMeterDFTSummation
+        PUBLIC simpleMeterDailyFreezeTime
+        PUBLIC simpleMeterDateCode
+        PUBLIC simpleMeterDefaultUpdatePeriod
+        PUBLIC simpleMeterDemandFormatting
+        PUBLIC simpleMeterDeviceEnabled
+        PUBLIC simpleMeterDivisor
+        PUBLIC simpleMeterFastPollUpdatePeriod
+        PUBLIC simpleMeterHWVersion
+        PUBLIC simpleMeterHistoricalConsumptionFormatting
+        PUBLIC simpleMeterIdentifyTime
+        PUBLIC simpleMeterInClusterList
+        PUBLIC simpleMeterInstanteneousDemand
+        PUBLIC simpleMeterKeyEstablishmentSuite
+        PUBLIC simpleMeterLocationDescription
+        PUBLIC simpleMeterManufacturerName
+        PUBLIC simpleMeterMaxDemandDeliverdTime
+        PUBLIC simpleMeterMaxDemandReceivedTime
+        PUBLIC simpleMeterMaxNumberOfPeriodsDelivered
+        PUBLIC simpleMeterModelId
+        PUBLIC simpleMeterMultiplier
+        PUBLIC simpleMeterOptions
+        PUBLIC simpleMeterOutClusterList
+        PUBLIC simpleMeterPhysicalEnvironment
+        PUBLIC simpleMeterPowerFactor
+        PUBLIC simpleMeterPowerSource
+        PUBLIC simpleMeterPreviousdayConsumptionDelivered
+        PUBLIC simpleMeterPreviousdayConsumtpionReceived
+        PUBLIC simpleMeterSimpleDesc
+        PUBLIC simpleMeterSnapshotTime
+        PUBLIC simpleMeterStatus
+        PUBLIC simpleMeterSummationFormating
+        PUBLIC simpleMeterTime
+        PUBLIC simpleMeterTimeStatus
+        PUBLIC simpleMeterUnitOfMeasure
+        PUBLIC simpleMeterZCLVersion
+// C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-SampleApp\Source\SimpleMeter\simplemeter_data.c
+//    1 /**************************************************************************************************
+//    2   Filename:       simplemeter_data.c
+//    3   Revised:        $Date: 2011-02-09 16:05:07 -0800 (Wed, 09 Feb 2011) $
+//    4   Revision:       $Revision: 25029 $
+//    5 
+//    6   Description:    File that contains attribute and simple descriptor
+//    7                   definitions for the Simple Meter
+//    8 
+//    9 
+//   10   Copyright 2009-2011 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /*********************************************************************
+//   42  * INCLUDES
+//   43  */
+//   44 
+//   45 #include "OSAL.h"
+//   46 #include "OSAL_Clock.h"
+//   47 #include "ZDConfig.h"
+//   48 
+//   49 #include "se.h"
+//   50 #include "simplemeter.h"
+//   51 #include "zcl_general.h"
+//   52 #include "zcl_se.h"
+//   53 #include "zcl_key_establish.h"
+//   54 
+//   55 /*********************************************************************
+//   56  * CONSTANTS
+//   57  */
+//   58 #define SIMPLEMETER_DEVICE_VERSION      0
+//   59 #define SIMPLEMETER_FLAGS               0
+//   60 
+//   61 #define SIMPLEMETER_HWVERSION           1
+//   62 #define SIMPLEMETER_ZCLVERSION          1
+//   63 
+//   64 /*********************************************************************
+//   65  * TYPEDEFS
+//   66  */
+//   67 
+//   68 /*********************************************************************
+//   69  * MACROS
+//   70  */
+//   71 
+//   72 /*********************************************************************
+//   73  * GLOBAL VARIABLES
+//   74  */
+//   75 // Basic Cluster
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   76 const uint8 simpleMeterZCLVersion = SIMPLEMETER_ZCLVERSION;
+simpleMeterZCLVersion:
+        DC8 1
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   77 const uint8 simpleMeterHWVersion = SIMPLEMETER_HWVERSION;
+simpleMeterHWVersion:
+        DC8 1
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   78 const uint8 simpleMeterManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+simpleMeterManufacturerName:
+        DC8 16, 84, 101, 120, 97, 115, 73, 110, 115, 116, 114, 117, 109, 101
+        DC8 110, 116, 115
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   79 const uint8 simpleMeterModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+simpleMeterModelId:
+        DC8 16, 84, 73, 48, 48, 48, 49, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   80 const uint8 simpleMeterDateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+simpleMeterDateCode:
+        DC8 16, 50, 48, 48, 54, 48, 56, 51, 49, 32, 32, 32, 32, 32, 32, 32, 32
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   81 const uint8 simpleMeterPowerSource = POWER_SOURCE_MAINS_1_PHASE;
+simpleMeterPowerSource:
+        DC8 1
+//   82 
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   83 uint8 simpleMeterLocationDescription[] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+simpleMeterLocationDescription:
+        DS8 17
+        REQUIRE `?<Initializer for simpleMeterLocationDescripti`
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero
+//   84 uint8 simpleMeterPhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+simpleMeterPhysicalEnvironment:
+        DS8 1
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   85 uint8 simpleMeterDeviceEnabled = DEVICE_ENABLED;
+simpleMeterDeviceEnabled:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterDeviceEnabled>`
+//   86 
+//   87 // Identify Cluster Attributes
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   88 uint16 simpleMeterIdentifyTime = 0;
+simpleMeterIdentifyTime:
+        DS8 2
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//   89 uint32 simpleMeterTime = 0;
+simpleMeterTime:
+        DS8 4
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   90 uint8 simpleMeterTimeStatus = 0x01;
+simpleMeterTimeStatus:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterTimeStatus>`
+//   91 
+//   92 // Simple Metering Cluster - Reading Information Set Attributes
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   93 uint8 simpleMeterCurrentSummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentSummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentSummationD`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   94 uint8 simpleMeterCurrentSummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentSummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentSummationR`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   95 uint8 simpleMeterCurrentMaxDemandDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentMaxDemandDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentMaxDemandD`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   96 uint8 simpleMeterCurrentMaxDemandReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentMaxDemandReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentMaxDemandR`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   97 uint8 simpleMeterCurrentTier1SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier1SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier1Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   98 uint8 simpleMeterCurrentTier1SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier1SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier1Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//   99 uint8 simpleMeterCurrentTier2SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier2SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier2Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  100 uint8 simpleMeterCurrentTier2SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier2SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier2Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  101 uint8 simpleMeterCurrentTier3SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier3SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier3Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  102 uint8 simpleMeterCurrentTier3SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier3SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier3Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  103 uint8 simpleMeterCurrentTier4SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier4SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier4Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  104 uint8 simpleMeterCurrentTier4SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier4SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier4Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  105 uint8 simpleMeterCurrentTier5SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier5SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier5Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  106 uint8 simpleMeterCurrentTier5SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier5SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier5Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  107 uint8 simpleMeterCurrentTier6SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier6SummationDelivered:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier6Summa`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  108 uint8 simpleMeterCurrentTier6SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterCurrentTier6SummationReceived:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterCurrentTier6Summa_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  109 uint8 simpleMeterDFTSummation[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+simpleMeterDFTSummation:
+        DS8 6
+        REQUIRE `?<Initializer for simpleMeterDFTSummation>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  110 uint16 simpleMeterDailyFreezeTime = 0x01;
+simpleMeterDailyFreezeTime:
+        DS8 2
+        REQUIRE `?<Initializer for simpleMeterDailyFreezeTime>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  111 int8 simpleMeterPowerFactor = 0x01;
+simpleMeterPowerFactor:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterPowerFactor>`
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  112 UTCTime simpleMeterSnapshotTime = 0x00;
+simpleMeterSnapshotTime:
+        DS8 4
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  113 UTCTime simpleMeterMaxDemandDeliverdTime = 0x00;
+simpleMeterMaxDemandDeliverdTime:
+        DS8 4
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  114 UTCTime simpleMeterMaxDemandReceivedTime = 0x00;
+simpleMeterMaxDemandReceivedTime:
+        DS8 4
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  115 uint8 simpleMeterDefaultUpdatePeriod = 0x1E;
+simpleMeterDefaultUpdatePeriod:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterDefaultUpdatePeri`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  116 uint8 simpleMeterFastPollUpdatePeriod = 0x05;
+simpleMeterFastPollUpdatePeriod:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterFastPollUpdatePer`
+//  117 
+//  118 // Simple Metering Cluster - Meter Status Attributes
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  119 uint8 simpleMeterStatus = 0x12;
+simpleMeterStatus:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterStatus>`
+//  120 
+//  121 // Simple Metering Cluster - Formatting Attributes
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  122 uint8 simpleMeterUnitOfMeasure = 0x01;
+simpleMeterUnitOfMeasure:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterUnitOfMeasure>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  123 uint24 simpleMeterMultiplier = 0x01;
+simpleMeterMultiplier:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterMultiplier>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  124 uint24 simpleMeterDivisor = 0x01;
+simpleMeterDivisor:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterDivisor>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  125 uint8 simpleMeterSummationFormating = 0x01;
+simpleMeterSummationFormating:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterSummationFormatin`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  126 uint8 simpleMeterDemandFormatting = 0x01;
+simpleMeterDemandFormatting:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterDemandFormatting>`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  127 uint8 simpleMeterHistoricalConsumptionFormatting = 0x01;
+simpleMeterHistoricalConsumptionFormatting:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterHistoricalConsump`
+//  128 
+//  129 // Simple Metering Cluster - SimpleMeter Historical Consumption Attributes
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  130 int24 simpleMeterInstanteneousDemand = 0x01;
+simpleMeterInstanteneousDemand:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterInstanteneousDema`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  131 uint24 simpleMeterCurrentdayConsumptionDelivered = 0x01;
+simpleMeterCurrentdayConsumptionDelivered:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurrentdayConsump`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  132 uint24 simpleMeterCurrentdayConsumptionReceived = 0x01;
+simpleMeterCurrentdayConsumptionReceived:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurrentdayConsump_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  133 uint24 simpleMeterPreviousdayConsumptionDelivered = 0x01;
+simpleMeterPreviousdayConsumptionDelivered:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterPreviousdayConsum`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  134 uint24 simpleMeterPreviousdayConsumtpionReceived = 0x01;
+simpleMeterPreviousdayConsumtpionReceived:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterPreviousdayConsum_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  135 UTCTime simpleMeterCurPartProfileIntStartTimeDelivered = 0x1000;
+simpleMeterCurPartProfileIntStartTimeDelivered:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurPartProfileInt`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  136 UTCTime simpleMeterCurPartProfileIntStartTimeReceived  = 0x2000;
+simpleMeterCurPartProfileIntStartTimeReceived:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurPartProfileInt_1`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  137 uint24 simpleMeterCurPartProfileIntValueDelivered = 0x0001;
+simpleMeterCurPartProfileIntValueDelivered:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurPartProfileInt_2`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  138 uint24 simpleMeterCurPartProfileIntValueReceived  = 0x0002;
+simpleMeterCurPartProfileIntValueReceived:
+        DS8 4
+        REQUIRE `?<Initializer for simpleMeterCurPartProfileInt_3`
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  139 uint8 simpleMeterMaxNumberOfPeriodsDelivered = 0x01;
+simpleMeterMaxNumberOfPeriodsDelivered:
+        DS8 1
+        REQUIRE `?<Initializer for simpleMeterMaxNumberOfPeriod`
+//  140 
+//  141 // Key Establishment
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  142 uint16 simpleMeterKeyEstablishmentSuite = CERTIFICATE_BASED_KEY_ESTABLISHMENT;
+simpleMeterKeyEstablishmentSuite:
+        DS8 2
+//  143 
+//  144 /*********************************************************************
+//  145  * ATTRIBUTE DEFINITIONS - Uses Cluster IDs
+//  146  */
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(1)
+//  147 CONST zclAttrRec_t simpleMeterAttrs[SIMPLEMETER_MAX_ATTRIBUTES] =
+simpleMeterAttrs:
+        DC16 0, 0
+        DC8 32, 1
+        DC16 simpleMeterZCLVersion, 0, 3
+        DC8 32, 1
+        DC16 simpleMeterHWVersion, 0, 4
+        DC8 66, 1
+        DC16 simpleMeterManufacturerName, 0, 5
+        DC8 66, 1
+        DC16 simpleMeterModelId, 0, 6
+        DC8 66, 1
+        DC16 simpleMeterDateCode, 0, 7
+        DC8 48, 1
+        DC16 simpleMeterPowerSource, 0, 16
+        DC8 66, 3
+        DC16 simpleMeterLocationDescription, 0, 17
+        DC8 48, 3
+        DC16 simpleMeterPhysicalEnvironment, 0, 18
+        DC8 16, 3
+        DC16 simpleMeterDeviceEnabled, 3, 0
+        DC8 33, 3
+        DC16 simpleMeterIdentifyTime, 10, 0
+        DC8 226, 1
+        DC16 simpleMeterTime, 10, 1
+        DC8 24, 1
+        DC16 simpleMeterTimeStatus, 1794, 0
+        DC8 37, 1
+        DC16 simpleMeterCurrentSummationDelivered, 1794, 1
+        DC8 37, 1
+        DC16 simpleMeterCurrentSummationReceived, 1794, 2
+        DC8 37, 1
+        DC16 simpleMeterCurrentMaxDemandDelivered, 1794, 3
+        DC8 37, 1
+        DC16 simpleMeterCurrentMaxDemandReceived, 1794, 256
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier1SummationDelivered, 1794, 257
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier1SummationReceived, 1794, 258
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier2SummationDelivered, 1794, 259
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier2SummationReceived, 1794, 260
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier3SummationDelivered, 1794, 261
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier3SummationReceived, 1794, 262
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier4SummationDelivered, 1794, 263
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier4SummationReceived, 1794, 264
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier5SummationDelivered, 1794, 265
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier5SummationReceived, 1794, 266
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier6SummationDelivered, 1794, 267
+        DC8 37, 1
+        DC16 simpleMeterCurrentTier6SummationReceived, 1794, 4
+        DC8 37, 1
+        DC16 simpleMeterDFTSummation, 1794, 5
+        DC8 33, 1
+        DC16 simpleMeterDailyFreezeTime, 1794, 6
+        DC8 40, 1
+        DC16 simpleMeterPowerFactor, 1794, 7
+        DC8 226, 1
+        DC16 simpleMeterSnapshotTime, 1794, 8
+        DC8 226, 1
+        DC16 simpleMeterMaxDemandDeliverdTime, 1794, 9
+        DC8 226, 1
+        DC16 simpleMeterMaxDemandReceivedTime, 1794, 10
+        DC8 32, 1
+        DC16 simpleMeterDefaultUpdatePeriod, 1794, 11
+        DC8 32, 1
+        DC16 simpleMeterFastPollUpdatePeriod, 1794, 512
+        DC8 24, 1
+        DC16 simpleMeterStatus, 1794, 768
+        DC8 48, 1
+        DC16 simpleMeterUnitOfMeasure, 1794, 769
+        DC8 34, 1
+        DC16 simpleMeterMultiplier, 1794, 770
+        DC8 34, 1
+        DC16 simpleMeterDivisor, 1794, 771
+        DC8 24, 1
+        DC16 simpleMeterSummationFormating, 1794, 772
+        DC8 24, 1
+        DC16 simpleMeterDemandFormatting, 1794, 773
+        DC8 24, 1
+        DC16 simpleMeterHistoricalConsumptionFormatting, 1794, 1024
+        DC8 42, 1
+        DC16 simpleMeterInstanteneousDemand, 1794, 1025
+        DC8 34, 1
+        DC16 simpleMeterCurrentdayConsumptionDelivered, 1794, 1026
+        DC8 34, 1
+        DC16 simpleMeterCurrentdayConsumptionReceived, 1794, 1027
+        DC8 34, 1
+        DC16 simpleMeterPreviousdayConsumptionDelivered, 1794, 1028
+        DC8 34, 1
+        DC16 simpleMeterPreviousdayConsumtpionReceived, 1794, 1029
+        DC8 226, 1
+        DC16 simpleMeterCurPartProfileIntStartTimeDelivered, 1794, 1030
+        DC8 226, 1
+        DC16 simpleMeterCurPartProfileIntStartTimeReceived, 1794, 1031
+        DC8 34, 1
+        DC16 simpleMeterCurPartProfileIntValueDelivered, 1794, 1032
+        DC8 34, 1
+        DC16 simpleMeterCurPartProfileIntValueReceived, 1794, 1280
+        DC8 32, 1
+        DC16 simpleMeterMaxNumberOfPeriodsDelivered, 2048, 0
+        DC8 25, 1
+        DC16 simpleMeterKeyEstablishmentSuite
+//  148 {
+//  149 
+//  150   // *** General Basic Cluster Attributes ***
+//  151   {
+//  152     ZCL_CLUSTER_ID_GEN_BASIC,              // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  153     {  // Attribute record
+//  154       ATTRID_BASIC_ZCL_VERSION,           // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  155       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+//  156       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//  157       (void *)&simpleMeterZCLVersion      // Pointer to attribute variable
+//  158     }
+//  159   },
+//  160   {
+//  161     ZCL_CLUSTER_ID_GEN_BASIC,
+//  162     { // Attribute record
+//  163       ATTRID_BASIC_HW_VERSION,
+//  164       ZCL_DATATYPE_UINT8,
+//  165       ACCESS_CONTROL_READ,
+//  166       (void *)&simpleMeterHWVersion
+//  167     }
+//  168   },
+//  169   {
+//  170     ZCL_CLUSTER_ID_GEN_BASIC,
+//  171     { // Attribute record
+//  172       ATTRID_BASIC_MANUFACTURER_NAME,
+//  173       ZCL_DATATYPE_CHAR_STR,
+//  174       ACCESS_CONTROL_READ,
+//  175       (void *)simpleMeterManufacturerName
+//  176     }
+//  177   },
+//  178   {
+//  179     ZCL_CLUSTER_ID_GEN_BASIC,
+//  180     { // Attribute record
+//  181       ATTRID_BASIC_MODEL_ID,
+//  182       ZCL_DATATYPE_CHAR_STR,
+//  183       ACCESS_CONTROL_READ,
+//  184       (void *)simpleMeterModelId
+//  185     }
+//  186   },
+//  187   {
+//  188     ZCL_CLUSTER_ID_GEN_BASIC,
+//  189     { // Attribute record
+//  190       ATTRID_BASIC_DATE_CODE,
+//  191       ZCL_DATATYPE_CHAR_STR,
+//  192       ACCESS_CONTROL_READ,
+//  193       (void *)simpleMeterDateCode
+//  194     }
+//  195   },
+//  196   {
+//  197     ZCL_CLUSTER_ID_GEN_BASIC,
+//  198     { // Attribute record
+//  199       ATTRID_BASIC_POWER_SOURCE,
+//  200       ZCL_DATATYPE_ENUM8,
+//  201       ACCESS_CONTROL_READ,
+//  202       (void *)&simpleMeterPowerSource
+//  203     }
+//  204   },
+//  205   {
+//  206     ZCL_CLUSTER_ID_GEN_BASIC,
+//  207     { // Attribute record
+//  208       ATTRID_BASIC_LOCATION_DESC,
+//  209       ZCL_DATATYPE_CHAR_STR,
+//  210       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  211       (void *)simpleMeterLocationDescription
+//  212     }
+//  213   },
+//  214   {
+//  215     ZCL_CLUSTER_ID_GEN_BASIC,
+//  216     { // Attribute record
+//  217       ATTRID_BASIC_PHYSICAL_ENV,
+//  218       ZCL_DATATYPE_ENUM8,
+//  219       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  220       (void *)&simpleMeterPhysicalEnvironment
+//  221     }
+//  222   },
+//  223   {
+//  224     ZCL_CLUSTER_ID_GEN_BASIC,
+//  225     { // Attribute record
+//  226       ATTRID_BASIC_DEVICE_ENABLED,
+//  227       ZCL_DATATYPE_BOOLEAN,
+//  228       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  229       (void *)&simpleMeterDeviceEnabled
+//  230     }
+//  231   },
+//  232 
+//  233   // *** Identify Cluster Attribute ***
+//  234   {
+//  235     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  236     { // Attribute record
+//  237       ATTRID_IDENTIFY_TIME,
+//  238       ZCL_DATATYPE_UINT16,
+//  239       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  240       (void *)&simpleMeterIdentifyTime
+//  241     }
+//  242   },
+//  243 
+//  244   // *** Time Cluster Attribute ***
+//  245   // In SE domain, only master clock will be used. Therefore
+//  246   // mark the access control to only readable.
+//  247   {
+//  248     ZCL_CLUSTER_ID_GEN_TIME,
+//  249     { // Attribute record
+//  250       ATTRID_TIME_TIME,
+//  251       ZCL_DATATYPE_UTC,
+//  252       ACCESS_CONTROL_READ,
+//  253       (void *)&simpleMeterTime
+//  254     }
+//  255   },
+//  256   // In SE domain, only master clock will be used. Therefore
+//  257   // mark the access control to only readable.
+//  258   {
+//  259     ZCL_CLUSTER_ID_GEN_TIME,
+//  260     { // Attribute record
+//  261       ATTRID_TIME_STATUS,
+//  262       ZCL_DATATYPE_BITMAP8,
+//  263       ACCESS_CONTROL_READ,
+//  264       (void *)&simpleMeterTimeStatus
+//  265     }
+//  266   },
+//  267 
+//  268 
+//  269   // SE Attributes
+//  270   {
+//  271     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,              // Cluster IDs - defined in the profile (ie. se.h)
+//  272     {  // Attribute record
+//  273       ATTRID_SE_CURRENT_SUMMATION_DELIVERED,        // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  274       ZCL_DATATYPE_UINT48,                          // Data Type - found in zcl.h
+//  275       ACCESS_CONTROL_READ,                          // Variable access control - found in zcl.h
+//  276       (void *)simpleMeterCurrentSummationDelivered  // Pointer to attribute variable
+//  277     }
+//  278   },
+//  279   {
+//  280     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  281     {  // Attribute record
+//  282       ATTRID_SE_CURRENT_SUMMATION_RECEIVED,
+//  283       ZCL_DATATYPE_UINT48,
+//  284       ACCESS_CONTROL_READ,
+//  285       (void *)simpleMeterCurrentSummationReceived
+//  286     }
+//  287   },
+//  288   {
+//  289     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  290     {  // Attribute record
+//  291       ATTRID_SE_CURRENT_MAX_DEMAND_DELIVERED,
+//  292       ZCL_DATATYPE_UINT48,
+//  293       ACCESS_CONTROL_READ,
+//  294       (void *)simpleMeterCurrentMaxDemandDelivered
+//  295     }
+//  296   },
+//  297   {
+//  298     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  299     {  // Attribute record
+//  300       ATTRID_SE_CURRENT_MAX_DEMAND_RECEIVED,
+//  301       ZCL_DATATYPE_UINT48,
+//  302       ACCESS_CONTROL_READ,
+//  303       (void *)simpleMeterCurrentMaxDemandReceived
+//  304     }
+//  305   },
+//  306   {
+//  307     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  308     {  // Attribute record
+//  309       ATTRID_SE_CURRENT_TIER1_SUMMATION_DELIVERED,
+//  310       ZCL_DATATYPE_UINT48,
+//  311       ACCESS_CONTROL_READ,
+//  312       (void *)simpleMeterCurrentTier1SummationDelivered
+//  313     }
+//  314   },
+//  315   {
+//  316     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  317     {  // Attribute record
+//  318       ATTRID_SE_CURRENT_TIER1_SUMMATION_RECEIVED,
+//  319       ZCL_DATATYPE_UINT48,
+//  320       ACCESS_CONTROL_READ,
+//  321       (void *)simpleMeterCurrentTier1SummationReceived
+//  322     }
+//  323   },
+//  324   {
+//  325     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  326     {  // Attribute record
+//  327       ATTRID_SE_CURRENT_TIER2_SUMMATION_DELIVERED,
+//  328       ZCL_DATATYPE_UINT48,
+//  329       ACCESS_CONTROL_READ,
+//  330       (void *)simpleMeterCurrentTier2SummationDelivered
+//  331     }
+//  332   },
+//  333   {
+//  334     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  335     {  // Attribute record
+//  336       ATTRID_SE_CURRENT_TIER2_SUMMATION_RECEIVED,
+//  337       ZCL_DATATYPE_UINT48,
+//  338       ACCESS_CONTROL_READ,
+//  339       (void *)simpleMeterCurrentTier2SummationReceived
+//  340     }
+//  341   },
+//  342   {
+//  343     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  344     {  // Attribute record
+//  345       ATTRID_SE_CURRENT_TIER3_SUMMATION_DELIVERED,
+//  346       ZCL_DATATYPE_UINT48,
+//  347       ACCESS_CONTROL_READ,
+//  348       (void *)simpleMeterCurrentTier3SummationDelivered
+//  349     }
+//  350   },
+//  351   {
+//  352     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  353     {  // Attribute record
+//  354       ATTRID_SE_CURRENT_TIER3_SUMMATION_RECEIVED,
+//  355       ZCL_DATATYPE_UINT48,
+//  356       ACCESS_CONTROL_READ,
+//  357       (void *)simpleMeterCurrentTier3SummationReceived
+//  358     }
+//  359   },
+//  360   {
+//  361     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  362     {  // Attribute record
+//  363       ATTRID_SE_CURRENT_TIER4_SUMMATION_DELIVERED,
+//  364       ZCL_DATATYPE_UINT48,
+//  365       ACCESS_CONTROL_READ,
+//  366       (void *)simpleMeterCurrentTier4SummationDelivered
+//  367     }
+//  368   },
+//  369   {
+//  370     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  371     {  // Attribute record
+//  372       ATTRID_SE_CURRENT_TIER4_SUMMATION_RECEIVED,
+//  373       ZCL_DATATYPE_UINT48,
+//  374       ACCESS_CONTROL_READ,
+//  375       (void *)simpleMeterCurrentTier4SummationReceived
+//  376     }
+//  377   },
+//  378   {
+//  379     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  380     {  // Attribute record
+//  381       ATTRID_SE_CURRENT_TIER5_SUMMATION_DELIVERED,
+//  382       ZCL_DATATYPE_UINT48,
+//  383       ACCESS_CONTROL_READ,
+//  384       (void *)simpleMeterCurrentTier5SummationDelivered
+//  385     }
+//  386   },
+//  387   {
+//  388     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  389     {  // Attribute record
+//  390       ATTRID_SE_CURRENT_TIER5_SUMMATION_RECEIVED,
+//  391       ZCL_DATATYPE_UINT48,
+//  392       ACCESS_CONTROL_READ,
+//  393       (void *)simpleMeterCurrentTier5SummationReceived
+//  394     }
+//  395   },
+//  396    {
+//  397     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  398     {  // Attribute record
+//  399       ATTRID_SE_CURRENT_TIER6_SUMMATION_DELIVERED,
+//  400       ZCL_DATATYPE_UINT48,
+//  401       ACCESS_CONTROL_READ,
+//  402       (void *)simpleMeterCurrentTier6SummationDelivered
+//  403     }
+//  404   },
+//  405   {
+//  406     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  407     {  // Attribute record
+//  408       ATTRID_SE_CURRENT_TIER6_SUMMATION_RECEIVED,
+//  409       ZCL_DATATYPE_UINT48,
+//  410       ACCESS_CONTROL_READ,
+//  411       (void *)simpleMeterCurrentTier6SummationReceived
+//  412     }
+//  413   },
+//  414   {
+//  415     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  416     {  // Attribute record
+//  417       ATTRID_SE_DFT_SUMMATION,
+//  418       ZCL_DATATYPE_UINT48,
+//  419       ACCESS_CONTROL_READ,
+//  420       (void *)simpleMeterDFTSummation
+//  421     }
+//  422   },
+//  423   {
+//  424     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  425     {  // Attribute record
+//  426       ATTRID_SE_DAILY_FREEZE_TIME,
+//  427       ZCL_DATATYPE_UINT16,
+//  428       ACCESS_CONTROL_READ,
+//  429       (void *)&simpleMeterDailyFreezeTime
+//  430     }
+//  431   },
+//  432   {
+//  433     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  434     {  // Attribute record
+//  435       ATTRID_SE_POWER_FACTOR,
+//  436       ZCL_DATATYPE_INT8,
+//  437       ACCESS_CONTROL_READ,
+//  438       (void *)&simpleMeterPowerFactor
+//  439     }
+//  440   },
+//  441   {
+//  442     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  443     {  // Attribute record
+//  444       ATTRID_SE_READING_SNAPSHOT_TIME,
+//  445       ZCL_DATATYPE_UTC,
+//  446       ACCESS_CONTROL_READ,
+//  447       (void *)&simpleMeterSnapshotTime
+//  448     }
+//  449   },
+//  450     {
+//  451     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  452     {  // Attribute record
+//  453       ATTRID_SE_CURRENT_MAX_DEMAND_DELIVERD_TIME,
+//  454       ZCL_DATATYPE_UTC,
+//  455       ACCESS_CONTROL_READ,
+//  456       (void *)&simpleMeterMaxDemandDeliverdTime
+//  457     }
+//  458   },
+//  459     {
+//  460     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  461     {  // Attribute record
+//  462       ATTRID_SE_CURRENT_MAX_DEMAND_RECEIVED_TIME,
+//  463       ZCL_DATATYPE_UTC,
+//  464       ACCESS_CONTROL_READ,
+//  465       (void *)&simpleMeterMaxDemandReceivedTime
+//  466     }
+//  467   },
+//  468   {
+//  469     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  470     {  // Attribute record
+//  471       ATTRID_SE_DEFAULT_UPDATE_PERIOD,
+//  472       ZCL_DATATYPE_UINT8,
+//  473       ACCESS_CONTROL_READ,
+//  474       (void *)&simpleMeterDefaultUpdatePeriod
+//  475     }
+//  476   },
+//  477   {
+//  478     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  479     {  // Attribute record
+//  480       ATTRID_SE_FAST_POLL_UPDATE_PERIOD,
+//  481       ZCL_DATATYPE_UINT8,
+//  482       ACCESS_CONTROL_READ,
+//  483       (void *)&simpleMeterFastPollUpdatePeriod
+//  484     }
+//  485   },
+//  486   {
+//  487     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  488     {  // Attribute record
+//  489       ATTRID_SE_STATUS,
+//  490       ZCL_DATATYPE_BITMAP8,
+//  491       ACCESS_CONTROL_READ,
+//  492       (void *)&simpleMeterStatus
+//  493     }
+//  494   },
+//  495 
+//  496   {
+//  497     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  498     {  // Attribute record
+//  499       ATTRID_SE_UNIT_OF_MEASURE,
+//  500       ZCL_DATATYPE_ENUM8,
+//  501       ACCESS_CONTROL_READ,
+//  502       (void *)&simpleMeterUnitOfMeasure
+//  503     }
+//  504   },
+//  505   {
+//  506     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  507     {  // Attribute record
+//  508       ATTRID_SE_MULTIPLIER,
+//  509       ZCL_DATATYPE_UINT24,
+//  510       ACCESS_CONTROL_READ,
+//  511       (void *)&simpleMeterMultiplier
+//  512     }
+//  513   },
+//  514   {
+//  515     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  516     {  // Attribute record
+//  517       ATTRID_SE_DIVISOR,
+//  518       ZCL_DATATYPE_UINT24,
+//  519       ACCESS_CONTROL_READ,
+//  520       (void *)&simpleMeterDivisor
+//  521     }
+//  522   },
+//  523   {
+//  524     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  525     {  // Attribute record
+//  526       ATTRID_SE_SUMMATION_FORMATTING,
+//  527       ZCL_DATATYPE_BITMAP8,
+//  528       ACCESS_CONTROL_READ,
+//  529       (void *)&simpleMeterSummationFormating
+//  530     }
+//  531   },
+//  532   {
+//  533     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  534     {  // Attribute record
+//  535       ATTRID_SE_DEMAND_FORMATTING,
+//  536       ZCL_DATATYPE_BITMAP8,
+//  537       ACCESS_CONTROL_READ,
+//  538       (void *)&simpleMeterDemandFormatting
+//  539     }
+//  540   },
+//  541   {
+//  542     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  543     {  // Attribute record
+//  544       ATTRID_SE_HISTORICAL_CONSUMPTION_FORMATTING,
+//  545       ZCL_DATATYPE_BITMAP8,
+//  546       ACCESS_CONTROL_READ,
+//  547       (void *)&simpleMeterHistoricalConsumptionFormatting
+//  548     }
+//  549   },
+//  550   {
+//  551     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  552     {  // Attribute record
+//  553       ATTRID_SE_INSTANTANEOUS_DEMAND,
+//  554       ZCL_DATATYPE_INT24,
+//  555       ACCESS_CONTROL_READ,
+//  556       (void *)&simpleMeterInstanteneousDemand
+//  557     }
+//  558   },
+//  559   {
+//  560     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  561     {  // Attribute record
+//  562       ATTRID_SE_CURRENTDAY_CONSUMPTION_DELIVERED,
+//  563       ZCL_DATATYPE_UINT24,
+//  564       ACCESS_CONTROL_READ,
+//  565       (void *)&simpleMeterCurrentdayConsumptionDelivered
+//  566     }
+//  567   },
+//  568   {
+//  569     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  570     {  // Attribute record
+//  571       ATTRID_SE_CURRENTDAY_CONSUMPTION_RECEIVED,
+//  572       ZCL_DATATYPE_UINT24,
+//  573       ACCESS_CONTROL_READ,
+//  574       (void *)&simpleMeterCurrentdayConsumptionReceived
+//  575     }
+//  576   },
+//  577   {
+//  578     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  579     {  // Attribute record
+//  580       ATTRID_SE_PREVIOUSDAY_CONSUMPTION_DELIVERED,
+//  581       ZCL_DATATYPE_UINT24,
+//  582       ACCESS_CONTROL_READ,
+//  583       (void *)&simpleMeterPreviousdayConsumptionDelivered
+//  584     }
+//  585   },
+//  586   {
+//  587     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  588     {  // Attribute record
+//  589       ATTRID_SE_PREVIOUSDAY_CONSUMPTION_RECEIVED,
+//  590       ZCL_DATATYPE_UINT24,
+//  591       ACCESS_CONTROL_READ,
+//  592       (void *)&simpleMeterPreviousdayConsumtpionReceived
+//  593     }
+//  594   },
+//  595   {
+//  596     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       
+//  597     {  // Attribute record
+//  598       ATTRID_SE_CUR_PART_PROFILE_INT_START_TIME_DELIVERED,    
+//  599       ZCL_DATATYPE_UTC,                       
+//  600       ACCESS_CONTROL_READ,                       
+//  601       (void *)&simpleMeterCurPartProfileIntStartTimeDelivered  
+//  602     }
+//  603   },
+//  604   {
+//  605     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       
+//  606     {  // Attribute record
+//  607       ATTRID_SE_CUR_PART_PROFILE_INT_START_TIME_RECEIVED,    
+//  608       ZCL_DATATYPE_UTC,                       
+//  609       ACCESS_CONTROL_READ,                       
+//  610       (void *)&simpleMeterCurPartProfileIntStartTimeReceived  
+//  611     }
+//  612   },
+//  613   {
+//  614     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       
+//  615     {  // Attribute record
+//  616       ATTRID_SE_CUR_PART_PROFILE_INT_VALUE_DELIVERED,    
+//  617       ZCL_DATATYPE_UINT24,                       
+//  618       ACCESS_CONTROL_READ,                       
+//  619       (void *)&simpleMeterCurPartProfileIntValueDelivered  
+//  620     }
+//  621   },
+//  622   {
+//  623     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       
+//  624     {  // Attribute record
+//  625       ATTRID_SE_CUR_PART_PROFILE_INT_VALUE_RECEIVED,    
+//  626       ZCL_DATATYPE_UINT24,                       
+//  627       ACCESS_CONTROL_READ,                       
+//  628       (void *)&simpleMeterCurPartProfileIntValueReceived  
+//  629     }
+//  630   },
+//  631 
+//  632   {
+//  633     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  634     {  // Attribute record
+//  635       ATTRID_SE_MAX_NUMBER_OF_PERIODS_DELIVERED,
+//  636       ZCL_DATATYPE_UINT8,
+//  637       ACCESS_CONTROL_READ,
+//  638       (void *)&simpleMeterMaxNumberOfPeriodsDelivered
+//  639     }
+//  640   },
+//  641   {
+//  642     ZCL_CLUSTER_ID_GEN_KEY_ESTABLISHMENT,
+//  643     {  // Attribute record
+//  644       ATTRID_KEY_ESTABLISH_SUITE,
+//  645       ZCL_DATATYPE_BITMAP16,
+//  646       ACCESS_CONTROL_READ,
+//  647       (void *)&simpleMeterKeyEstablishmentSuite
+//  648     }
+//  649   },
+//  650 };
+//  651 
+//  652 /*********************************************************************
+//  653  * CLUSTER OPTION DEFINITIONS
+//  654  */
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  655 zclOptionRec_t simpleMeterOptions[SIMPLEMETER_MAX_OPTIONS] =
+simpleMeterOptions:
+        DS8 8
+        REQUIRE `?<Initializer for simpleMeterOptions>`
+//  656 {
+//  657   // *** General Cluster Options ***
+//  658   {
+//  659     ZCL_CLUSTER_ID_GEN_TIME,                      // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  660     ( AF_EN_SECURITY /*| AF_ACK_REQUEST*/ ),      // Options - Found in AF header (ie. AF.h)
+//  661   },
+//  662 
+//  663   // *** Smart Energy Cluster Options ***
+//  664   {
+//  665     ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+//  666     ( AF_EN_SECURITY ),
+//  667   },
+//  668 };
+//  669 
+//  670 /*********************************************************************
+//  671  * SIMPLE DESCRIPTOR
+//  672  */
+//  673 // This is the Cluster ID List and should be filled with Application
+//  674 // specific cluster IDs.
+//  675 #define SIMPLEMETER_MAX_INCLUSTERS       4
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(1)
+//  676 const cId_t simpleMeterInClusterList[SIMPLEMETER_MAX_INCLUSTERS] =
+simpleMeterInClusterList:
+        DC16 0, 3, 10, 1794
+//  677 {
+//  678   ZCL_CLUSTER_ID_GEN_BASIC,
+//  679   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  680   ZCL_CLUSTER_ID_GEN_TIME,
+//  681   ZCL_CLUSTER_ID_SE_SIMPLE_METERING
+//  682 };
+//  683 
+//  684 #define SIMPLEMETER_MAX_OUTCLUSTERS       4
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(1)
+//  685 const cId_t simpleMeterOutClusterList[SIMPLEMETER_MAX_OUTCLUSTERS] =
+simpleMeterOutClusterList:
+        DC16 0, 3, 10, 1794
+//  686 {
+//  687   ZCL_CLUSTER_ID_GEN_BASIC,
+//  688   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  689   ZCL_CLUSTER_ID_GEN_TIME,
+//  690   ZCL_CLUSTER_ID_SE_SIMPLE_METERING
+//  691 };
+//  692 
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  693 SimpleDescriptionFormat_t simpleMeterSimpleDesc =
+simpleMeterSimpleDesc:
+        DS8 14
+        REQUIRE `?<Initializer for simpleMeterSimpleDesc>`
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterLocationDescripti`:
+        DC8 16, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterDeviceEnabled>`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterTimeStatus>`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentSummationD`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentSummationR`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentMaxDemandD`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentMaxDemandR`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier1Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier1Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier2Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier2Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier3Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier3Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier4Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier4Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier5Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier5Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier6Summa`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterCurrentTier6Summa_1`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterDFTSummation>`:
+        DC8 17, 34, 51, 68, 85, 102
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterDailyFreezeTime>`:
+        DC16 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterPowerFactor>`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterDefaultUpdatePeri`:
+        DC8 30
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterFastPollUpdatePer`:
+        DC8 5
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterStatus>`:
+        DC8 18
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterUnitOfMeasure>`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterMultiplier>`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterDivisor>`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterSummationFormatin`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterDemandFormatting>`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterHistoricalConsump`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterInstanteneousDema`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurrentdayConsump`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurrentdayConsump_1`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterPreviousdayConsum`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterPreviousdayConsum_1`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurPartProfileInt`:
+        DC32 4096
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurPartProfileInt_1`:
+        DC32 8192
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurPartProfileInt_2`:
+        DC32 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterCurPartProfileInt_3`:
+        DC32 2
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for simpleMeterMaxNumberOfPeriod`:
+        DC8 1
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterOptions>`:
+        DC16 10
+        DC8 64, 0
+        DC16 1794
+        DC8 64, 0
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simpleMeterSimpleDesc>`:
+        DC8 9, 0
+        DC16 265, 1281
+        DC8 0, 4
+        DC16 simpleMeterInClusterList
+        DC8 4, 0
+        DC16 simpleMeterOutClusterList
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  694 {
+//  695   SIMPLEMETER_ENDPOINT,                       //  uint8 Endpoint;
+//  696   ZCL_SE_PROFILE_ID,                          //  uint16 AppProfId[2];
+//  697   ZCL_SE_DEVICEID_METER,                      //  uint16 AppDeviceId[2];
+//  698   SIMPLEMETER_DEVICE_VERSION,                 //  int   AppDevVer:4;
+//  699   SIMPLEMETER_FLAGS,                          //  int   AppFlags:4;
+//  700   SIMPLEMETER_MAX_INCLUSTERS,                 //  uint8  AppNumInClusters;
+//  701   (cId_t *)simpleMeterInClusterList,          //  cId_t *pAppInClusterList;
+//  702   SIMPLEMETER_MAX_OUTCLUSTERS,                //  uint8  AppNumInClusters;
+//  703   (cId_t *)simpleMeterOutClusterList          //  cId_t *pAppInClusterList;
+//  704 };
+//  705 
+//  706 /*********************************************************************
+//  707  * GLOBAL FUNCTIONS
+//  708  */
+//  709 
+//  710 /*********************************************************************
+//  711  * LOCAL FUNCTIONS
+//  712  */
+//  713 
+//  714 /****************************************************************************
+//  715 ****************************************************************************/
+//  716 
+//  717 
+// 
+// 502 bytes in segment DATA16_C
+// 198 bytes in segment DATA16_I
+// 198 bytes in segment DATA16_ID
+//  21 bytes in segment DATA16_Z
+// 
+// 700 bytes of CONST memory
+// 219 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

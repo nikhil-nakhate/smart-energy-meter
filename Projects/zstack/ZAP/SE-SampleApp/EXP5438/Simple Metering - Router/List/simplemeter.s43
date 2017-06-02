@@ -1,0 +1,2890 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      29/Jan/2012  18:15:58 /
+// IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\Source\SimpleMeter\simplemeter.c      /
+//    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"     /
+//                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI           /
+//                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE            /
+//                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE              /
+//                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE              /
+//                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                 /
+//                     -DZAP_AF_DATA_REQ_FRAG=FALSE                           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZC /
+//                     L.cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC             /
+//                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH        /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE) "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\Source\SimpleMeter\simplemeter.c" -D           /
+//                     ZAP_DEVICETYPE=ZG_DEVICETYPE_ROUTER -D                 /
+//                     TC_LINKKEY_JOIN -D ZCL_REPORT -lC "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\Simple Metering - Router\List\" -lA    /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\Simple Metering -            /
+//                     Router\List\" --remarks --diag_suppress                /
+//                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\Simple Metering - Router\Obj\"         /
+//                     --debug -D__MSP430F5438A__ -e --double=32 --clib -I    /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\Source\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\Source\" -I "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\hal\target\M /
+//                     SP5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ /
+//                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\. /
+//                     .\Components\hal\include\" -I "C:\Texas                /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\mac\include\ /
+//                     " -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z /
+//                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen /
+//                     ts\mt\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\osal\include\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp /
+//                     430\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projec /
+//                     ts\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Comp /
+//                     onents\services\saddr\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\services\sda /
+//                     ta\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Project /
+//                     s\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Compo /
+//                     nents\stack\af\" -I "C:\Texas                          /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\nwk\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sapi\" -I "C:\Texas                             /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\sec\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sys\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0 /
+//                     \Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\ /
+//                     ..\Components\stack\zcl\" -I "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\zdo\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \zmac\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\zmac\f8w\" --core=430X --data_model=small     /
+//                     -Ohz --multiplier=32 --multiplier_location=4C0         /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\EXP5438\Simple Metering -             /
+//                     Router\List\simplemeter.s43                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME simplemeter
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?CopyMemoryWords
+        EXTERN ?cstart_init_copy
+        EXTERN ?cstart_init_zero
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC E
+        FUNCTION simplemeter_AlarmCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_BasicResetCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_GetProfileCmdCB,021603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 40, STACK
+        FUNCTION simplemeter_GetProfileRspCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_IdentifyCB,021603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_IdentifyQueryRspCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC simplemeter_Init
+        FUNCTION simplemeter_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION simplemeter_MirrorRemCmdCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_MirrorRemRspCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_ProcessIdentifyTimeChange,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_ProcessInConfigReportCmd,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 30, STACK
+        FUNCTION simplemeter_ProcessInConfigReportRspCmd,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        FUNCTION simplemeter_ProcessInReadReportCfgCmd,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 30, STACK
+        FUNCTION simplemeter_ProcessZCLMsg,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION simplemeter_ProcessZDOMsgs,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION simplemeter_ReqMirrorCmdCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_ReqMirrorRspCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION simplemeter_ValidateAttrDataCB,0603H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC simplemeter_event_loop
+        FUNCTION simplemeter_event_loop,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 72, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H 0
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H 0
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H 0
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H 0
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN zclFindAttrRec
+        FUNCTION zclFindAttrRec,0202H
+        EXTERN zclAnalogDataType
+        FUNCTION zclAnalogDataType,0202H
+        EXTERN zclGetDataTypeLength
+        FUNCTION zclGetDataTypeLength,0202H
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        EXTERN zcl_SendReadReportCfgRspCmd
+        FUNCTION zcl_SendReadReportCfgRspCmd,0202H
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        EXTERN zcl_SendConfigReportRspCmd
+        FUNCTION zcl_SendConfigReportRspCmd,0202H
+        EXTERN zclSE_SimpleMetering_Send_GetProfileRsp
+        FUNCTION zclSE_SimpleMetering_Send_GetProfileRsp,0202H
+        EXTERN simpleMeterIdentifyTime
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        EXTERN HalLedBlink
+        FUNCTION HalLedBlink,0202H
+        EXTERN HalLedSet
+        FUNCTION HalLedSet,0202H
+        EXTERN osal_stop_timerEx
+        FUNCTION osal_stop_timerEx,0202H
+        EXTERN ZDO_ParseEPListRsp
+        FUNCTION ZDO_ParseEPListRsp,0202H
+        EXTERN osal_set_event
+        FUNCTION osal_set_event,0202H
+        EXTERN zclGeneral_KeyEstablish_InitiateKeyEstablishment
+        FUNCTION zclGeneral_KeyEstablish_InitiateKeyEstablishment,0202H
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        EXTERN ZDOInitDevice
+        FUNCTION ZDOInitDevice,0202H
+        EXTERN NLME_SetPollRate
+        FUNCTION NLME_SetPollRate,0202H
+        EXTERN HalAdcRead
+        FUNCTION HalAdcRead,0202H
+        EXTERN _itoa
+        FUNCTION _itoa,0202H
+        EXTERN HalLcdWriteString
+        FUNCTION HalLcdWriteString,0202H
+        EXTERN zcl_SendReportCmd
+        FUNCTION zcl_SendReportCmd,0202H
+        EXTERN osal_getClock
+        FUNCTION osal_getClock,0202H
+        EXTERN simpleMeterTime
+        EXTERN simpleMeterSimpleDesc
+        EXTERN zclSE_Init
+        FUNCTION zclSE_Init,0202H
+        EXTERN zclGeneral_RegisterCmdCallbacks
+        FUNCTION zclGeneral_RegisterCmdCallbacks,0202H
+        EXTERN zclSE_RegisterCmdCallbacks
+        FUNCTION zclSE_RegisterCmdCallbacks,0202H
+        EXTERN simpleMeterAttrs
+        EXTERN zcl_registerAttrList
+        FUNCTION zcl_registerAttrList,0202H
+        EXTERN simpleMeterOptions
+        EXTERN zcl_registerClusterOptionList
+        FUNCTION zcl_registerClusterOptionList,0202H
+        EXTERN zcl_registerValidateAttrData
+        FUNCTION zcl_registerValidateAttrData,0202H
+        EXTERN zcl_registerForMsg
+        FUNCTION zcl_registerForMsg,0202H
+        EXTERN RegisterForKeys
+        FUNCTION RegisterForKeys,0202H
+        EXTERN ZDO_RegisterForZDOMsg
+        FUNCTION ZDO_RegisterForZDOMsg,0202H
+        EXTERN simpleMeterCurrentSummationDelivered
+
+// C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-SampleApp\Source\SimpleMeter\simplemeter.c
+//    1 /**************************************************************************************************
+//    2   Filename:       simplemeter.c
+//    3   Revised:        $Date: 2011-05-20 16:26:11 -0700 (Fri, 20 May 2011) $
+//    4   Revision:       $Revision: 26054 $
+//    5 
+//    6   Description:    This module implements the Simple Meter functionality and
+//    7                   contains the init and event loop functions
+//    8 
+//    9 
+//   10   Copyright 2009-2011 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /*********************************************************************
+//   42   This application is designed for the test purpose of the SE profile which
+//   43   exploits the following clusters for a Simple Metering configuration:
+//   44 
+//   45   General Basic
+//   46   General Alarms
+//   47   General Time
+//   48   General Key Establishment
+//   49   SE     Simple Metering
+//   50 
+//   51   Key control:
+//   52     SW1:  Join Network
+//   53     SW2:  N/A
+//   54     SW3:  N/A
+//   55     SW4:  N/A
+//   56 
+//   57 *********************************************************************/
+//   58 
+//   59 /*********************************************************************
+//   60  * INCLUDES
+//   61  */
+//   62 
+//   63 #include "OSAL.h"
+//   64 #include "OSAL_Clock.h"
+//   65 #include "OSAL_Nv.h"
+//   66 #include "ZDApp.h"
+//   67 #include "ZDObject.h"
+//   68 #include "AddrMgr.h"
+//   69 #include "MT.h"
+//   70 
+//   71 #include "se.h"
+//   72 #include "simplemeter.h"
+//   73 #include "zcl_general.h"
+//   74 #include "zcl_se.h"
+//   75 #include "zcl_key_establish.h"
+//   76 
+//   77 #include "onboard.h"
+//   78 
+//   79 /* HAL */
+//   80 #include "hal_lcd.h"
+//   81 #include "hal_led.h"
+//   82 #include "hal_key.h"
+//   83 #include "hal_adc.h"
+//   84 
+//   85 
+//   86 /*********************************************************************
+//   87  * MACROS
+//   88  */
+//   89 
+//   90 // There is no attribute in the Mandatory Reportable Attribute list for now
+//   91 #define zcl_MandatoryReportableAttribute( a ) ( a == NULL )
+//   92 
+//   93 /*********************************************************************
+//   94  * CONSTANTS
+//   95  */
+//   96 
+//   97 #define SIMPLEMETER_MIN_REPORTING_INTERVAL       5
+//   98 
+//   99 /*********************************************************************
+//  100  * TYPEDEFS
+//  101  */
+//  102 
+//  103 /*********************************************************************
+//  104  * GLOBAL VARIABLES
+//  105  */
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  106 uint16 E;
+E:
+        DS8 2
+//  107 /*********************************************************************
+//  108  * GLOBAL FUNCTIONS
+//  109  */
+//  110 
+//  111 /*********************************************************************
+//  112  * LOCAL VARIABLES
+//  113  */
+//  114 
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero
+//  115 static uint8 simpleMeterTaskID;                                    // osal task id of simple meter
+simpleMeterTaskID:
+        DS8 1
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero
+//  116 static uint8 simpleMeterTransID;                                   // transaction id
+simpleMeterTransID:
+        DS8 1
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  117 static afAddrType_t ESPAddr;                                       // esp destination address
+ESPAddr:
+        DS8 12
+
+        RSEG DATA16_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero
+//  118 static zclReportCmd_t *pReportCmd;                                 // report command structure
+pReportCmd:
+        DS8 2
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy
+//  119 static uint8 numAttr = 3;                                          // number of attributes in report
+numAttr:
+        DS8 1
+        REQUIRE `?<Initializer for numAttr>`
+//  120 extern uint8 simpleMeterCurrentSummationDelivered[];               // defined in simplemeter_data.c
+//  121 #if SECURE
+//  122 static uint8 linkKeyStatus;                                        // status return from get link key routine
+//  123 #endif
+//  124 
+//  125 /*********************************************************************
+//  126  * LOCAL FUNCTIONS
+//  127  */
+//  128 static void simplemeter_HandleKeys( uint8 shift, uint8 keys );
+//  129 
+//  130 #if SECURE
+//  131 static uint8 simplemeter_KeyEstablish_ReturnLinkKey( uint16 shortAddr );
+//  132 #endif
+//  133 
+//  134 #if defined ( ZCL_ALARMS )
+//  135 static void simplemeter_ProcessAlarmCmd( uint8 srcEP, afAddrType_t *dstAddr,
+//  136                         uint16 clusterID, zclFrameHdr_t *hdr, uint8 len, uint8 *data );
+//  137 #endif // ZCL_ALARMS
+//  138 
+//  139 static void simplemeter_ProcessIdentifyTimeChange( void );
+//  140 
+//  141 /*************************************************************************/
+//  142 /*** Application Callback Functions                                    ***/
+//  143 /*************************************************************************/
+//  144 
+//  145 // Foundation Callback functions
+//  146 static uint8 simplemeter_ValidateAttrDataCB( zclAttrRec_t *pAttr, zclWriteRec_t *pAttrInfo );
+//  147 
+//  148 // General Cluster Callback functions
+//  149 static void simplemeter_BasicResetCB( void );
+//  150 static void simplemeter_IdentifyCB( zclIdentify_t *pCmd );
+//  151 static void simplemeter_IdentifyQueryRspCB( zclIdentifyQueryRsp_t *pRsp );
+//  152 static void simplemeter_AlarmCB( zclAlarm_t *pAlarm );
+//  153 
+//  154 // Function to process ZDO callback messages
+//  155 static void simplemeter_ProcessZDOMsgs( zdoIncomingMsg_t *pMsg );
+//  156 
+//  157 // SE Callback functions
+//  158 static void simplemeter_GetProfileCmdCB( zclCCGetProfileCmd_t *pCmd,
+//  159                                        afAddrType_t *srcAddr, uint8 seqNum );
+//  160 static void simplemeter_GetProfileRspCB( zclCCGetProfileRsp_t *pCmd,
+//  161                                        afAddrType_t *srcAddr, uint8 seqNum );
+//  162 static void simplemeter_ReqMirrorCmdCB( afAddrType_t *srcAddr, uint8 seqNum );
+//  163 static void simplemeter_ReqMirrorRspCB( zclCCReqMirrorRsp_t *pCmd,
+//  164                                        afAddrType_t *srcAddr, uint8 seqNum );
+//  165 static void simplemeter_MirrorRemCmdCB( afAddrType_t *srcAddr, uint8 seqNum );
+//  166 static void simplemeter_MirrorRemRspCB( zclCCMirrorRemRsp_t *pCmd,
+//  167                                        afAddrType_t *srcAddr, uint8 seqNum );
+//  168 
+//  169 
+//  170 /************************************************************************/
+//  171 /***               Functions to process ZCL Foundation                ***/
+//  172 /***               incoming Command/Response messages                 ***/
+//  173 /************************************************************************/
+//  174 static void simplemeter_ProcessZCLMsg( zclIncomingMsg_t *msg );
+//  175 #if defined ( ZCL_READ )
+//  176 static uint8 simplemeter_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+//  177 #endif // ZCL_READ
+//  178 #if defined ( ZCL_WRITE )
+//  179 static uint8 simplemeter_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+//  180 #endif // ZCL_WRITE
+//  181 #if defined ( ZCL_REPORT )
+//  182 static uint8 simplemeter_ProcessInConfigReportCmd( zclIncomingMsg_t *pInMsg );
+//  183 static uint8 simplemeter_ProcessInConfigReportRspCmd( zclIncomingMsg_t *pInMsg );
+//  184 static uint8 simplemeter_ProcessInReadReportCfgCmd( zclIncomingMsg_t *pInMsg );
+//  185 static uint8 simplemeter_ProcessInReadReportCfgRspCmd( zclIncomingMsg_t *pInMsg );
+//  186 static uint8 simplemeter_ProcessInReportCmd( zclIncomingMsg_t *pInMsg );
+//  187 #endif // ZCL_REPORT
+//  188 static uint8 simplemeter_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+//  189 #if defined ( ZCL_DISCOVER )
+//  190 static uint8 simplemeter_ProcessInDiscRspCmd( zclIncomingMsg_t *pInMsg );
+//  191 #endif // ZCL_DISCOVER
+//  192 
+//  193 /*********************************************************************
+//  194  * ZCL General Clusters Callback table
+//  195  */
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  196 static zclGeneral_AppCallbacks_t simplemeter_GenCmdCallbacks =
+simplemeter_GenCmdCallbacks:
+        DS8 60
+        REQUIRE `?<Initializer for simplemeter_GenCmdCallbacks>`
+//  197 {
+//  198   simplemeter_BasicResetCB,              // Basic Cluster Reset command
+//  199   simplemeter_IdentifyCB,                // Identify command
+//  200   simplemeter_IdentifyQueryRspCB,        // Identify Query Response command
+//  201   NULL,                                  // On/Off cluster commands
+//  202   NULL,                                  // Level Control Move to Level command
+//  203   NULL,                                  // Level Control Move command
+//  204   NULL,                                  // Level Control Step command
+//  205   NULL,                                  // Level Control Stop command
+//  206   NULL,                                  // Group Response commands
+//  207   NULL,                                  // Scene Store Request command
+//  208   NULL,                                  // Scene Recall Request command
+//  209   NULL,                                  // Scene Response command
+//  210   simplemeter_AlarmCB,                   // Alarm (Response) command
+//  211   NULL,                                  // RSSI Location command
+//  212   NULL                                   // RSSI Location Response command
+//  213 };
+//  214 
+//  215 /*********************************************************************
+//  216  * ZCL SE Clusters Callback table
+//  217  */
+
+        RSEG DATA16_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy
+//  218 static zclSE_AppCallbacks_t simplemeter_SECmdCallbacks =			
+simplemeter_SECmdCallbacks:
+        DS8 104
+        REQUIRE `?<Initializer for simplemeter_SECmdCallbacks>`
+//  219 {
+//  220   simplemeter_GetProfileCmdCB,                        // Get Profile Command
+//  221   simplemeter_GetProfileRspCB,                        // Get Profile Response
+//  222   simplemeter_ReqMirrorCmdCB,                         // Request Mirror Command
+//  223   simplemeter_ReqMirrorRspCB,                         // Request Mirror Response
+//  224   simplemeter_MirrorRemCmdCB,                         // Mirror Remove Command
+//  225   simplemeter_MirrorRemRspCB,                         // Mirror Remove Response
+//  226   NULL,                                               // Get Current Price
+//  227   NULL,                                               // Get Scheduled Price
+//  228   NULL,                                               // Publish Price
+//  229   NULL,                                               // Display Message Command
+//  230   NULL,                                               // Cancel Message Command
+//  231   NULL,                                               // Get Last Message Command
+//  232   NULL,                                               // Message Confirmation
+//  233   NULL,                                               // Load Control Event
+//  234   NULL,                                               // Cancel Load Control Event
+//  235   NULL,                                               // Cancel All Load Control Events
+//  236   NULL,                                               // Report Event Status
+//  237   NULL,                                               // Get Scheduled Event
+//  238   NULL,                                               // Request Fast Poll Mode Command
+//  239   NULL,                                               // Request Fast Poll Mode Response
+//  240   NULL,                                               // Price Acknowledgement
+//  241   NULL,                                               // Get Block Period
+//  242   NULL,                                               // Publish Block Period
+//  243   NULL,                                               // Select Available Emergency Credit Command
+//  244   NULL,                                               // Change Supply Command
+//  245   NULL                                                // Supply Status Response
+//  246 };
+//  247 
+//  248 /*********************************************************************
+//  249  * @fn          simplemeter_Init
+//  250  *
+//  251  * @brief       Initialization function for the ZCL App Application.
+//  252  *
+//  253  * @param       uint8 task_id - simple meter task id
+//  254  *
+//  255  * @return      none
+//  256  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  257 void simplemeter_Init( uint8 task_id )
+simplemeter_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function simplemeter_Init
+//  258 {
+        FUNCALL simplemeter_Init, zclSE_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zclGeneral_RegisterCmdCallbacks
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zclSE_RegisterCmdCallbacks
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zcl_registerAttrList
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zcl_registerClusterOptionList
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zcl_registerValidateAttrData
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, zcl_registerForMsg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, RegisterForKeys
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, osal_start_timerEx
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_Init, osal_mem_alloc
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  259   simpleMeterTaskID = task_id;
+        MOV.B   R12, &simpleMeterTaskID
+//  260   simpleMeterTransID = 0;
+        MOV.B   #0x0, &simpleMeterTransID
+//  261 
+//  262   // Device hardware initialization can be added here or in main() (Zmain.c).
+//  263   // If the hardware is application specific - add it here.
+//  264   // If the hardware is other parts of the device add it in main().
+//  265 
+//  266   // ESP destination address init
+//  267   ESPAddr.addrMode = (afAddrMode_t)Addr16Bit;
+        MOV.B   #0x2, &ESPAddr + 8
+//  268   ESPAddr.endPoint = SIMPLEMETER_ENDPOINT;
+        MOV.B   #0x9, R11
+        MOV.B   R11, &ESPAddr + 9
+//  269   ESPAddr.addr.shortAddr = 0;
+        MOV.W   #0x0, &ESPAddr
+//  270 
+//  271   // register for SE endpoint
+//  272   zclSE_Init( &simpleMeterSimpleDesc );
+        MOV.W   #simpleMeterSimpleDesc, R12
+        CALLA   #zclSE_Init
+//  273 
+//  274   // Register the ZCL General Cluster Library callback functions
+//  275   zclGeneral_RegisterCmdCallbacks( SIMPLEMETER_ENDPOINT, &simplemeter_GenCmdCallbacks );
+        MOV.W   #simplemeter_GenCmdCallbacks, R13
+        MOV.B   R11, R12
+        CALLA   #zclGeneral_RegisterCmdCallbacks
+//  276 
+//  277   // Register the ZCL SE Cluster Library callback functions
+//  278   zclSE_RegisterCmdCallbacks( SIMPLEMETER_ENDPOINT, &simplemeter_SECmdCallbacks );
+        MOV.W   #simplemeter_SECmdCallbacks, R13
+        MOV.B   R11, R12
+        CALLA   #zclSE_RegisterCmdCallbacks
+//  279 
+//  280   // Register the application's attribute list
+//  281   zcl_registerAttrList( SIMPLEMETER_ENDPOINT, SIMPLEMETER_MAX_ATTRIBUTES, simpleMeterAttrs );
+        MOV.W   #simpleMeterAttrs, R14
+        MOV.B   #0x36, R13
+        MOV.B   R11, R12
+        CALLA   #zcl_registerAttrList
+//  282 
+//  283   // Register the application's cluster option list
+//  284   zcl_registerClusterOptionList( SIMPLEMETER_ENDPOINT, SIMPLEMETER_MAX_OPTIONS, simpleMeterOptions );
+        MOV.W   #simpleMeterOptions, R14
+        MOV.B   #0x2, R13
+        MOV.B   R11, R12
+        CALLA   #zcl_registerClusterOptionList
+//  285 
+//  286   // Register the application's attribute data validation callback function
+//  287   zcl_registerValidateAttrData( simplemeter_ValidateAttrDataCB );
+        MOV.W   #LWRD(simplemeter_ValidateAttrDataCB), R12
+        MOV.W   #HWRD(simplemeter_ValidateAttrDataCB), R13
+        CALLA   #zcl_registerValidateAttrData
+//  288 
+//  289   // Register the Application to receive the unprocessed Foundation command/response messages
+//  290   zcl_registerForMsg( simpleMeterTaskID );
+        MOV.B   &simpleMeterTaskID, R12
+        CALLA   #zcl_registerForMsg
+//  291 
+//  292   // Register for all key events - This app will handle all key events
+//  293   RegisterForKeys( simpleMeterTaskID );
+        MOV.B   &simpleMeterTaskID, R12
+        CALLA   #RegisterForKeys
+//  294 
+//  295   // Register with the ZDO to receive Match Descriptor Responses
+//  296   ZDO_RegisterForZDOMsg(task_id, Match_Desc_rsp);
+        MOV.W   #0x8006, R13
+        MOV.B   R10, R12
+        CALLA   #ZDO_RegisterForZDOMsg
+//  297 
+//  298   // Start the timer to sync SimpleMeter timer with the osal timer
+//  299   osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_UPDATE_TIME_EVT, SIMPLEMETER_UPDATE_TIME_PERIOD );
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x2, R13
+        MOV.B   &simpleMeterTaskID, R12
+        CALLA   #osal_start_timerEx
+//  300 
+//  301   // setup attribute IDs of interest for Simple Meter
+//  302 
+//  303   pReportCmd = (zclReportCmd_t *)osal_mem_alloc( sizeof( zclReportCmd_t ) + ( numAttr * sizeof( zclReport_t ) ) );
+        MOV.B   &numAttr, R15
+        MOV.W   #0x2, R12
+        RPT     #0x6
+        ADDX.W  R15, R12
+        CALLA   #osal_mem_alloc
+        MOV.W   R12, &pReportCmd
+//  304   if ( pReportCmd != NULL )
+        CMP.W   #0x0, R12
+        JEQ     ??simplemeter_Init_0
+//  305   {
+//  306     pReportCmd->numAttr = numAttr;
+        MOV.B   &numAttr, 0(R12)
+//  307 
+//  308     // Set up the first attribute
+//  309     pReportCmd->attrList[0].attrID = ATTRID_SE_CURRENT_SUMMATION_DELIVERED;
+        MOV.W   #0x0, 0x2(R12)
+//  310     pReportCmd->attrList[0].dataType = ZCL_DATATYPE_UINT48;
+        MOV.B   #0x25, 0x4(R12)
+//  311     pReportCmd->attrList[0].attrData = simpleMeterCurrentSummationDelivered;
+        MOV.W   #simpleMeterCurrentSummationDelivered, 0x6(R12)
+//  312     
+//  313     pReportCmd->attrList[1].attrID = ATTRID_SE_POWER_FACTOR;
+        MOV.W   #0x6, 0x8(R12)
+//  314     pReportCmd->attrList[1].dataType = ZCL_DATATYPE_UINT48;
+        MOV.B   #0x25, 0xa(R12)
+//  315     
+//  316     
+//  317     pReportCmd->attrList[2].attrID = ATTRID_SE_CURRENT_SUMMATION_RECEIVED;
+        MOV.W   #0x1, 0xe(R12)
+//  318     pReportCmd->attrList[2].dataType = ZCL_DATATYPE_UINT48;
+        MOV.B   #0x25, 0x10(R12)
+//  319     
+//  320 
+//  321     // Set up the remaining attributes
+//  322   }
+//  323 }
+??simplemeter_Init_0:
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//  324 
+//  325 /*********************************************************************
+//  326  * @fn          simplemeter_event_loop
+//  327  *
+//  328  * @brief       Event Loop Processor for the simple meter.
+//  329  *
+//  330  * @param       uint8 task_id - the osal task id
+//  331  * @param       uint16 events - the event bitmask
+//  332  *
+//  333  * @return      none
+//  334  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  335 uint16 simplemeter_event_loop( uint8 task_id, uint16 events )
+simplemeter_event_loop:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function simplemeter_event_loop
+//  336 {
+        FUNCALL simplemeter_event_loop, zclGeneral_KeyEstablish_InitiateKeyEstablishment
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_start_timerEx
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_msg_deallocate
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_msg_receive
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, simplemeter_ProcessZDOMsgs
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, simplemeter_ProcessZCLMsg
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, ZDOInitDevice
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_start_timerEx
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, NLME_SetPollRate
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, HalAdcRead
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, HalAdcRead
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, _itoa
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, _itoa
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, HalLcdWriteString
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, HalLcdWriteString
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, zcl_SendReportCmd
+        LOCFRAME CSTACK, 72, STACK
+        FUNCALL simplemeter_event_loop, osal_start_timerEx
+        LOCFRAME CSTACK, 72, STACK
+        FUNCALL simplemeter_event_loop, simplemeter_ProcessIdentifyTimeChange
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_getClock
+        LOCFRAME CSTACK, 66, STACK
+        FUNCALL simplemeter_event_loop, osal_start_timerEx
+        LOCFRAME CSTACK, 66, STACK
+        PUSHM.W #0x6, R11
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+        SUB.W   #0x32, SP
+          CFI CFA SP+66
+        MOV.W   R13, R10
+        MOV.W   #simpleMeterTaskID, R11
+        CMP.W   #0x0, R13
+        JL      ??simplemeter_event_loop_4
+//  337   afIncomingMSGPacket_t *MSGpkt;
+//  338 
+//  339   if ( events & SYS_EVENT_MSG )
+//  340   {
+//  341     while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( simpleMeterTaskID )) )
+//  342     {
+//  343       switch ( MSGpkt->hdr.event )
+//  344       {
+//  345         case ZDO_CB_MSG:
+//  346           simplemeter_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+//  347           break;
+//  348 
+//  349         case ZCL_INCOMING_MSG:
+//  350           // Incoming ZCL foundation command/response messages
+//  351           simplemeter_ProcessZCLMsg( (zclIncomingMsg_t *)MSGpkt );
+//  352           break;
+//  353 
+//  354         case KEY_CHANGE:
+//  355           simplemeter_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+//  356           break;
+//  357 
+//  358         case ZDO_STATE_CHANGE:
+//  359           if ((DEV_END_DEVICE == (devStates_t)(MSGpkt->hdr.status)) ||
+//  360               (DEV_ROUTER == (devStates_t)(MSGpkt->hdr.status)))
+//  361           {
+//  362 #if SECURE
+//  363             {
+//  364               // check to see if link key had already been established
+//  365               linkKeyStatus = simplemeter_KeyEstablish_ReturnLinkKey(ESPAddr.addr.shortAddr);
+//  366 
+//  367               if (linkKeyStatus != ZSuccess)
+//  368               {
+//  369                 cId_t cbkeCluster = ZCL_CLUSTER_ID_GEN_KEY_ESTABLISHMENT;
+//  370                 zAddrType_t dstAddr;
+//  371 
+//  372                 // Send out a match for the key establishment
+//  373                 dstAddr.addrMode = AddrBroadcast;
+//  374                 dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+//  375                 ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR, ZCL_SE_PROFILE_ID,
+//  376                                   1, &cbkeCluster, 0, NULL, FALSE );
+//  377               }
+//  378               else
+//  379               {
+//  380                 // link key already established, resume sending reports
+//  381                 osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_REPORT_ATTRIBUTE_EVT,
+//  382                                                        SIMPLEMETER_REPORT_PERIOD );
+//  383               }
+//  384             }
+//  385 #else
+//  386             { 
+//  387               osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_REPORT_ATTRIBUTE_EVT,
+//  388                                                      SIMPLEMETER_REPORT_PERIOD );
+//  389             }
+//  390 #endif
+//  391             // per smart energy spec end device polling requirement of not to poll < 7.5 seconds
+//  392             NLME_SetPollRate ( SE_DEVICE_POLL_RATE );
+//  393           }
+//  394           break;
+//  395 
+//  396 #if defined( ZCL_KEY_ESTABLISH )
+//  397         case ZCL_KEY_ESTABLISH_IND:
+//  398           if ((MSGpkt->hdr.status) == TermKeyStatus_Success)
+//  399           {
+//  400             ESPAddr.endPoint = SIMPLEMETER_ENDPOINT; // set destination endpoint back to application endpoint
+//  401             osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_REPORT_ATTRIBUTE_EVT, SIMPLEMETER_REPORT_PERIOD );
+//  402           }
+//  403 
+//  404           break;
+//  405 #endif
+//  406 
+//  407         default:
+//  408           break;
+//  409       }
+//  410 
+//  411       // Release the memory
+//  412       osal_msg_deallocate( (uint8 *)MSGpkt );
+//  413 
+//  414     }
+//  415 
+//  416     // return unprocessed events
+//  417     return (events ^ SYS_EVENT_MSG);
+//  418   }
+//  419 
+//  420   // event to intiate key establishment request
+//  421   if ( events & SIMPLEMETER_KEY_ESTABLISHMENT_REQUEST_EVT )
+        BIT.W   #0x4, R13
+        JNC     ??simplemeter_event_loop_5
+//  422   {
+//  423     zclGeneral_KeyEstablish_InitiateKeyEstablishment(simpleMeterTaskID, &ESPAddr, simpleMeterTransID);
+        MOV.B   &simpleMeterTransID, R14
+        MOV.W   #ESPAddr, R13
+        MOV.B   @R11, R12
+        CALLA   #zclGeneral_KeyEstablish_InitiateKeyEstablishment
+//  424 
+//  425     return ( events ^ SIMPLEMETER_KEY_ESTABLISHMENT_REQUEST_EVT );
+        XOR.W   #0x4, R10
+        JMP     ??simplemeter_event_loop_3
+//  426   }
+??simplemeter_event_loop_0:
+        CMP.B   #0x0, 0x1(R12)
+        JNE     ??simplemeter_event_loop_1
+        MOV.B   #0x9, &ESPAddr + 9
+        CALLA   #?Subroutine2
+??simplemeter_event_loop_1:
+        MOV.W   R8, R12
+        CALLA   #osal_msg_deallocate
+??simplemeter_event_loop_4:
+        MOV.B   @R11, R12
+        CALLA   #osal_msg_receive
+        MOV.W   R12, R8
+        CMP.W   #0x0, R12
+        JEQ     ??simplemeter_event_loop_6
+        MOV.B   @R12, R14
+        SUB.B   #0x34, R14
+        JEQ     ??simplemeter_event_loop_7
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_event_loop_0
+        SUB.B   #0x8b, R14
+        JEQ     ??simplemeter_event_loop_8
+        SUB.B   #0x11, R14
+        JEQ     ??simplemeter_event_loop_9
+        SUB.B   #0x2, R14
+        JNE     ??simplemeter_event_loop_1
+        CALLA   #simplemeter_ProcessZDOMsgs
+        JMP     ??simplemeter_event_loop_1
+??simplemeter_event_loop_7:
+        CALLA   #simplemeter_ProcessZCLMsg
+        JMP     ??simplemeter_event_loop_1
+??simplemeter_event_loop_8:
+        CMP.B   #0x0, 0x2(R12)
+        JNE     ??simplemeter_event_loop_1
+        BIT.B   #0x1, 0x3(R12)
+        JNC     ??simplemeter_event_loop_1
+        MOV.W   #0x0, R12
+        CALLA   #ZDOInitDevice
+        JMP     ??simplemeter_event_loop_1
+??simplemeter_event_loop_9:
+        MOV.B   0x1(R12), R14
+        CMP.B   #0x6, R14
+        JEQ     ??simplemeter_event_loop_10
+        CMP.B   #0x7, R14
+        JNE     ??simplemeter_event_loop_1
+??simplemeter_event_loop_10:
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_5:
+        MOV.W   #0x1f40, R12
+        CALLA   #NLME_SetPollRate
+        JMP     ??simplemeter_event_loop_1
+??simplemeter_event_loop_6:
+        XOR.W   #0x8000, R10
+        JMP     ??simplemeter_event_loop_3
+//  427 
+//  428   // event to send report attribute
+//  429   if ( events & SIMPLEMETER_REPORT_ATTRIBUTE_EVT )
+??simplemeter_event_loop_5:
+        BIT.W   #0x8, R13
+        JNC     ??simplemeter_event_loop_11
+//  430   {
+//  431     
+//  432     uint16 v,i;
+//  433 
+//  434      v = HalAdcRead (ADC12INCH_10,0);//
+        MOV.B   #0x0, R13
+        MOV.B   #0xa, R12
+        CALLA   #HalAdcRead
+        MOV.W   R12, R9
+//  435      i = HalAdcRead (ADC12INCH_11,0);
+        MOV.B   #0x0, R13
+        MOV.B   #0xb, R12
+        CALLA   #HalAdcRead
+        MOV.W   R12, R6
+//  436     
+//  437 //    uint32 v1 ;
+//  438 //    v1= v * 80;
+//  439 //    v = (uint16)(v1 / 2340);
+//  440 //    v=20;
+//  441 //    uint16 i1;
+//  442 //    i1 = i * 10;
+//  443 //    i = i1 / 1989;
+//  444 //    uint16 P = v * i;
+//  445 //    uint16 E_1 = P * 5;
+//  446 //    E = E_1 + E;
+//  447 //    
+//  448      uint8 buf_1[25];
+//  449      uint8 buf_2[25];   
+//  450     _itoa( v, &buf_1[0], 10 );
+        MOV.W   SP, R8
+        ADD.W   #0x19, R8
+        MOV.B   #0xa, R14
+        MOV.W   R8, R13
+        MOV.W   R9, R12
+        CALLA   #_itoa
+//  451     _itoa( i, &buf_2[0], 10 ); 
+        MOV.B   #0xa, R14
+        MOV.W   SP, R13
+        MOV.W   R6, R12
+        CALLA   #_itoa
+        MOV.W   &pReportCmd, R15
+        MOV.W   R8, 0xc(R15)
+//  452   
+//  453     
+//  454     pReportCmd->attrList[1].attrData = buf_1;
+//  455     pReportCmd->attrList[2].attrData = buf_2; 
+        MOV.W   SP, 0x12(R15)
+//  456     
+//  457     HalLcdWriteString ( (char*)buf_1, 0x04);
+        MOV.B   #0x4, R13
+        MOV.W   R8, R12
+        CALLA   #HalLcdWriteString
+//  458     HalLcdWriteString ( (char*)buf_2, 0x05);
+        MOV.B   #0x5, R13
+        MOV.W   SP, R12
+        CALLA   #HalLcdWriteString
+//  459     
+//  460     if ( pReportCmd != NULL )
+        CMP.W   #0x0, &pReportCmd
+        JEQ     ??simplemeter_event_loop_12
+//  461     {
+//  462       zcl_SendReportCmd( SIMPLEMETER_ENDPOINT, &ESPAddr,
+//  463                          ZCL_CLUSTER_ID_SE_SIMPLE_METERING, pReportCmd,
+//  464                          ZCL_FRAME_SERVER_CLIENT_DIR, 1, 0 );
+        PUSH.B  #0x0
+          CFI CFA SP+68
+        PUSH.B  #0x1
+          CFI CFA SP+70
+        PUSH.B  #0x1
+          CFI CFA SP+72
+        MOV.W   &pReportCmd, R15
+        MOV.W   #0x702, R14
+        MOV.W   #ESPAddr, R13
+        MOV.B   #0x9, R12
+        CALLA   #zcl_SendReportCmd
+//  465 
+//  466       osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_REPORT_ATTRIBUTE_EVT, SIMPLEMETER_REPORT_PERIOD );
+        CALLA   #?Subroutine2
+//  467     }
+??CrossCallReturnLabel_4:
+        ADD.W   #0x6, SP
+          CFI CFA SP+66
+//  468 
+//  469     return ( events ^ SIMPLEMETER_REPORT_ATTRIBUTE_EVT );
+??simplemeter_event_loop_12:
+        XOR.W   #0x8, R10
+        JMP     ??simplemeter_event_loop_3
+//  470   }
+//  471 
+//  472   // handle processing of identify timeout event triggered by an identify command
+//  473   if ( events & SIMPLEMETER_IDENTIFY_TIMEOUT_EVT )
+??simplemeter_event_loop_11:
+        BIT.W   #0x1, R13
+        JNC     ??simplemeter_event_loop_13
+//  474   {
+//  475     if ( simpleMeterIdentifyTime > 0 )
+        CMP.W   #0x0, &simpleMeterIdentifyTime
+        JEQ     ??simplemeter_event_loop_14
+//  476     {
+//  477       simpleMeterIdentifyTime--;
+        ADD.W   #0xffff, &simpleMeterIdentifyTime
+//  478     }
+//  479     simplemeter_ProcessIdentifyTimeChange();
+??simplemeter_event_loop_14:
+        CALLA   #simplemeter_ProcessIdentifyTimeChange
+//  480 
+//  481     return ( events ^ SIMPLEMETER_IDENTIFY_TIMEOUT_EVT );
+        XOR.W   #0x1, R10
+        JMP     ??simplemeter_event_loop_3
+//  482   }
+//  483 
+//  484   // event to get current time
+//  485   if ( events & SIMPLEMETER_UPDATE_TIME_EVT )
+??simplemeter_event_loop_13:
+        BIT.W   #0x2, R13
+        JNC     ??simplemeter_event_loop_15
+//  486   {
+//  487     simpleMeterTime = osal_getClock();
+        CALLA   #osal_getClock
+        MOV.W   R12, &simpleMeterTime
+        MOV.W   R13, &simpleMeterTime + 2
+//  488     osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_UPDATE_TIME_EVT, SIMPLEMETER_UPDATE_TIME_PERIOD );
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x2, R13
+        CALLA   #??Subroutine4_0
+//  489 
+//  490     return ( events ^ SIMPLEMETER_UPDATE_TIME_EVT );
+??CrossCallReturnLabel_3:
+        XOR.W   #0x2, R10
+??simplemeter_event_loop_3:
+        MOV.W   R10, R12
+        JMP     ??simplemeter_event_loop_16
+//  491   }
+//  492 
+//  493   // Discard unknown events
+//  494   return 0;
+??simplemeter_event_loop_15:
+        MOV.W   #0x0, R12
+??simplemeter_event_loop_16:
+        ADD.W   #0x32, SP
+          CFI CFA SP+16
+        POPM.W  #0x6, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//  495 }
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI Function simplemeter_event_loop
+          CFI Conditional ??simplemeter_event_loop_1
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+70
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function simplemeter_event_loop
+          CFI (cfiCond3) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond3) R6L Frame(CFA, -16)
+          CFI (cfiCond3) R7L Frame(CFA, -14)
+          CFI (cfiCond3) R8L Frame(CFA, -12)
+          CFI (cfiCond3) R9L Frame(CFA, -10)
+          CFI (cfiCond3) R10L Frame(CFA, -8)
+          CFI (cfiCond3) R11L Frame(CFA, -6)
+          CFI (cfiCond3) CFA SP+70
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function simplemeter_event_loop
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond4) R6L Frame(CFA, -16)
+          CFI (cfiCond4) R7L Frame(CFA, -14)
+          CFI (cfiCond4) R8L Frame(CFA, -12)
+          CFI (cfiCond4) R9L Frame(CFA, -10)
+          CFI (cfiCond4) R10L Frame(CFA, -8)
+          CFI (cfiCond4) R11L Frame(CFA, -6)
+          CFI (cfiCond4) CFA SP+76
+          CFI Block cfiPicker5 Using cfiCommon1
+          CFI (cfiPicker5) NoFunction
+          CFI (cfiPicker5) Picker
+        MOV.W   #0x1388, R14
+        MOV.W   #0x8, R13
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiPicker5
+        REQUIRE ??Subroutine4_0
+        // Fall through to label ??Subroutine4_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine4_0:
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI Function simplemeter_event_loop
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+70
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI (cfiCond7) Function simplemeter_event_loop
+          CFI (cfiCond7) Conditional ??simplemeter_event_loop_1
+          CFI (cfiCond7) R6L Frame(CFA, -16)
+          CFI (cfiCond7) R7L Frame(CFA, -14)
+          CFI (cfiCond7) R8L Frame(CFA, -12)
+          CFI (cfiCond7) R9L Frame(CFA, -10)
+          CFI (cfiCond7) R10L Frame(CFA, -8)
+          CFI (cfiCond7) R11L Frame(CFA, -6)
+          CFI (cfiCond7) CFA SP+70
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function simplemeter_event_loop
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond8) R6L Frame(CFA, -16)
+          CFI (cfiCond8) R7L Frame(CFA, -14)
+          CFI (cfiCond8) R8L Frame(CFA, -12)
+          CFI (cfiCond8) R9L Frame(CFA, -10)
+          CFI (cfiCond8) R10L Frame(CFA, -8)
+          CFI (cfiCond8) R11L Frame(CFA, -6)
+          CFI (cfiCond8) CFA SP+70
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function simplemeter_event_loop
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond9) R6L Frame(CFA, -16)
+          CFI (cfiCond9) R7L Frame(CFA, -14)
+          CFI (cfiCond9) R8L Frame(CFA, -12)
+          CFI (cfiCond9) R9L Frame(CFA, -10)
+          CFI (cfiCond9) R10L Frame(CFA, -8)
+          CFI (cfiCond9) R11L Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+76
+          CFI Block cfiPicker10 Using cfiCommon1
+          CFI (cfiPicker10) NoFunction
+          CFI (cfiPicker10) Picker
+        MOV.B   @R11, R12
+        BRA     #osal_start_timerEx
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiPicker10
+//  496 
+//  497 /*********************************************************************
+//  498  * @fn      simplemeter_ProcessZDOMsgs
+//  499  *
+//  500  * @brief   Called to process callbacks from the ZDO.
+//  501  *
+//  502  * @param   none
+//  503  *
+//  504  * @return  none
+//  505  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  506 static void simplemeter_ProcessZDOMsgs( zdoIncomingMsg_t *pMsg )
+simplemeter_ProcessZDOMsgs:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function simplemeter_ProcessZDOMsgs
+//  507 {
+        FUNCALL simplemeter_ProcessZDOMsgs, ZDO_ParseEPListRsp
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_ProcessZDOMsgs, osal_set_event
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_ProcessZDOMsgs, osal_mem_free
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R12, R10
+//  508   if (pMsg->clusterID == Match_Desc_rsp)
+        CMP.W   #0x8006, 0xe(R12)
+        JNE     ??simplemeter_ProcessZDOMsgs_0
+//  509   {
+//  510     ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( pMsg );
+        CALLA   #ZDO_ParseEPListRsp
+        MOV.W   R12, R11
+//  511 
+//  512     if (pRsp)
+        CMP.W   #0x0, R12
+        JEQ     ??simplemeter_ProcessZDOMsgs_0
+//  513     {
+//  514       if (pRsp->cnt)
+        CMP.B   #0x0, 0x4(R12)
+        JEQ     ??simplemeter_ProcessZDOMsgs_1
+//  515       {
+//  516         // Record the trust center
+//  517         ESPAddr.endPoint = pRsp->epList[0];
+        MOV.B   0x5(R12), &ESPAddr + 9
+//  518         ESPAddr.addr.shortAddr = pMsg->srcAddr.addr.shortAddr;
+        MOV.W   0x2(R10), &ESPAddr
+//  519 
+//  520         // send out key establishment request
+//  521         osal_set_event( simpleMeterTaskID, SIMPLEMETER_KEY_ESTABLISHMENT_REQUEST_EVT);
+        MOV.W   #0x4, R13
+        MOV.B   &simpleMeterTaskID, R12
+        CALLA   #osal_set_event
+//  522       }
+//  523       osal_mem_free(pRsp);
+??simplemeter_ProcessZDOMsgs_1:
+        MOV.W   R11, R12
+        CALLA   #osal_mem_free
+//  524     }
+//  525   }
+//  526 }
+??simplemeter_ProcessZDOMsgs_0:
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock11
+//  527 
+//  528 /*********************************************************************
+//  529  * @fn      simplemeter_ProcessIdentifyTimeChange
+//  530  *
+//  531  * @brief   Called to blink led for specified IdentifyTime attribute value
+//  532  *
+//  533  * @param   none
+//  534  *
+//  535  * @return  none
+//  536  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  537 static void simplemeter_ProcessIdentifyTimeChange( void )
+simplemeter_ProcessIdentifyTimeChange:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function simplemeter_ProcessIdentifyTimeChange
+//  538 {
+//  539   if ( simpleMeterIdentifyTime > 0 )
+        FUNCALL simplemeter_ProcessIdentifyTimeChange, osal_start_timerEx
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL simplemeter_ProcessIdentifyTimeChange, HalLedBlink
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL simplemeter_ProcessIdentifyTimeChange, HalLedSet
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL simplemeter_ProcessIdentifyTimeChange, osal_stop_timerEx
+        LOCFRAME CSTACK, 4, STACK
+        CMP.W   #0x0, &simpleMeterIdentifyTime
+        JEQ     ??simplemeter_ProcessIdentifyTimeChange_0
+//  540   {
+//  541     osal_start_timerEx( simpleMeterTaskID, SIMPLEMETER_IDENTIFY_TIMEOUT_EVT, 1000 );
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x1, R13
+        MOV.B   &simpleMeterTaskID, R12
+        CALLA   #osal_start_timerEx
+//  542     HalLedBlink ( HAL_LED_4, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+        MOV.W   #0x3e8, R15
+        MOV.B   #0x5, R14
+        MOV.B   #0xff, R13
+        MOV.B   #0x8, R12
+        BRA     #HalLedBlink
+//  543   }
+//  544   else
+//  545   {
+//  546     HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+??simplemeter_ProcessIdentifyTimeChange_0:
+        MOV.B   #0x0, R13
+        MOV.B   #0x8, R12
+        CALLA   #HalLedSet
+//  547     osal_stop_timerEx( simpleMeterTaskID, SIMPLEMETER_IDENTIFY_TIMEOUT_EVT );
+        MOV.W   #0x1, R13
+        MOV.B   &simpleMeterTaskID, R12
+        BRA     #osal_stop_timerEx
+          CFI EndBlock cfiBlock12
+//  548   }
+//  549 }
+//  550 
+//  551 #if SECURE
+//  552 /*********************************************************************
+//  553  * @fn      simplemeter_KeyEstablish_ReturnLinkKey
+//  554  *
+//  555  * @brief   This function get the requested link key
+//  556  *
+//  557  * @param   shortAddr - short address of the partner.
+//  558  *
+//  559  * @return  none
+//  560  */
+//  561 static uint8 simplemeter_KeyEstablish_ReturnLinkKey( uint16 shortAddr )
+//  562 {
+//  563   uint8 status = ZFailure;
+//  564   AddrMgrEntry_t entry;
+//  565 
+//  566   // Look up the long address of the device
+//  567 
+//  568   entry.user = ADDRMGR_USER_DEFAULT;
+//  569   entry.nwkAddr = shortAddr;
+//  570 
+//  571   if ( AddrMgrEntryLookupNwk( &entry ) )
+//  572   {
+//  573     // check if APS link key has been established
+//  574     if ( APSME_IsLinkKeyValid( entry.extAddr ) == TRUE )
+//  575     {
+//  576       status = ZSuccess;
+//  577     }
+//  578   }
+//  579   else
+//  580   {
+//  581     // It's an unknown device
+//  582     status = ZInvalidParameter;
+//  583   }
+//  584 
+//  585   return status;
+//  586 }
+//  587 #endif
+//  588 
+//  589 /*********************************************************************
+//  590  * @fn      simplemeter_HandleKeys
+//  591  *
+//  592  * @brief   Handles all key events for this device.
+//  593  *
+//  594  * @param   shift - true if in shift/alt.
+//  595  * @param   keys - bit field for key events. Valid entries:
+//  596  *                 HAL_KEY_SW_4
+//  597  *                 HAL_KEY_SW_3
+//  598  *                 HAL_KEY_SW_2
+//  599  *                 HAL_KEY_SW_1
+//  600  *
+//  601  * @return  none
+//  602  */
+//  603 static void simplemeter_HandleKeys( uint8 shift, uint8 keys )
+//  604 {
+//  605   // Shift is used to make each button/switch dual purpose.
+//  606   if ( shift )
+//  607   {
+//  608     if ( keys & HAL_KEY_SW_1 )
+//  609     {
+//  610     }
+//  611     if ( keys & HAL_KEY_SW_2 )
+//  612     {
+//  613     }
+//  614     if ( keys & HAL_KEY_SW_3 )
+//  615     {
+//  616     }
+//  617     if ( keys & HAL_KEY_SW_4 )
+//  618     {
+//  619     }
+//  620   }
+//  621   else
+//  622   {
+//  623     if ( keys & HAL_KEY_SW_1 )
+//  624     {
+//  625       ZDOInitDevice(0);  // Join the network.
+//  626     }
+//  627 
+//  628     if ( keys & HAL_KEY_SW_2 )
+//  629     {
+//  630 
+//  631     }
+//  632 
+//  633     if ( keys & HAL_KEY_SW_3 )
+//  634     {
+//  635 
+//  636     }
+//  637 
+//  638     if ( keys & HAL_KEY_SW_4 )
+//  639     {
+//  640 
+//  641     }
+//  642   }
+//  643 }
+//  644 
+//  645 /*********************************************************************
+//  646  * @fn      simplemeter_ValidateAttrDataCB
+//  647  *
+//  648  * @brief   Check to see if the supplied value for the attribute data
+//  649  *          is within the specified range of the attribute.
+//  650  *
+//  651  * @param   pAttr - pointer to attribute
+//  652  * @param   pAttrInfo - pointer to attribute info
+//  653  *
+//  654  * @return  TRUE if data valid. FALSE otherwise.
+//  655  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  656 static uint8 simplemeter_ValidateAttrDataCB( zclAttrRec_t *pAttr, zclWriteRec_t *pAttrInfo )
+simplemeter_ValidateAttrDataCB:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function simplemeter_ValidateAttrDataCB
+//  657 {
+//  658   uint8 valid = TRUE;
+        MOV.B   #0x1, R12
+//  659 
+//  660   switch ( pAttrInfo->dataType )
+        CMP.B   #0x10, 0x2(R13)
+        JNE     ??simplemeter_ValidateAttrDataCB_0
+//  661   {
+//  662     case ZCL_DATATYPE_BOOLEAN:
+//  663       if ( ( *(pAttrInfo->attrData) != 0 ) && ( *(pAttrInfo->attrData) != 1 ) )
+        MOV.W   0x4(R13), R15
+        MOV.B   @R15, R14
+        CMP.B   #0x0, R14
+        JEQ     ??simplemeter_ValidateAttrDataCB_0
+        CMP.B   #0x1, R14
+        JEQ     ??simplemeter_ValidateAttrDataCB_0
+//  664         valid = FALSE;
+        MOV.B   #0x0, R12
+//  665       break;
+//  666 
+//  667     default:
+//  668       break;
+//  669   }
+//  670 
+//  671   return ( valid );
+??simplemeter_ValidateAttrDataCB_0:
+        RETA
+          CFI EndBlock cfiBlock13
+//  672 }
+//  673 
+//  674 /*********************************************************************
+//  675  * @fn      simplemeter_BasicResetCB
+//  676  *
+//  677  * @brief   Callback from the ZCL General Cluster Library to set all
+//  678  *          the attributes of all the clusters to their factory defaults
+//  679  *
+//  680  * @param   none
+//  681  *
+//  682  * @return  none
+//  683  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  684 static void simplemeter_BasicResetCB( void )
+simplemeter_BasicResetCB:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function simplemeter_BasicResetCB
+//  685 {
+//  686   // user should handle setting attributes to factory defaults here
+//  687 }
+        RETA
+          CFI EndBlock cfiBlock14
+//  688 
+//  689 /*********************************************************************
+//  690  * @fn      simplemeter_IdentifyCB
+//  691  *
+//  692  * @brief   Callback from the ZCL General Cluster Library when
+//  693  *          it received an Identity Command for this application.
+//  694  *
+//  695  * @param   pCmd - pointer to structure for identify command
+//  696  *
+//  697  * @return  none
+//  698  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  699 static void simplemeter_IdentifyCB( zclIdentify_t *pCmd )
+simplemeter_IdentifyCB:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function simplemeter_IdentifyCB
+//  700 {
+//  701   simpleMeterIdentifyTime = pCmd->identifyTime;
+        FUNCALL simplemeter_IdentifyCB, simplemeter_ProcessIdentifyTimeChange
+        LOCFRAME CSTACK, 4, STACK
+        MOV.W   0x2(R12), &simpleMeterIdentifyTime
+//  702   simplemeter_ProcessIdentifyTimeChange();
+        BRA     #simplemeter_ProcessIdentifyTimeChange
+          CFI EndBlock cfiBlock15
+//  703 }
+//  704 
+//  705 /*********************************************************************
+//  706  * @fn      simplemeter_IdentifyQueryRspCB
+//  707  *
+//  708  * @brief   Callback from the ZCL General Cluster Library when
+//  709  *          it received an Identity Query Response Command for this application.
+//  710  *
+//  711  * @param   pRsp - pointer to structure for identify query response
+//  712  *
+//  713  * @return  none
+//  714  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  715 static void simplemeter_IdentifyQueryRspCB( zclIdentifyQueryRsp_t *pRsp )
+simplemeter_IdentifyQueryRspCB:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function simplemeter_IdentifyQueryRspCB
+//  716 {
+//  717   // add user code here
+//  718 }
+        RETA
+          CFI EndBlock cfiBlock16
+//  719 
+//  720 
+//  721 
+//  722 /*********************************************************************
+//  723  * @fn      simplemeter_AlarmCB
+//  724  *
+//  725  * @brief   Callback from the ZCL General Cluster Library when
+//  726  *          it received an Alarm request or response command for
+//  727  *          this application.
+//  728  *
+//  729  * @param   pAlarm - pointer to structure for alarm command
+//  730  *
+//  731  * @return  none
+//  732  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  733 static void simplemeter_AlarmCB( zclAlarm_t *pAlarm )
+simplemeter_AlarmCB:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function simplemeter_AlarmCB
+//  734 {
+//  735   // add user code here
+//  736 }
+        RETA
+          CFI EndBlock cfiBlock17
+//  737 
+//  738 /*********************************************************************
+//  739  * @fn      simplemeter_GetProfileCmdCB
+//  740  *
+//  741  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  742  *          it received a Get Profile Command for
+//  743  *          this application.
+//  744  *
+//  745  * @param   pCmd - pointer to get profile command structure
+//  746  * @param   srcAddr - pointer to source address
+//  747  * @param   seqNum - sequence number of this command
+//  748  *
+//  749  * @return  none
+//  750  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  751 static void simplemeter_GetProfileCmdCB( zclCCGetProfileCmd_t *pCmd, afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_GetProfileCmdCB:
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI Function simplemeter_GetProfileCmdCB
+//  752 {
+        FUNCALL simplemeter_GetProfileCmdCB, zclSE_SimpleMetering_Send_GetProfileRsp
+        LOCFRAME CSTACK, 40, STACK
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+        SUB.W   #0x14, SP
+          CFI CFA SP+28
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.B   R14, R15
+//  753 #if defined ( ZCL_SIMPLE_METERING )
+//  754   // Upon receipt of the Get Profile Command, the metering device shall send
+//  755   // Get Profile Response back.
+//  756 
+//  757   // Variables in the following are initialized to arbitrary value for test purpose
+//  758   // In real application, user shall look up the interval data captured during
+//  759   // the period specified in the pCmd->endTime and return corresponding data.
+//  760 
+//  761   uint32 endTime;
+//  762   uint8  status = zclSE_SimpleMeter_GetProfileRsp_Status_Success;
+//  763   uint8  profileIntervalPeriod = PROFILE_INTERVAL_PERIOD_60MIN;
+//  764   uint8  numberOfPeriodDelivered = 5;
+//  765   uint24 intervals[] = {0xa00001, 0xa00002, 0xa00003, 0xa00004, 0xa00005};
+        MOV.W   SP, R12
+        MOV.W   #`?<Constant {10485761L, 10485762L, 10485763L, 1`, R14
+        MOV.W   #0xa, R13
+        CALLA   #?CopyMemoryWords
+//  766 
+//  767   // endTime: 32 bit value (in UTC) representing the end time of the most
+//  768   // chronologically recent interval being requested.
+//  769   // Example: Data collected from 2:00 PM to 3:00 PM would be specified as a
+//  770   // 3:00 PM interval (end time).
+//  771 
+//  772   // The Intervals block returned shall be the most recent block with
+//  773   // its EndTime equal or older to the one in the request (pCmd->endTime).
+//  774   // Requested End Time with value 0xFFFFFFFF indicats the most recent
+//  775   // Intervals block is requested.
+//  776 
+//  777   // Sample Code - assuming the end time of the requested block is the same as
+//  778   // it in the request.
+//  779   endTime = pCmd->endTime;
+//  780 
+//  781   // Send Get Profile Response Command back
+//  782 
+//  783   zclSE_SimpleMetering_Send_GetProfileRsp( SIMPLEMETER_ENDPOINT, srcAddr, endTime,
+//  784                                            status,
+//  785                                            profileIntervalPeriod,
+//  786                                            numberOfPeriodDelivered, intervals,
+//  787                                            FALSE, seqNum );
+        PUSH.B  R15
+          CFI CFA SP+30
+        PUSH.B  #0x0
+          CFI CFA SP+32
+        MOV.W   SP, R15
+        ADD.W   #0x4, R15
+        PUSH.W  R15
+          CFI CFA SP+34
+        PUSH.B  #0x5
+          CFI CFA SP+36
+        PUSH.B  #0x1
+          CFI CFA SP+38
+        PUSH.B  #0x0
+          CFI CFA SP+40
+        MOV.W   0x2(R10), R14
+        MOV.W   0x4(R10), R15
+        MOV.W   R11, R13
+        MOV.B   #0x9, R12
+        CALLA   #zclSE_SimpleMetering_Send_GetProfileRsp
+//  788 #endif // ZCL_SIMPLE_METERING
+//  789 }
+        ADD.W   #0x20, SP
+          CFI CFA SP+8
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock18
+//  790 
+//  791 /*********************************************************************
+//  792  * @fn      simplemeter_GetProfileRspCB
+//  793  *
+//  794  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  795  *          it received a Get Profile Response for
+//  796  *          this application.
+//  797  *
+//  798  * @param   pCmd - pointer to get profile response structure
+//  799  * @param   srcAddr - pointer to source address
+//  800  * @param   seqNum - sequence number of this command
+//  801  *
+//  802  * @return  none
+//  803  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  804 static void simplemeter_GetProfileRspCB( zclCCGetProfileRsp_t *pCmd, afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_GetProfileRspCB:
+          CFI Block cfiBlock19 Using cfiCommon0
+          CFI Function simplemeter_GetProfileRspCB
+//  805 {
+//  806   // add user code here
+//  807 }
+        RETA
+          CFI EndBlock cfiBlock19
+//  808 
+//  809 /*********************************************************************
+//  810  * @fn      simplemeter_ReqMirrorCmdCB
+//  811  *
+//  812  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  813  *          it received a Request Mirror Command for
+//  814  *          this application.
+//  815  *
+//  816  * @param   srcAddr - pointer to source address
+//  817  * @param   seqNum - sequence number of this command
+//  818  *
+//  819  * @return  none
+//  820  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  821 static void simplemeter_ReqMirrorCmdCB( afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_ReqMirrorCmdCB:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function simplemeter_ReqMirrorCmdCB
+//  822 {
+//  823   // add user code here
+//  824 }
+        RETA
+          CFI EndBlock cfiBlock20
+//  825 /*********************************************************************
+//  826  * @fn      simplemeter_ReqMirrorRspCB
+//  827  *
+//  828  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  829  *          it received a Request Mirror Response for
+//  830  *          this application.
+//  831  *
+//  832  * @param   pRsp - pointer to request mirror response structure
+//  833  * @param   srcAddr - pointer to source address
+//  834  * @param   seqNum - sequence number of this command
+//  835  *
+//  836  * @return  none
+//  837  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  838 static void simplemeter_ReqMirrorRspCB( zclCCReqMirrorRsp_t *pRsp, afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_ReqMirrorRspCB:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function simplemeter_ReqMirrorRspCB
+//  839 {
+//  840   // add user code here
+//  841 }
+        RETA
+          CFI EndBlock cfiBlock21
+//  842 /*********************************************************************
+//  843  * @fn      simplemeter_MirrorRemCmdCB
+//  844  *
+//  845  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  846  *          it received a Mirror Remove Command for
+//  847  *          this application.
+//  848  *
+//  849  * @param   srcAddr - pointer to source address
+//  850  * @param   seqNum - sequence number of this command
+//  851  *
+//  852  * @return  none
+//  853  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  854 static void simplemeter_MirrorRemCmdCB( afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_MirrorRemCmdCB:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function simplemeter_MirrorRemCmdCB
+//  855 {
+//  856  // add user code here
+//  857 }
+        RETA
+          CFI EndBlock cfiBlock22
+//  858 /*********************************************************************
+//  859  * @fn      simplemeter_MirrorRemRspCB
+//  860  *
+//  861  * @brief   Callback from the ZCL SE Profile Simple Metering Cluster Library when
+//  862  *          it received a Mirror Remove Response for
+//  863  *          this application.
+//  864  *
+//  865  * @param   pCmd - pointer to mirror remove response structure
+//  866  * @param   srcAddr - pointer to source address
+//  867  * @param   seqNum - sequence number of this command
+//  868  *
+//  869  * @return  none
+//  870  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  871 static void simplemeter_MirrorRemRspCB( zclCCMirrorRemRsp_t *pCmd, afAddrType_t *srcAddr, uint8 seqNum )
+simplemeter_MirrorRemRspCB:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI Function simplemeter_MirrorRemRspCB
+//  872 {
+//  873   // add user code here
+//  874 }
+        RETA
+          CFI EndBlock cfiBlock23
+//  875 
+//  876 
+//  877 /******************************************************************************
+//  878  *
+//  879  *  Functions for processing ZCL Foundation incoming Command/Response messages
+//  880  *
+//  881  *****************************************************************************/
+//  882 
+//  883 /*********************************************************************
+//  884  * @fn      simplemeter_ProcessZCLMsg
+//  885  *
+//  886  * @brief   Process ZCL Foundation incoming message
+//  887  *
+//  888  * @param   pInMsg - message to process
+//  889  *
+//  890  * @return  none
+//  891  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  892 static void simplemeter_ProcessZCLMsg( zclIncomingMsg_t *pInMsg )
+simplemeter_ProcessZCLMsg:
+          CFI Block cfiBlock24 Using cfiCommon0
+          CFI Function simplemeter_ProcessZCLMsg
+//  893 {
+        FUNCALL simplemeter_ProcessZCLMsg, simplemeter_ProcessInConfigReportCmd
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_ProcessZCLMsg, simplemeter_ProcessInConfigReportRspCmd
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_ProcessZCLMsg, simplemeter_ProcessInReadReportCfgCmd
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL simplemeter_ProcessZCLMsg, osal_mem_free
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.W #0x2, R11
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R12, R10
+//  894   switch ( pInMsg->zclHdr.commandID )
+        MOV.W   R12, R11
+        ADD.W   #0x18, R11
+        MOV.B   0x7(R12), R14
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_4
+        SUB.B   #0x3, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_5
+        SUB.B   #0x2, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_6
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_7
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_8
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_9
+        SUB.B   #0x1, R14
+        JEQ     ??simplemeter_ProcessZCLMsg_10
+        JMP     ??simplemeter_ProcessZCLMsg_11
+//  895   {
+//  896 #if defined ( ZCL_READ )
+//  897     case ZCL_CMD_READ_RSP:
+//  898       simplemeter_ProcessInReadRspCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_4:
+        MOV.W   @R11, R15
+        MOV.B   #0x0, R14
+??simplemeter_ProcessZCLMsg_0:
+        CMP.B   @R15, R14
+        JC      ??simplemeter_ProcessZCLMsg_11
+        ADD.B   #0x1, R14
+        JMP     ??simplemeter_ProcessZCLMsg_0
+//  899       break;
+//  900 #endif // ZCL_READ
+//  901 #if defined ( ZCL_WRITE )
+//  902     case ZCL_CMD_WRITE_RSP:
+//  903       simplemeter_ProcessInWriteRspCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_5:
+        MOV.W   @R11, R15
+        MOV.B   #0x0, R14
+??simplemeter_ProcessZCLMsg_1:
+        CMP.B   @R15, R14
+        JC      ??simplemeter_ProcessZCLMsg_11
+        ADD.B   #0x1, R14
+        JMP     ??simplemeter_ProcessZCLMsg_1
+//  904       break;
+//  905 #endif // ZCL_READ
+//  906 #if defined ( ZCL_REPORT )
+//  907     case ZCL_CMD_CONFIG_REPORT:
+//  908       simplemeter_ProcessInConfigReportCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_6:
+        CALLA   #simplemeter_ProcessInConfigReportCmd
+//  909       break;
+        JMP     ??simplemeter_ProcessZCLMsg_11
+//  910 
+//  911     case ZCL_CMD_CONFIG_REPORT_RSP:
+//  912       simplemeter_ProcessInConfigReportRspCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_7:
+        CALLA   #simplemeter_ProcessInConfigReportRspCmd
+//  913       break;
+        JMP     ??simplemeter_ProcessZCLMsg_11
+//  914 
+//  915     case ZCL_CMD_READ_REPORT_CFG:
+//  916       simplemeter_ProcessInReadReportCfgCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_8:
+        CALLA   #simplemeter_ProcessInReadReportCfgCmd
+//  917       break;
+        JMP     ??simplemeter_ProcessZCLMsg_11
+//  918 
+//  919     case ZCL_CMD_READ_REPORT_CFG_RSP:
+//  920       simplemeter_ProcessInReadReportCfgRspCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_9:
+        MOV.W   @R11, R15
+        MOV.B   #0x0, R14
+??simplemeter_ProcessZCLMsg_2:
+        CMP.B   @R15, R14
+        JC      ??simplemeter_ProcessZCLMsg_11
+        ADD.B   #0x1, R14
+        JMP     ??simplemeter_ProcessZCLMsg_2
+//  921       break;
+//  922 
+//  923     case ZCL_CMD_REPORT:
+//  924       simplemeter_ProcessInReportCmd( pInMsg );
+??simplemeter_ProcessZCLMsg_10:
+        MOV.W   @R11, R15
+        MOV.B   #0x0, R14
+        JMP     ??simplemeter_ProcessZCLMsg_12
+??simplemeter_ProcessZCLMsg_3:
+        ADD.B   #0x1, R14
+??simplemeter_ProcessZCLMsg_12:
+        CMP.B   @R15, R14
+        JNC     ??simplemeter_ProcessZCLMsg_3
+??simplemeter_ProcessZCLMsg_11:
+        CMP.W   #0x0, 0x18(R10)
+        JEQ     ??simplemeter_ProcessZCLMsg_13
+//  925       break;
+//  926 #endif // ZCL_REPORT
+//  927     case ZCL_CMD_DEFAULT_RSP:
+//  928       simplemeter_ProcessInDefaultRspCmd( pInMsg );
+//  929       break;
+//  930 #if defined ( ZCL_DISCOVER )
+//  931     case ZCL_CMD_DISCOVER_RSP:
+//  932       simplemeter_ProcessInDiscRspCmd( pInMsg );
+//  933       break;
+//  934 #endif // ZCL_DISCOVER
+//  935     default:
+//  936       break;
+//  937   }
+//  938 
+//  939   if ( pInMsg->attrCmd != NULL )
+//  940   {
+//  941     // free the parsed command
+//  942     osal_mem_free( pInMsg->attrCmd );
+        MOV.W   @R11, R12
+        CALLA   #osal_mem_free
+//  943     pInMsg->attrCmd = NULL;
+        MOV.W   #0x0, 0x18(R10)
+//  944   }
+//  945 }
+??simplemeter_ProcessZCLMsg_13:
+        POPM.W  #0x2, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock24
+
+        RSEG CODE:CODE:NOROOT(1)
+simplemeter_ProcessInReadReportCfgCmd:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function simplemeter_ProcessInReadReportCfgCmd
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, zclFindAttrRec
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, zclAnalogDataType
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, zclGetDataTypeLength
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, osal_mem_alloc
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, zclFindAttrRec
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, zcl_SendReadReportCfgRspCmd
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL simplemeter_ProcessInReadReportCfgCmd, osal_mem_free
+        LOCFRAME CSTACK, 30, STACK
+        PUSHM.W #0x6, R11
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+        SUB.W   #0x8, SP
+          CFI CFA SP+24
+        MOV.W   R12, R8
+        MOV.B   #0x0, R11
+        MOV.W   0x18(R12), R9
+        MOV.B   #0x0, R10
+        JMP     ??simplemeter_ProcessInReadReportCfgCmd_2
+??simplemeter_ProcessInReadReportCfgCmd_0:
+        MOV.W   SP, R15
+        MOV.B   R10, R7
+        RLAM.W  #0x2, R7
+        MOV.W   R9, R14
+        ADD.W   R7, R14
+        MOV.W   0x4(R14), R14
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_0:
+        JEQ     ??simplemeter_ProcessInReadReportCfgCmd_3
+        MOV.B   0x4(SP), R12
+        CALLA   #zclAnalogDataType
+        CMP.B   #0x0, R12
+        JEQ     ??simplemeter_ProcessInReadReportCfgCmd_3
+        MOV.B   0x4(SP), R12
+        CALLA   #zclGetDataTypeLength
+        BIT.B   #0x1, R12
+        JNC     ??simplemeter_ProcessInReadReportCfgCmd_4
+        ADD.B   #0x1, R12
+??simplemeter_ProcessInReadReportCfgCmd_4:
+        ADD.B   R12, R11
+??simplemeter_ProcessInReadReportCfgCmd_3:
+        ADD.B   #0x1, R10
+??simplemeter_ProcessInReadReportCfgCmd_2:
+        MOV.B   @R9, R14
+        CMP.B   R14, R10
+        JNC     ??simplemeter_ProcessInReadReportCfgCmd_0
+        MOV.B   #0x2, R12
+        RPT     #0xe
+        ADDX.B  R14, R12
+        MOV.B   R12, R12
+        ADD.W   R11, R12
+        CALLA   #osal_mem_alloc
+        MOV.W   R12, R11
+        CMP.W   #0x0, R12
+        JNE     ??simplemeter_ProcessInReadReportCfgCmd_5
+        MOV.B   #0x0, R12
+        JMP     ??simplemeter_ProcessInReadReportCfgCmd_6
+??simplemeter_ProcessInReadReportCfgCmd_5:
+        MOV.B   @R9, 0(R12)
+        MOV.B   #0x0, R10
+        JMP     ??simplemeter_ProcessInReadReportCfgCmd_7
+??simplemeter_ProcessInReadReportCfgCmd_1:
+        MOV.B   R10, R15
+        MOV.W   R15, R7
+        RPT     #0xd
+        ADDX.W  R15, R7
+        MOV.W   R11, R6
+        ADD.W   R7, R6
+        ADD.W   #0x2, R6
+        RLAM.W  #0x2, R15
+        MOV.W   R9, R7
+        ADD.W   R15, R7
+        ADD.W   #0x4, R7
+        MOV.W   SP, R15
+        MOV.W   @R7, R14
+        CALLA   #??Subroutine3_0
+??CrossCallReturnLabel_2:
+        JNE     ??simplemeter_ProcessInReadReportCfgCmd_8
+        MOV.B   #0x86, R14
+        JMP     ??simplemeter_ProcessInReadReportCfgCmd_9
+??simplemeter_ProcessInReadReportCfgCmd_8:
+        MOV.B   #0x8c, R14
+??simplemeter_ProcessInReadReportCfgCmd_9:
+        MOV.B   R14, 0(R6)
+        MOV.W   @R7, 0x2(R6)
+        ADD.B   #0x1, R10
+??simplemeter_ProcessInReadReportCfgCmd_7:
+        MOV.W   0x8(R8), R13
+        CMP.B   @R9, R10
+        JNC     ??simplemeter_ProcessInReadReportCfgCmd_1
+        PUSH.B  0x6(R8)
+          CFI CFA SP+26
+        PUSH.B  #0x1
+          CFI CFA SP+28
+        PUSH.B  #0x1
+          CFI CFA SP+30
+        MOV.W   R11, R15
+        MOV.W   R13, R14
+        ADD.W   #0xa, R8
+        MOV.W   R8, R13
+        MOV.B   #0x9, R12
+        CALLA   #zcl_SendReadReportCfgRspCmd
+        MOV.W   R11, R12
+        CALLA   #osal_mem_free
+        MOV.B   #0x1, R12
+        ADD.W   #0x6, SP
+          CFI CFA SP+24
+          CFI EndBlock cfiBlock25
+??simplemeter_ProcessInReadReportCfgCmd_6:
+        REQUIRE ?Subroutine0
+        // Fall through to label ?Subroutine0
+//  946 
+//  947 #if defined ( ZCL_READ )
+//  948 /*********************************************************************
+//  949  * @fn      simplemeter_ProcessInReadRspCmd
+//  950  *
+//  951  * @brief   Process the "Profile" Read Response Command
+//  952  *
+//  953  * @param   pInMsg - incoming message to process
+//  954  *
+//  955  * @return  none
+//  956  */
+//  957 static uint8 simplemeter_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+//  958 {
+//  959   zclReadRspCmd_t *readRspCmd;
+//  960   uint8 i;
+//  961 
+//  962   readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+//  963   for (i = 0; i < readRspCmd->numAttr; i++)
+//  964   {
+//  965     // Notify the originator of the results of the original read attributes
+//  966     // attempt and, for each successfull request, the value of the requested
+//  967     // attribute
+//  968   }
+//  969 
+//  970   return TRUE;
+//  971 }
+//  972 #endif // ZCL_READ
+//  973 
+//  974 #if defined ( ZCL_WRITE )
+//  975 /*********************************************************************
+//  976  * @fn      simplemeter_ProcessInWriteRspCmd
+//  977  *
+//  978  * @brief   Process the "Profile" Write Response Command
+//  979  *
+//  980  * @param   pInMsg - incoming message to process
+//  981  *
+//  982  * @return  none
+//  983  */
+//  984 static uint8 simplemeter_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+//  985 {
+//  986   zclWriteRspCmd_t *writeRspCmd;
+//  987   uint8 i;
+//  988 
+//  989   writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+//  990   for (i = 0; i < writeRspCmd->numAttr; i++)
+//  991   {
+//  992     // Notify the device of the results of the its original write attributes
+//  993     // command.
+//  994   }
+//  995 
+//  996   return TRUE;
+//  997 }
+//  998 #endif // ZCL_WRITE
+//  999 
+// 1000 #if defined ( ZCL_REPORT )
+// 1001 /*********************************************************************
+// 1002  * @fn      simplemeter_ProcessInConfigReportCmd
+// 1003  *
+// 1004  * @brief   Process the "Profile" Configure Reporting Command
+// 1005  *
+// 1006  * @param   pInMsg - incoming message to process
+// 1007  *
+// 1008  * @return  TRUE if attribute was found in the Attribute list,
+// 1009  *          FALSE if not
+// 1010  */
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+24
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+// 1011 static uint8 simplemeter_ProcessInConfigReportCmd( zclIncomingMsg_t *pInMsg )
+// 1012 {
+// 1013   zclCfgReportCmd_t *cfgReportCmd;
+// 1014   zclCfgReportRec_t *reportRec;
+// 1015   zclCfgReportRspCmd_t *cfgReportRspCmd;
+// 1016   zclAttrRec_t attrRec;
+// 1017   uint8 status;
+// 1018   uint8 i, j = 0;
+// 1019 
+// 1020   cfgReportCmd = (zclCfgReportCmd_t *)pInMsg->attrCmd;
+// 1021 
+// 1022   // Allocate space for the response command
+// 1023   cfgReportRspCmd = (zclCfgReportRspCmd_t *)osal_mem_alloc( sizeof ( zclCfgReportRspCmd_t ) + \ 
+// 1024                                         sizeof ( zclCfgReportStatus_t) * cfgReportCmd->numAttr );
+// 1025   if ( cfgReportRspCmd == NULL )
+// 1026     return FALSE; // EMBEDDED RETURN
+// 1027 
+// 1028   // Process each Attribute Reporting Configuration record
+// 1029   for ( i = 0; i < cfgReportCmd->numAttr; i++ )
+// 1030   {
+// 1031     reportRec = &(cfgReportCmd->attrList[i]);
+// 1032 
+// 1033     status = ZCL_STATUS_SUCCESS;
+// 1034 
+// 1035     if ( zclFindAttrRec( SIMPLEMETER_ENDPOINT, pInMsg->clusterId, reportRec->attrID, &attrRec ) )
+// 1036     {
+// 1037       if ( reportRec->direction == ZCL_SEND_ATTR_REPORTS )
+// 1038       {
+// 1039         if ( reportRec->dataType == attrRec.attr.dataType )
+// 1040         {
+// 1041           // This the attribute that is to be reported
+// 1042           if ( zcl_MandatoryReportableAttribute( &attrRec ) == TRUE )
+// 1043           {
+// 1044             if ( reportRec->minReportInt < SIMPLEMETER_MIN_REPORTING_INTERVAL ||
+// 1045                  ( reportRec->maxReportInt != 0 &&
+// 1046                    reportRec->maxReportInt < reportRec->minReportInt ) )
+// 1047             {
+// 1048               // Invalid fields
+// 1049               status = ZCL_STATUS_INVALID_VALUE;
+// 1050             }
+// 1051             else
+// 1052             {
+// 1053               // Set the Min and Max Reporting Intervals and Reportable Change
+// 1054               //status = zclSetAttrReportInterval( pAttr, cfgReportCmd );
+// 1055               status = ZCL_STATUS_UNREPORTABLE_ATTRIBUTE; // for now
+// 1056             }
+// 1057           }
+// 1058           else
+// 1059           {
+// 1060             // Attribute cannot be reported
+// 1061             status = ZCL_STATUS_UNREPORTABLE_ATTRIBUTE;
+// 1062           }
+// 1063         }
+// 1064         else
+// 1065         {
+// 1066           // Attribute data type is incorrect
+// 1067           status = ZCL_STATUS_INVALID_DATA_TYPE;
+// 1068         }
+// 1069       }
+// 1070       else
+// 1071       {
+// 1072         // We shall expect reports of values of this attribute
+// 1073         if ( zcl_MandatoryReportableAttribute( &attrRec ) == TRUE )
+// 1074         {
+// 1075           // Set the Timeout Period
+// 1076           //status = zclSetAttrTimeoutPeriod( pAttr, cfgReportCmd );
+// 1077           status = ZCL_STATUS_UNSUPPORTED_ATTRIBUTE; // for now
+// 1078         }
+// 1079         else
+// 1080         {
+// 1081           // Reports of attribute cannot be received
+// 1082           status = ZCL_STATUS_UNSUPPORTED_ATTRIBUTE;
+// 1083         }
+// 1084       }
+// 1085     }
+// 1086     else
+// 1087     {
+// 1088       // Attribute is not supported
+// 1089       status = ZCL_STATUS_UNSUPPORTED_ATTRIBUTE;
+// 1090     }
+// 1091 
+// 1092     // If not successful then record the status
+// 1093     if ( status != ZCL_STATUS_SUCCESS )
+// 1094     {
+// 1095       cfgReportRspCmd->attrList[j].status = status;
+// 1096       cfgReportRspCmd->attrList[j++].attrID = reportRec->attrID;
+// 1097     }
+// 1098   } // for loop
+// 1099 
+// 1100   if ( j == 0 )
+// 1101   {
+// 1102     // Since all attributes were configured successfully, include a single
+// 1103     // attribute status record in the response command with the status field
+// 1104     // set to SUCCESS and the attribute ID field omitted.
+// 1105     cfgReportRspCmd->attrList[0].status = ZCL_STATUS_SUCCESS;
+// 1106     cfgReportRspCmd->numAttr = 1;
+// 1107   }
+// 1108   else
+// 1109   {
+// 1110     cfgReportRspCmd->numAttr = j;
+// 1111   }
+// 1112 
+// 1113   // Send the response back
+// 1114   zcl_SendConfigReportRspCmd( SIMPLEMETER_ENDPOINT, &(pInMsg->srcAddr),
+// 1115                               pInMsg->clusterId, cfgReportRspCmd, ZCL_FRAME_SERVER_CLIENT_DIR,
+// 1116                               TRUE, pInMsg->zclHdr.transSeqNum );
+// 1117   osal_mem_free( cfgReportRspCmd );
+// 1118 
+// 1119   return TRUE ;
+        ADD.W   #0x8, SP
+          CFI CFA SP+16
+        POPM.W  #0x6, R11
+          CFI CFA SP+4
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+        RETA
+          CFI EndBlock cfiBlock26
+
+        RSEG CODE:CODE:NOROOT(1)
+simplemeter_ProcessInConfigReportRspCmd:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI Function simplemeter_ProcessInConfigReportRspCmd
+        FUNCALL simplemeter_ProcessInConfigReportRspCmd, zclFindAttrRec
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.W #0x4, R11
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x8, SP
+          CFI CFA SP+20
+        MOV.W   R12, R11
+        MOV.W   0x18(R12), R8
+        MOV.B   #0x0, R10
+        JMP     ??simplemeter_ProcessInConfigReportRspCmd_1
+??simplemeter_ProcessInConfigReportRspCmd_0:
+        MOV.W   SP, R15
+        MOV.B   R10, R14
+        RLAM.W  #0x2, R14
+        MOV.W   R8, R13
+        ADD.W   R14, R13
+        MOV.W   0x4(R13), R14
+        MOV.W   0x8(R11), R13
+        MOV.B   #0x9, R12
+        CALLA   #zclFindAttrRec
+        ADD.B   #0x1, R10
+??simplemeter_ProcessInConfigReportRspCmd_1:
+        CMP.B   @R8, R10
+        JNC     ??simplemeter_ProcessInConfigReportRspCmd_0
+        MOV.B   #0x1, R12
+        ADD.W   #0x8, SP
+          CFI CFA SP+12
+        POPM.W  #0x4, R11
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock27
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+simplemeter_ProcessInConfigReportCmd:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI Function simplemeter_ProcessInConfigReportCmd
+        FUNCALL simplemeter_ProcessInConfigReportCmd, osal_mem_alloc
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInConfigReportCmd, zclFindAttrRec
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL simplemeter_ProcessInConfigReportCmd, zcl_SendConfigReportRspCmd
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL simplemeter_ProcessInConfigReportCmd, osal_mem_free
+        LOCFRAME CSTACK, 30, STACK
+        PUSHM.W #0x6, R11
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+16
+        SUB.W   #0x8, SP
+          CFI CFA SP+24
+        MOV.W   R12, R8
+        MOV.B   #0x0, R10
+        MOV.W   0x18(R12), R9
+        MOV.B   @R9, R12
+        RLAM.W  #0x2, R12
+        ADD.W   #0x2, R12
+        CALLA   #osal_mem_alloc
+        MOV.W   R12, R6
+        CMP.W   #0x0, R12
+        JNE     ??simplemeter_ProcessInConfigReportCmd_3
+        MOV.B   #0x0, R12
+        JMP     ??simplemeter_ProcessInConfigReportCmd_4
+??simplemeter_ProcessInConfigReportCmd_3:
+        MOV.B   #0x0, R11
+        JMP     ??simplemeter_ProcessInConfigReportCmd_5
+??simplemeter_ProcessInConfigReportCmd_0:
+        MOV.B   #0x86, R14
+??simplemeter_ProcessInConfigReportCmd_1:
+        MOV.B   R10, R13
+        RLAM.W  #0x2, R13
+        MOV.W   R6, R15
+        ADD.W   R13, R15
+        MOV.B   R14, 0x2(R15)
+        MOV.W   0x2(R7), 0x4(R15)
+        ADD.B   #0x1, R10
+        ADD.B   #0x1, R11
+??simplemeter_ProcessInConfigReportCmd_5:
+        CMP.B   @R9, R11
+        JC      ??simplemeter_ProcessInConfigReportCmd_6
+        MOV.W   R11, R15
+        RPT     #0xd
+        ADDX.W  R11, R15
+        MOV.W   R9, R7
+        ADD.W   R15, R7
+        ADD.W   #0x2, R7
+        MOV.W   SP, R15
+        MOV.W   0x2(R7), R14
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_1:
+        JEQ     ??simplemeter_ProcessInConfigReportCmd_0
+        CMP.B   #0x0, 0(R7)
+        JNE     ??simplemeter_ProcessInConfigReportCmd_0
+        CMP.B   0x4(SP), 0x4(R7)
+        JEQ     ??simplemeter_ProcessInConfigReportCmd_7
+        MOV.B   #0x8d, R14
+        JMP     ??simplemeter_ProcessInConfigReportCmd_1
+??simplemeter_ProcessInConfigReportCmd_7:
+        MOV.B   #0x8c, R14
+        JMP     ??simplemeter_ProcessInConfigReportCmd_1
+??simplemeter_ProcessInConfigReportCmd_6:
+        CMP.B   #0x0, R10
+        JNE     ??simplemeter_ProcessInConfigReportCmd_8
+        MOV.B   #0x0, 0x2(R6)
+        MOV.B   #0x1, 0(R6)
+        JMP     ??simplemeter_ProcessInConfigReportCmd_9
+??simplemeter_ProcessInConfigReportCmd_8:
+        MOV.B   R10, 0(R6)
+??simplemeter_ProcessInConfigReportCmd_9:
+        PUSH.B  0x6(R8)
+          CFI CFA SP+26
+        PUSH.B  #0x1
+          CFI CFA SP+28
+        PUSH.B  #0x1
+          CFI CFA SP+30
+        MOV.W   R6, R15
+        MOV.W   0x8(R8), R14
+        ADD.W   #0xa, R8
+        MOV.W   R8, R13
+        MOV.B   #0x9, R12
+        CALLA   #zcl_SendConfigReportRspCmd
+        MOV.W   R6, R12
+        CALLA   #osal_mem_free
+        MOV.B   #0x1, R12
+        ADD.W   #0x6, SP
+          CFI CFA SP+24
+??simplemeter_ProcessInConfigReportCmd_4:
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock28
+// 1120 }
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI Function simplemeter_ProcessInReadReportCfgCmd
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+28
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI (cfiCond30) Function simplemeter_ProcessInConfigReportCmd
+          CFI (cfiCond30) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond30) R6L Frame(CFA, -16)
+          CFI (cfiCond30) R7L Frame(CFA, -14)
+          CFI (cfiCond30) R8L Frame(CFA, -12)
+          CFI (cfiCond30) R9L Frame(CFA, -10)
+          CFI (cfiCond30) R10L Frame(CFA, -8)
+          CFI (cfiCond30) R11L Frame(CFA, -6)
+          CFI (cfiCond30) CFA SP+28
+          CFI Block cfiPicker31 Using cfiCommon1
+          CFI (cfiPicker31) NoFunction
+          CFI (cfiPicker31) Picker
+// 1121 
+// 1122 /*********************************************************************
+// 1123  * @fn      simplemeter_ProcessInConfigReportRspCmd
+// 1124  *
+// 1125  * @brief   Process the "Profile" Configure Reporting Response Command
+// 1126  *
+// 1127  * @param   pInMsg - incoming message to process
+// 1128  *
+// 1129  * @return  none
+// 1130  */
+// 1131 static uint8 simplemeter_ProcessInConfigReportRspCmd( zclIncomingMsg_t *pInMsg )
+// 1132 {
+// 1133   zclCfgReportRspCmd_t *cfgReportRspCmd;
+// 1134   zclAttrRec_t attrRec;
+// 1135   uint8 i;
+// 1136 
+// 1137   cfgReportRspCmd = (zclCfgReportRspCmd_t *)pInMsg->attrCmd;
+// 1138   for (i = 0; i < cfgReportRspCmd->numAttr; i++)
+// 1139   {
+// 1140     if ( zclFindAttrRec( SIMPLEMETER_ENDPOINT, pInMsg->clusterId,
+// 1141                          cfgReportRspCmd->attrList[i].attrID, &attrRec ) )
+// 1142     {
+// 1143       // Notify the device of success (or otherwise) of the its original configure
+// 1144       // reporting command, for each attribute.
+// 1145     }
+// 1146   }
+// 1147 
+// 1148   return TRUE;
+// 1149 }
+// 1150 
+// 1151 /*********************************************************************
+// 1152  * @fn      simplemeter_ProcessInReadReportCfgCmd
+// 1153  *
+// 1154  * @brief   Process the "Profile" Read Reporting Configuration Command
+// 1155  *
+// 1156  * @param   pInMsg - incoming message to process
+// 1157  *
+// 1158  * @return  none
+// 1159  */
+// 1160 static uint8 simplemeter_ProcessInReadReportCfgCmd( zclIncomingMsg_t *pInMsg )
+// 1161 {
+// 1162   zclReadReportCfgCmd_t *readReportCfgCmd;
+// 1163   zclReadReportCfgRspCmd_t *readReportCfgRspCmd;
+// 1164   zclReportCfgRspRec_t *reportRspRec;
+// 1165   zclAttrRec_t attrRec;
+// 1166   uint8 reportChangeLen;
+// 1167   uint8 *dataPtr;
+// 1168   uint8 hdrLen;
+// 1169   uint8 dataLen = 0;
+// 1170   uint8 status;
+// 1171   uint8 i;
+// 1172 
+// 1173   readReportCfgCmd = (zclReadReportCfgCmd_t *)pInMsg->attrCmd;
+// 1174 
+// 1175   // Find out the response length (Reportable Change field is of variable length)
+// 1176   for ( i = 0; i < readReportCfgCmd->numAttr; i++ )
+// 1177   {
+// 1178     // For supported attributes with 'analog' data type, find out the length of
+// 1179     // the Reportable Change field
+// 1180     if ( zclFindAttrRec( SIMPLEMETER_ENDPOINT, pInMsg->clusterId,
+// 1181                          readReportCfgCmd->attrList[i].attrID, &attrRec ) )
+        MOV.W   0x8(R8), R13
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiPicker31
+        REQUIRE ??Subroutine3_0
+        // Fall through to label ??Subroutine3_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine3_0:
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI Function simplemeter_ProcessInReadReportCfgCmd
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R6L Frame(CFA, -16)
+          CFI R7L Frame(CFA, -14)
+          CFI R8L Frame(CFA, -12)
+          CFI R9L Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R11L Frame(CFA, -6)
+          CFI CFA SP+28
+          CFI Block cfiCond33 Using cfiCommon0
+          CFI (cfiCond33) Function simplemeter_ProcessInReadReportCfgCmd
+          CFI (cfiCond33) Conditional ??CrossCallReturnLabel_0
+          CFI (cfiCond33) R6L Frame(CFA, -16)
+          CFI (cfiCond33) R7L Frame(CFA, -14)
+          CFI (cfiCond33) R8L Frame(CFA, -12)
+          CFI (cfiCond33) R9L Frame(CFA, -10)
+          CFI (cfiCond33) R10L Frame(CFA, -8)
+          CFI (cfiCond33) R11L Frame(CFA, -6)
+          CFI (cfiCond33) CFA SP+28
+          CFI Block cfiCond34 Using cfiCommon0
+          CFI (cfiCond34) Function simplemeter_ProcessInConfigReportCmd
+          CFI (cfiCond34) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond34) R6L Frame(CFA, -16)
+          CFI (cfiCond34) R7L Frame(CFA, -14)
+          CFI (cfiCond34) R8L Frame(CFA, -12)
+          CFI (cfiCond34) R9L Frame(CFA, -10)
+          CFI (cfiCond34) R10L Frame(CFA, -8)
+          CFI (cfiCond34) R11L Frame(CFA, -6)
+          CFI (cfiCond34) CFA SP+28
+          CFI Block cfiPicker35 Using cfiCommon1
+          CFI (cfiPicker35) NoFunction
+          CFI (cfiPicker35) Picker
+// 1182     {
+// 1183       if ( zclAnalogDataType( attrRec.attr.dataType ) )
+// 1184       {
+// 1185          reportChangeLen = zclGetDataTypeLength( attrRec.attr.dataType );
+// 1186 
+// 1187          // add padding if neede
+// 1188          if ( PADDING_NEEDED( reportChangeLen ) )
+// 1189            reportChangeLen++;
+// 1190          dataLen += reportChangeLen;
+// 1191       }
+// 1192     }
+// 1193   }
+// 1194 
+// 1195   hdrLen = sizeof( zclReadReportCfgRspCmd_t ) + ( readReportCfgCmd->numAttr * sizeof( zclReportCfgRspRec_t ) );
+// 1196 
+// 1197   // Allocate space for the response command
+// 1198   readReportCfgRspCmd = (zclReadReportCfgRspCmd_t *)osal_mem_alloc( hdrLen + dataLen );
+// 1199   if ( readReportCfgRspCmd == NULL )
+// 1200     return FALSE; // EMBEDDED RETURN
+// 1201 
+// 1202   dataPtr = (uint8 *)( (uint8 *)readReportCfgRspCmd + hdrLen );
+// 1203   readReportCfgRspCmd->numAttr = readReportCfgCmd->numAttr;
+// 1204   for (i = 0; i < readReportCfgCmd->numAttr; i++)
+// 1205   {
+// 1206     reportRspRec = &(readReportCfgRspCmd->attrList[i]);
+// 1207 
+// 1208     if ( zclFindAttrRec( SIMPLEMETER_ENDPOINT, pInMsg->clusterId,
+// 1209                          readReportCfgCmd->attrList[i].attrID, &attrRec ) )
+        MOV.B   #0x9, R12
+        CALLA   #zclFindAttrRec
+        CMP.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiCond33
+          CFI EndBlock cfiCond34
+          CFI EndBlock cfiPicker35
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for numAttr>`:
+        DC8 3
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simplemeter_GenCmdCallbacks>`:
+        DC32 simplemeter_BasicResetCB, simplemeter_IdentifyCB
+        DC32 simplemeter_IdentifyQueryRspCB, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H
+        DC32 simplemeter_AlarmCB, 0H, 0H
+
+        RSEG DATA16_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for simplemeter_SECmdCallbacks>`:
+        DC32 simplemeter_GetProfileCmdCB, simplemeter_GetProfileRspCB
+        DC32 simplemeter_ReqMirrorCmdCB, simplemeter_ReqMirrorRspCB
+        DC32 simplemeter_MirrorRemCmdCB, simplemeter_MirrorRemRspCB, 0H, 0H, 0H
+        DC32 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H, 0H
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(1)
+`?<Constant {10485761L, 10485762L, 10485763L, 1`:
+        DC32 10485761, 10485762, 10485763, 10485764, 10485765
+
+        END
+// 1210     {
+// 1211       if ( zcl_MandatoryReportableAttribute( &attrRec ) == TRUE )
+// 1212       {
+// 1213         // Get the Reporting Configuration
+// 1214         // status = zclReadReportCfg( readReportCfgCmd->attrID[i], reportRspRec );
+// 1215         status = ZCL_STATUS_UNREPORTABLE_ATTRIBUTE; // for now
+// 1216         if ( status == ZCL_STATUS_SUCCESS && zclAnalogDataType( attrRec.attr.dataType ) )
+// 1217         {
+// 1218           reportChangeLen = zclGetDataTypeLength( attrRec.attr.dataType );
+// 1219           //osal_memcpy( dataPtr, pBuf, reportChangeLen );
+// 1220           reportRspRec->reportableChange = dataPtr;
+// 1221 
+// 1222           // add padding if needed
+// 1223           if ( PADDING_NEEDED( reportChangeLen ) )
+// 1224             reportChangeLen++;
+// 1225           dataPtr += reportChangeLen;
+// 1226         }
+// 1227       }
+// 1228       else
+// 1229       {
+// 1230         // Attribute not in the Mandatory Reportable Attribute list
+// 1231         status = ZCL_STATUS_UNREPORTABLE_ATTRIBUTE;
+// 1232       }
+// 1233     }
+// 1234     else
+// 1235     {
+// 1236       // Attribute not found
+// 1237       status = ZCL_STATUS_UNSUPPORTED_ATTRIBUTE;
+// 1238     }
+// 1239 
+// 1240     reportRspRec->status = status;
+// 1241     reportRspRec->attrID = readReportCfgCmd->attrList[i].attrID;
+// 1242   }
+// 1243 
+// 1244   // Send the response back
+// 1245   zcl_SendReadReportCfgRspCmd( SIMPLEMETER_ENDPOINT, &(pInMsg->srcAddr),
+// 1246                                pInMsg->clusterId, readReportCfgRspCmd, ZCL_FRAME_SERVER_CLIENT_DIR,
+// 1247                                TRUE, pInMsg->zclHdr.transSeqNum );
+// 1248   osal_mem_free( readReportCfgRspCmd );
+// 1249 
+// 1250   return TRUE;
+// 1251 }
+// 1252 
+// 1253 /*********************************************************************
+// 1254  * @fn      simplemeter_ProcessInReadReportCfgRspCmd
+// 1255  *
+// 1256  * @brief   Process the "Profile" Read Reporting Configuration Response Command
+// 1257  *
+// 1258  * @param   pInMsg - incoming message to process
+// 1259  *
+// 1260  * @return  none
+// 1261  */
+// 1262 static uint8 simplemeter_ProcessInReadReportCfgRspCmd( zclIncomingMsg_t *pInMsg )
+// 1263 {
+// 1264   zclReadReportCfgRspCmd_t *readReportCfgRspCmd;
+// 1265   zclReportCfgRspRec_t *reportRspRec;
+// 1266   uint8 i;
+// 1267 
+// 1268   readReportCfgRspCmd = (zclReadReportCfgRspCmd_t *)pInMsg->attrCmd;
+// 1269   for ( i = 0; i < readReportCfgRspCmd->numAttr; i++ )
+// 1270   {
+// 1271     reportRspRec = &(readReportCfgRspCmd->attrList[i]);
+// 1272 
+// 1273     // Notify the device of the results of the its original read reporting
+// 1274     // configuration command.
+// 1275 
+// 1276     if ( reportRspRec->status == ZCL_STATUS_SUCCESS )
+// 1277     {
+// 1278       if ( reportRspRec->direction == ZCL_SEND_ATTR_REPORTS )
+// 1279       {
+// 1280         // add user code here
+// 1281       }
+// 1282       else
+// 1283       {
+// 1284         // expecting attribute reports
+// 1285       }
+// 1286     }
+// 1287   }
+// 1288 
+// 1289   return TRUE;
+// 1290 }
+// 1291 
+// 1292 /*********************************************************************
+// 1293  * @fn      simplemeter_ProcessInReportCmd
+// 1294  *
+// 1295  * @brief   Process the "Profile" Report Command
+// 1296  *
+// 1297  * @param   pInMsg - incoming message to process
+// 1298  *
+// 1299  * @return  none
+// 1300  */
+// 1301 static uint8 simplemeter_ProcessInReportCmd( zclIncomingMsg_t *pInMsg )
+// 1302 {
+// 1303   zclReportCmd_t *reportCmd;
+// 1304   uint8 i;
+// 1305 
+// 1306   reportCmd = (zclReportCmd_t *)pInMsg->attrCmd;
+// 1307   for (i = 0; i < reportCmd->numAttr; i++)
+// 1308   {
+// 1309     // add user code here
+// 1310   }
+// 1311 
+// 1312   return TRUE;
+// 1313 }
+// 1314 #endif // ZCL_REPORT
+// 1315 
+// 1316 /*********************************************************************
+// 1317  * @fn      simplemeter_ProcessInDefaultRspCmd
+// 1318  *
+// 1319  * @brief   Process the "Profile" Default Response Command
+// 1320  *
+// 1321  * @param   pInMsg - incoming message to process
+// 1322  *
+// 1323  * @return  none
+// 1324  */
+// 1325 static uint8 simplemeter_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+// 1326 {
+// 1327   // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+// 1328 
+// 1329   // Device is notified of the Default Response command.
+// 1330 
+// 1331   return TRUE;
+// 1332 }
+// 1333 
+// 1334 #if defined ( ZCL_DISCOVER )
+// 1335 /*********************************************************************
+// 1336  * @fn      simplemeter_ProcessInDiscRspCmd
+// 1337  *
+// 1338  * @brief   Process the "Profile" Discover Response Command
+// 1339  *
+// 1340  * @param   pInMsg - incoming message to process
+// 1341  *
+// 1342  * @return  none
+// 1343  */
+// 1344 static uint8 simplemeter_ProcessInDiscRspCmd( zclIncomingMsg_t *pInMsg )
+// 1345 {
+// 1346   zclDiscoverRspCmd_t *discoverRspCmd;
+// 1347   uint8 i;
+// 1348 
+// 1349   discoverRspCmd = (zclDiscoverRspCmd_t *)pInMsg->attrCmd;
+// 1350   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+// 1351   {
+// 1352     // Device is notified of the result of its attribute discovery command.
+// 1353   }
+// 1354 
+// 1355   return TRUE;
+// 1356 }
+// 1357 #endif // ZCL_DISCOVER
+// 1358 
+// 1359 /****************************************************************************
+// 1360 ****************************************************************************/
+// 
+// 1 406 bytes in segment CODE
+//    20 bytes in segment DATA16_C
+//   165 bytes in segment DATA16_I
+//   165 bytes in segment DATA16_ID
+//    18 bytes in segment DATA16_Z
+// 
+// 1 406 bytes of CODE  memory
+//   185 bytes of CONST memory
+//   183 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

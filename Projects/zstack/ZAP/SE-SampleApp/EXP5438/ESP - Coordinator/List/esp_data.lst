@@ -1,0 +1,2301 @@
+###############################################################################
+#                                                                             #
+#                                                       29/Jan/2012  16:16:12 #
+# IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\SE-SampleApp\Source\ESP\esp_data.c                   #
+#    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"       #
+#                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI            #
+#                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE             #
+#                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE               #
+#                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE               #
+#                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                  #
+#                     -DZAP_AF_DATA_REQ_FRAG=FALSE                            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZCL. #
+#                     cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC                #
+#                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH         #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE) "C:\Texas Instruments\ZAP-MSP430-2.5.0\P #
+#                     rojects\zstack\ZAP\SE-SampleApp\Source\ESP\esp_data.c"  #
+#                     -D ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDINATOR -D          #
+#                     TC_LINKKEY_JOIN -D ZCL_REPORT -D INTER_PAN -lC          #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\ESP - Coordinator\List\" -lA   #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\ESP - Coordinator\List\"       #
+#                     --remarks --diag_suppress Pe001,Pe193,Pe236,Pe826 -o    #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\ESP - Coordinator\Obj\"        #
+#                     --debug -D__MSP430F5438A__ -e --double=32 --clib -I     #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\" -I "C:\Texas                 #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\Source\" -I "C:\Texas                 #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\Source\" -I "C:\Texas              #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\hal\target\MSP #
+#                     5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pro #
+#                     jects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co #
+#                     mponents\hal\include\" -I "C:\Texas                     #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\mac\include\"  #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\m #
+#                     t\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\ #
+#                     zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen #
+#                     ts\osal\include\" -I "C:\Texas                          #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp43 #
+#                     0\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\ #
+#                     zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen #
+#                     ts\services\saddr\" -I "C:\Texas                        #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\services\sdata #
+#                     \" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z #
+#                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Component #
+#                     s\stack\af\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ #
+#                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\.. #
+#                     \Components\stack\nwk\" -I "C:\Texas                    #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\stack\sapi\"   #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\s #
+#                     tack\sec\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pr #
+#                     ojects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\C #
+#                     omponents\stack\sys\" -I "C:\Texas                      #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\stack\zcl\"    #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\s #
+#                     tack\zdo\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pr #
+#                     ojects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\C #
+#                     omponents\zmac\" -I "C:\Texas                           #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\zmac\f8w\"     #
+#                     --core=430X --data_model=small -Ohz --multiplier=32     #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40                                   #
+#    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\SE-SampleApp\EXP5438\ESP -                           #
+#                     Coordinator\List\esp_data.lst                           #
+#    Object file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\SE-SampleApp\EXP5438\ESP -                           #
+#                     Coordinator\Obj\esp_data.r43                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-SampleApp\Source\ESP\esp_data.c
+      1          /**************************************************************************************************
+      2            Filename:       esp_data.c
+      3            Revised:        $Date: 2011-06-17 16:56:21 -0700 (Fri, 17 Jun 2011) $
+      4            Revision:       $Revision: 26373 $
+      5          
+      6            Description:    File that contains attribute and simple descriptor
+      7                            definitions for the ESP
+      8          
+      9          
+     10            Copyright 2009-2011 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42           * INCLUDES
+     43           */
+     44          #include "ZComDef.h"
+     45          #include "OSAL_Clock.h"
+     46          #include "ZDConfig.h"
+     47          
+     48          #include "se.h"
+     49          #include "esp.h"
+     50          #include "zcl_general.h"
+     51          #include "zcl_se.h"
+     52          #include "zcl_key_establish.h"
+     53          
+     54          /*********************************************************************
+     55           * CONSTANTS
+     56           */
+     57          #define ESP_DEVICE_VERSION      0
+     58          #define ESP_FLAGS               0
+     59          
+     60          #define ESP_HWVERSION           1
+     61          #define ESP_ZCLVERSION          1
+     62          
+     63          /*********************************************************************
+     64           * TYPEDEFS
+     65           */
+     66          
+     67          /*********************************************************************
+     68           * MACROS
+     69           */
+     70          
+     71          /*********************************************************************
+     72           * GLOBAL VARIABLES
+     73           */
+     74          // Basic Cluster
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     75          const uint8 espZCLVersion = ESP_ZCLVERSION;
+   \                     espZCLVersion:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     76          const uint8 espHWVersion = ESP_HWVERSION;
+   \                     espHWVersion:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     77          const uint8 espManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+   \                     espManufacturerName:
+   \   000000   105465786173 DC8 16, 84, 101, 120, 97, 115, 73, 110, 115, 116, 114, 117, 109, 101
+   \            496E73747275
+   \            6D65        
+   \   00000E   6E7473       DC8 110, 116, 115
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     78          const uint8 espModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     espModelId:
+   \   000000   105449303030 DC8 16, 84, 73, 48, 48, 48, 49, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32
+   \            312020202020
+   \            2020202020  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     79          const uint8 espDateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     espDateCode:
+   \   000000   103230303630 DC8 16, 50, 48, 48, 54, 48, 56, 51, 49, 32, 32, 32, 32, 32, 32, 32, 32
+   \            383331202020
+   \            2020202020  
+
+   \                                 In  segment DATA16_C, align 1, align-sorted
+     80          const uint8 espPowerSource = POWER_SOURCE_MAINS_1_PHASE;
+   \                     espPowerSource:
+   \   000000   01           DC8 1
+     81          
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     82          uint8 espLocationDescription[] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     espLocationDescription:
+   \   000000                DS8 17
+   \   000011                REQUIRE `?<Initializer for espLocationDescription>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     83          uint8 espPhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+   \                     espPhysicalEnvironment:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     84          uint8 espDeviceEnabled = DEVICE_ENABLED;
+   \                     espDeviceEnabled:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espDeviceEnabled>`
+     85          
+     86          // Identify Cluster Attributes
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     87          uint16 espIdentifyTime = 0;
+   \                     espIdentifyTime:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     88          uint32 espTime = 0;
+   \                     espTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     89          uint8 espTimeStatus = 0x01;
+   \                     espTimeStatus:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espTimeStatus>`
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     90          uint32 espLastSetTime;
+   \                     espLastSetTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+     91          uint32 espValidUntilTime;
+   \                     espValidUntilTime:
+   \   000000                DS8 4
+     92          
+     93          // Simple Metering Cluster - Reading Information Set Attributes
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     94          uint8 espCurrentSummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentSummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentSummationDelivered`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     95          uint8 espCurrentSummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentSummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentSummationReceived>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     96          uint8 espCurrentMaxDemandDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentMaxDemandDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentMaxDemandDelivered`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     97          uint8 espCurrentMaxDemandReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentMaxDemandReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentMaxDemandReceived>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     98          uint8 espCurrentTier1SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier1SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier1SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+     99          uint8 espCurrentTier1SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier1SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier1SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    100          uint8 espCurrentTier2SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier2SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier2SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    101          uint8 espCurrentTier2SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier2SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier2SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    102          uint8 espCurrentTier3SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier3SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier3SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    103          uint8 espCurrentTier3SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier3SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier3SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    104          uint8 espCurrentTier4SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier4SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier4SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    105          uint8 espCurrentTier4SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier4SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier4SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    106          uint8 espCurrentTier5SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier5SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier5SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    107          uint8 espCurrentTier5SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier5SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier5SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    108          uint8 espCurrentTier6SummationDelivered[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier6SummationDelivered:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier6SummationDeli`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    109          uint8 espCurrentTier6SummationReceived[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espCurrentTier6SummationReceived:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espCurrentTier6SummationRece`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    110          uint8 espDFTSummation[] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espDFTSummation:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espDFTSummation>`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    111          uint16 espDailyFreezeTime = 0x01;
+   \                     espDailyFreezeTime:
+   \   000000                DS8 2
+   \   000002                REQUIRE `?<Initializer for espDailyFreezeTime>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    112          int8 espPowerFactor = 0x01;
+   \                     espPowerFactor:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espPowerFactor>`
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    113          UTCTime espSnapshotTime = 0x00;
+   \                     espSnapshotTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    114          UTCTime espMaxDemandDeliverdTime = 0x00;
+   \                     espMaxDemandDeliverdTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    115          UTCTime espMaxDemandReceivedTime = 0x00;
+   \                     espMaxDemandReceivedTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    116          uint8 espDefaultUpdatePeriod = 0x1E;
+   \                     espDefaultUpdatePeriod:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espDefaultUpdatePeriod>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    117          uint8 espFastPollUpdatePeriod = 0x05;
+   \                     espFastPollUpdatePeriod:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espFastPollUpdatePeriod>`
+    118          
+    119          // Simple Metering Cluster - Meter Status Attributes
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    120          uint8 espStatus = 0x12;
+   \                     espStatus:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espStatus>`
+    121          
+    122          // Simple Metering Cluster - Formatting Attributes
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    123          uint8 espUnitOfMeasure = 0x00; // kW
+   \                     espUnitOfMeasure:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    124          uint24 espMultiplier = 0x01;
+   \                     espMultiplier:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espMultiplier>`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    125          uint24 espDivisor = 0x01;
+   \                     espDivisor:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espDivisor>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    126          uint8 espSummationFormating = 0x01;
+   \                     espSummationFormating:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espSummationFormating>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    127          uint8 espDemandFormatting = 0x01;
+   \                     espDemandFormatting:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espDemandFormatting>`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    128          uint8 espHistoricalConsumptionFormatting = 0x01;
+   \                     espHistoricalConsumptionFormatting:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espHistoricalConsumptionForm`
+    129          
+    130          // Simple Metering Cluster - esp Historical Consumption Attributes
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    131          int24 espInstanteneousDemand = 0x01;
+   \                     espInstanteneousDemand:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espInstanteneousDemand>`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    132          uint24 espCurrentdayConsumptionDelivered = 0x01;
+   \                     espCurrentdayConsumptionDelivered:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurrentdayConsumptionDeli`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    133          uint24 espCurrentdayConsumptionReceived = 0x01;
+   \                     espCurrentdayConsumptionReceived:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurrentdayConsumptionRece`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    134          uint24 espPreviousdayConsumptionDelivered = 0x01;
+   \                     espPreviousdayConsumptionDelivered:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espPreviousdayConsumptionDel`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    135          uint24 espPreviousdayConsumtpionReceived = 0x01;
+   \                     espPreviousdayConsumtpionReceived:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espPreviousdayConsumtpionRec`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    136          UTCTime espCurPartProfileIntStartTimeDelivered = 0x1000;
+   \                     espCurPartProfileIntStartTimeDelivered:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurPartProfileIntStartTim`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    137          UTCTime espCurPartProfileIntStartTimeReceived  = 0x2000;
+   \                     espCurPartProfileIntStartTimeReceived:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurPartProfileIntStartTim_1`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    138          uint24 espCurPartProfileIntValueDelivered = 0x0001;
+   \                     espCurPartProfileIntValueDelivered:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurPartProfileIntValueDel`
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    139          uint24 espCurPartProfileIntValueReceived  = 0x0002;
+   \                     espCurPartProfileIntValueReceived:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for espCurPartProfileIntValueRec`
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    140          uint8 espMaxNumberOfPeriodsDelivered = 0x01;
+   \                     espMaxNumberOfPeriodsDelivered:
+   \   000000                DS8 1
+   \   000001                REQUIRE `?<Initializer for espMaxNumberOfPeriodsDeliver`
+    141          
+    142          // Demand Response and Load Control
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    143          uint8 espUtilityDefinedGroup = 0x00;
+   \                     espUtilityDefinedGroup:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    144          uint8 espStartRandomizeMinutes = 0x00;
+   \                     espStartRandomizeMinutes:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    145          uint8 espStopRandomizeMinutes = 0x00;
+   \                     espStopRandomizeMinutes:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    146          uint8 espSignature[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+   \                     espSignature:
+   \   000000                DS8 16
+   \   000010                REQUIRE `?<Initializer for espSignature>`
+    147                                            0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
+    148          
+    149          // Key Establishment
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    150          uint16 espKeyEstablishmentSuite = CERTIFICATE_BASED_KEY_ESTABLISHMENT;
+   \                     espKeyEstablishmentSuite:
+   \   000000                DS8 2
+    151          
+    152          // Prepayment Cluster - Prepayment Information Set Attributes
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    153          uint8 espPaymentControl = 0x00;
+   \                     espPaymentControl:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    154          int32 espCreditRemaining;
+   \                     espCreditRemaining:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    155          int32 espEmerCreditRemaining;
+   \                     espEmerCreditRemaining:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    156          uint8 espCreditStatus = 0x00;
+   \                     espCreditStatus:
+   \   000000                DS8 1
+    157          
+    158          // Prepayment Cluster - Top-up Attribute Set Attributes
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    159          UTCTime espTopUpDateTime1;
+   \                     espTopUpDateTime1:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    160          uint8 espTopUpAmount1[6] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espTopUpAmount1:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espTopUpAmount1>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    161          uint8 espOrigDev1;
+   \                     espOrigDev1:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    162          UTCTime espTopUpDateTime2;
+   \                     espTopUpDateTime2:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    163          uint8 espTopUpAmount2[6] = { 0x22, 0x33, 0x44, 0x55, 0x66, 0x77 };
+   \                     espTopUpAmount2:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espTopUpAmount2>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    164          uint8 espOrigDev2;
+   \                     espOrigDev2:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    165          UTCTime espTopUpDateTime3;
+   \                     espTopUpDateTime3:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    166          uint8 espTopUpAmount3[6] = { 0x33, 0x44, 0x55, 0x66, 0x77, 0x88 };
+   \                     espTopUpAmount3:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espTopUpAmount3>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    167          uint8 espOrigDev3;
+   \                     espOrigDev3:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    168          UTCTime espTopUpDateTime4;
+   \                     espTopUpDateTime4:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    169          uint8 espTopUpAmount4[6] = { 0x44, 0x55, 0x66, 0x77, 0x88, 0x99 };
+   \                     espTopUpAmount4:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espTopUpAmount4>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    170          uint8 espOrigDev4;
+   \                     espOrigDev4:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    171          UTCTime espTopUpDateTime5;
+   \                     espTopUpDateTime5:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    172          uint8 espTopUpAmount5[6] = { 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA };
+   \                     espTopUpAmount5:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espTopUpAmount5>`
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    173          uint8 espOrigDev5;
+   \                     espOrigDev5:
+   \   000000                DS8 1
+    174          
+    175          // Prepayment Cluster - Debt Attribute Set Attributes
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    176          uint8 espFuelDebtRem[6] = { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 };
+   \                     espFuelDebtRem:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espFuelDebtRem>`
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    177          uint32 espFuelDebtRecRate;
+   \                     espFuelDebtRecRate:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    178          uint8 espFuelDebtRecPeriod;
+   \                     espFuelDebtRecPeriod:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_I, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+    179          uint8 espNonFuelDebtRem[6] = { 0x22, 0x33, 0x44, 0x55, 0x66, 0x77 };
+   \                     espNonFuelDebtRem:
+   \   000000                DS8 6
+   \   000006                REQUIRE `?<Initializer for espNonFuelDebtRem>`
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    180          uint32 espNonFuelDebtRecRate;
+   \                     espNonFuelDebtRecRate:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    181          uint8 espNonFuelDebtRecPeriod;
+   \                     espNonFuelDebtRecPeriod:
+   \   000000                DS8 1
+    182          
+    183          // Prepayment Cluster - Supply Control Set Attributes
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    184          uint32 espPropChangeProviderId;
+   \                     espPropChangeProviderId:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    185          UTCTime espPropChangeImplemTime;
+   \                     espPropChangeImplemTime:
+   \   000000                DS8 4
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    186          uint8 espPropChangeSupplyStatus;
+   \                     espPropChangeSupplyStatus:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA16_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    187          uint16 espDelayedSuppIntValueRem;
+   \                     espDelayedSuppIntValueRem:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero
+    188          uint8 espDelayedSuppIntValueType;
+   \                     espDelayedSuppIntValueType:
+   \   000000                DS8 1
+    189          
+    190          /*********************************************************************
+    191           * ATTRIBUTE DEFINITIONS - Uses Cluster IDs
+    192           */
+
+   \                                 In  segment DATA16_C, align 2, align-sorted
+    193          CONST zclAttrRec_t espAttrs[ESP_MAX_ATTRIBUTES] =
+   \                     espAttrs:
+   \   000000   00000000     DC16 0, 0
+   \   000004   2001         DC8 32, 1
+   \   000006   ....00000300 DC16 espZCLVersion, 0, 3
+   \   00000C   2001         DC8 32, 1
+   \   00000E   ....00000400 DC16 espHWVersion, 0, 4
+   \   000014   4201         DC8 66, 1
+   \   000016   ....00000500 DC16 espManufacturerName, 0, 5
+   \   00001C   4201         DC8 66, 1
+   \   00001E   ....00000600 DC16 espModelId, 0, 6
+   \   000024   4201         DC8 66, 1
+   \   000026   ....00000700 DC16 espDateCode, 0, 7
+   \   00002C   3001         DC8 48, 1
+   \   00002E   ....00001000 DC16 espPowerSource, 0, 16
+   \   000034   4203         DC8 66, 3
+   \   000036   ....00001100 DC16 espLocationDescription, 0, 17
+   \   00003C   3003         DC8 48, 3
+   \   00003E   ....00001200 DC16 espPhysicalEnvironment, 0, 18
+   \   000044   1003         DC8 16, 3
+   \   000046   ....03000000 DC16 espDeviceEnabled, 3, 0
+   \   00004C   2103         DC8 33, 3
+   \   00004E   ....0A000000 DC16 espIdentifyTime, 10, 0
+   \   000054   E203         DC8 226, 3
+   \   000056   ....0A000100 DC16 espTime, 10, 1
+   \   00005C   1803         DC8 24, 3
+   \   00005E   ....0A000800 DC16 espTimeStatus, 10, 8
+   \   000064   E201         DC8 226, 1
+   \   000066   ....0A000900 DC16 espLastSetTime, 10, 9
+   \   00006C   E203         DC8 226, 3
+   \   00006E   ....02070000 DC16 espValidUntilTime, 1794, 0
+   \   000074   2501         DC8 37, 1
+   \   000076   ....02070100 DC16 espCurrentSummationDelivered, 1794, 1
+   \   00007C   2501         DC8 37, 1
+   \   00007E   ....02070200 DC16 espCurrentSummationReceived, 1794, 2
+   \   000084   2501         DC8 37, 1
+   \   000086   ....02070300 DC16 espCurrentMaxDemandDelivered, 1794, 3
+   \   00008C   2501         DC8 37, 1
+   \   00008E   ....02070001 DC16 espCurrentMaxDemandReceived, 1794, 256
+   \   000094   2501         DC8 37, 1
+   \   000096   ....02070101 DC16 espCurrentTier1SummationDelivered, 1794, 257
+   \   00009C   2501         DC8 37, 1
+   \   00009E   ....02070201 DC16 espCurrentTier1SummationReceived, 1794, 258
+   \   0000A4   2501         DC8 37, 1
+   \   0000A6   ....02070301 DC16 espCurrentTier2SummationDelivered, 1794, 259
+   \   0000AC   2501         DC8 37, 1
+   \   0000AE   ....02070401 DC16 espCurrentTier2SummationReceived, 1794, 260
+   \   0000B4   2501         DC8 37, 1
+   \   0000B6   ....02070501 DC16 espCurrentTier3SummationDelivered, 1794, 261
+   \   0000BC   2501         DC8 37, 1
+   \   0000BE   ....02070601 DC16 espCurrentTier3SummationReceived, 1794, 262
+   \   0000C4   2501         DC8 37, 1
+   \   0000C6   ....02070701 DC16 espCurrentTier4SummationDelivered, 1794, 263
+   \   0000CC   2501         DC8 37, 1
+   \   0000CE   ....02070801 DC16 espCurrentTier4SummationReceived, 1794, 264
+   \   0000D4   2501         DC8 37, 1
+   \   0000D6   ....02070901 DC16 espCurrentTier5SummationDelivered, 1794, 265
+   \   0000DC   2501         DC8 37, 1
+   \   0000DE   ....02070A01 DC16 espCurrentTier5SummationReceived, 1794, 266
+   \   0000E4   2501         DC8 37, 1
+   \   0000E6   ....02070B01 DC16 espCurrentTier6SummationDelivered, 1794, 267
+   \   0000EC   2501         DC8 37, 1
+   \   0000EE   ....02070400 DC16 espCurrentTier6SummationReceived, 1794, 4
+   \   0000F4   2501         DC8 37, 1
+   \   0000F6   ....02070500 DC16 espDFTSummation, 1794, 5
+   \   0000FC   2101         DC8 33, 1
+   \   0000FE   ....02070600 DC16 espDailyFreezeTime, 1794, 6
+   \   000104   2801         DC8 40, 1
+   \   000106   ....02070700 DC16 espPowerFactor, 1794, 7
+   \   00010C   E201         DC8 226, 1
+   \   00010E   ....02070800 DC16 espSnapshotTime, 1794, 8
+   \   000114   E201         DC8 226, 1
+   \   000116   ....02070900 DC16 espMaxDemandDeliverdTime, 1794, 9
+   \   00011C   E201         DC8 226, 1
+   \   00011E   ....02070A00 DC16 espMaxDemandReceivedTime, 1794, 10
+   \   000124   2001         DC8 32, 1
+   \   000126   ....02070B00 DC16 espDefaultUpdatePeriod, 1794, 11
+   \   00012C   2001         DC8 32, 1
+   \   00012E   ....02070002 DC16 espFastPollUpdatePeriod, 1794, 512
+   \   000134   1801         DC8 24, 1
+   \   000136   ....02070003 DC16 espStatus, 1794, 768
+   \   00013C   3001         DC8 48, 1
+   \   00013E   ....02070103 DC16 espUnitOfMeasure, 1794, 769
+   \   000144   2201         DC8 34, 1
+   \   000146   ....02070203 DC16 espMultiplier, 1794, 770
+   \   00014C   2201         DC8 34, 1
+   \   00014E   ....02070303 DC16 espDivisor, 1794, 771
+   \   000154   1801         DC8 24, 1
+   \   000156   ....02070403 DC16 espSummationFormating, 1794, 772
+   \   00015C   1801         DC8 24, 1
+   \   00015E   ....02070503 DC16 espDemandFormatting, 1794, 773
+   \   000164   1801         DC8 24, 1
+   \   000166   ....02070004 DC16 espHistoricalConsumptionFormatting, 1794, 1024
+   \   00016C   2A01         DC8 42, 1
+   \   00016E   ....02070104 DC16 espInstanteneousDemand, 1794, 1025
+   \   000174   2201         DC8 34, 1
+   \   000176   ....02070204 DC16 espCurrentdayConsumptionDelivered, 1794, 1026
+   \   00017C   2201         DC8 34, 1
+   \   00017E   ....02070304 DC16 espCurrentdayConsumptionReceived, 1794, 1027
+   \   000184   2201         DC8 34, 1
+   \   000186   ....02070404 DC16 espPreviousdayConsumptionDelivered, 1794, 1028
+   \   00018C   2201         DC8 34, 1
+   \   00018E   ....02070504 DC16 espPreviousdayConsumtpionReceived, 1794, 1029
+   \   000194   E201         DC8 226, 1
+   \   000196   ....02070604 DC16 espCurPartProfileIntStartTimeDelivered, 1794, 1030
+   \   00019C   E201         DC8 226, 1
+   \   00019E   ....02070704 DC16 espCurPartProfileIntStartTimeReceived, 1794, 1031
+   \   0001A4   2201         DC8 34, 1
+   \   0001A6   ....02070804 DC16 espCurPartProfileIntValueDelivered, 1794, 1032
+   \   0001AC   2201         DC8 34, 1
+   \   0001AE   ....02070005 DC16 espCurPartProfileIntValueReceived, 1794, 1280
+   \   0001B4   2001         DC8 32, 1
+   \   0001B6   ....01070000 DC16 espMaxNumberOfPeriodsDelivered, 1793, 0
+   \   0001BC   2003         DC8 32, 3
+   \   0001BE   ....01070100 DC16 espUtilityDefinedGroup, 1793, 1
+   \   0001C4   2003         DC8 32, 3
+   \   0001C6   ....01070200 DC16 espStartRandomizeMinutes, 1793, 2
+   \   0001CC   2003         DC8 32, 3
+   \   0001CE   ....00080000 DC16 espStopRandomizeMinutes, 2048, 0
+   \   0001D4   1901         DC8 25, 1
+   \   0001D6   ....05070000 DC16 espKeyEstablishmentSuite, 1797, 0
+   \   0001DC   1801         DC8 24, 1
+   \   0001DE   ....05070100 DC16 espPaymentControl, 1797, 1
+   \   0001E4   2B01         DC8 43, 1
+   \   0001E6   ....05070200 DC16 espCreditRemaining, 1797, 2
+   \   0001EC   2B01         DC8 43, 1
+   \   0001EE   ....05070300 DC16 espEmerCreditRemaining, 1797, 3
+   \   0001F4   1801         DC8 24, 1
+   \   0001F6   ....05070001 DC16 espCreditStatus, 1797, 256
+   \   0001FC   E201         DC8 226, 1
+   \   0001FE   ....05070101 DC16 espTopUpDateTime1, 1797, 257
+   \   000204   2501         DC8 37, 1
+   \   000206   ....05070201 DC16 espTopUpAmount1, 1797, 258
+   \   00020C   3001         DC8 48, 1
+   \   00020E   ....05071001 DC16 espOrigDev1, 1797, 272
+   \   000214   E201         DC8 226, 1
+   \   000216   ....05071101 DC16 espTopUpDateTime2, 1797, 273
+   \   00021C   2501         DC8 37, 1
+   \   00021E   ....05071201 DC16 espTopUpAmount2, 1797, 274
+   \   000224   3001         DC8 48, 1
+   \   000226   ....05072001 DC16 espOrigDev2, 1797, 288
+   \   00022C   E201         DC8 226, 1
+   \   00022E   ....05072101 DC16 espTopUpDateTime3, 1797, 289
+   \   000234   2501         DC8 37, 1
+   \   000236   ....05072201 DC16 espTopUpAmount3, 1797, 290
+   \   00023C   3001         DC8 48, 1
+   \   00023E   ....05073001 DC16 espOrigDev3, 1797, 304
+   \   000244   E201         DC8 226, 1
+   \   000246   ....05073101 DC16 espTopUpDateTime4, 1797, 305
+   \   00024C   2501         DC8 37, 1
+   \   00024E   ....05073201 DC16 espTopUpAmount4, 1797, 306
+   \   000254   3001         DC8 48, 1
+   \   000256   ....05074001 DC16 espOrigDev4, 1797, 320
+   \   00025C   E201         DC8 226, 1
+   \   00025E   ....05074101 DC16 espTopUpDateTime5, 1797, 321
+   \   000264   2501         DC8 37, 1
+   \   000266   ....05074201 DC16 espTopUpAmount5, 1797, 322
+   \   00026C   3001         DC8 48, 1
+   \   00026E   ....05070002 DC16 espOrigDev5, 1797, 512
+   \   000274   2501         DC8 37, 1
+   \   000276   ....05070102 DC16 espFuelDebtRem, 1797, 513
+   \   00027C   2301         DC8 35, 1
+   \   00027E   ....05070202 DC16 espFuelDebtRecRate, 1797, 514
+   \   000284   3001         DC8 48, 1
+   \   000286   ....05070302 DC16 espFuelDebtRecPeriod, 1797, 515
+   \   00028C   2501         DC8 37, 1
+   \   00028E   ....05070402 DC16 espNonFuelDebtRem, 1797, 516
+   \   000294   2301         DC8 35, 1
+   \   000296   ....05070502 DC16 espNonFuelDebtRecRate, 1797, 517
+   \   00029C   3001         DC8 48, 1
+   \   00029E   ....05070003 DC16 espNonFuelDebtRecPeriod, 1797, 768
+   \   0002A4   2301         DC8 35, 1
+   \   0002A6   ....05070103 DC16 espPropChangeProviderId, 1797, 769
+   \   0002AC   E201         DC8 226, 1
+   \   0002AE   ....05070203 DC16 espPropChangeImplemTime, 1797, 770
+   \   0002B4   3001         DC8 48, 1
+   \   0002B6   ....05070303 DC16 espPropChangeSupplyStatus, 1797, 771
+   \   0002BC   2103         DC8 33, 3
+   \   0002BE   ....05070403 DC16 espDelayedSuppIntValueRem, 1797, 772
+   \   0002C4   3003         DC8 48, 3
+   \   0002C6   ....         DC16 espDelayedSuppIntValueType
+    194          {
+    195          
+    196            // *** General Basic Cluster Attributes ***
+    197            {
+    198              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+    199              {  // Attribute record
+    200                ATTRID_BASIC_ZCL_VERSION,           // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    201                ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+    202                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+    203                (void *)&espZCLVersion              // Pointer to attribute variable
+    204              }
+    205            },
+    206            {
+    207              ZCL_CLUSTER_ID_GEN_BASIC,
+    208              { // Attribute record
+    209                ATTRID_BASIC_HW_VERSION,
+    210                ZCL_DATATYPE_UINT8,
+    211                ACCESS_CONTROL_READ,
+    212                (void *)&espHWVersion
+    213              }
+    214            },
+    215            {
+    216              ZCL_CLUSTER_ID_GEN_BASIC,
+    217              { // Attribute record
+    218                ATTRID_BASIC_MANUFACTURER_NAME,
+    219                ZCL_DATATYPE_CHAR_STR,
+    220                ACCESS_CONTROL_READ,
+    221                (void *)espManufacturerName
+    222              }
+    223            },
+    224            {
+    225              ZCL_CLUSTER_ID_GEN_BASIC,
+    226              { // Attribute record
+    227                ATTRID_BASIC_MODEL_ID,
+    228                ZCL_DATATYPE_CHAR_STR,
+    229                ACCESS_CONTROL_READ,
+    230                (void *)espModelId
+    231              }
+    232            },
+    233            {
+    234              ZCL_CLUSTER_ID_GEN_BASIC,
+    235              { // Attribute record
+    236                ATTRID_BASIC_DATE_CODE,
+    237                ZCL_DATATYPE_CHAR_STR,
+    238                ACCESS_CONTROL_READ,
+    239                (void *)espDateCode
+    240              }
+    241            },
+    242            {
+    243              ZCL_CLUSTER_ID_GEN_BASIC,
+    244              { // Attribute record
+    245                ATTRID_BASIC_POWER_SOURCE,
+    246                ZCL_DATATYPE_ENUM8,
+    247                ACCESS_CONTROL_READ,
+    248                (void *)&espPowerSource
+    249              }
+    250            },
+    251            {
+    252              ZCL_CLUSTER_ID_GEN_BASIC,
+    253              { // Attribute record
+    254                ATTRID_BASIC_LOCATION_DESC,
+    255                ZCL_DATATYPE_CHAR_STR,
+    256                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    257                (void *)espLocationDescription
+    258              }
+    259            },
+    260            {
+    261              ZCL_CLUSTER_ID_GEN_BASIC,
+    262              { // Attribute record
+    263                ATTRID_BASIC_PHYSICAL_ENV,
+    264                ZCL_DATATYPE_ENUM8,
+    265                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    266                (void *)&espPhysicalEnvironment
+    267              }
+    268            },
+    269            {
+    270              ZCL_CLUSTER_ID_GEN_BASIC,
+    271              { // Attribute record
+    272                ATTRID_BASIC_DEVICE_ENABLED,
+    273                ZCL_DATATYPE_BOOLEAN,
+    274                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    275                (void *)&espDeviceEnabled
+    276              }
+    277            },
+    278          
+    279            // *** Identify Cluster Attribute ***
+    280            {
+    281              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    282              { // Attribute record
+    283                ATTRID_IDENTIFY_TIME,
+    284                ZCL_DATATYPE_UINT16,
+    285                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    286                (void *)&espIdentifyTime
+    287              }
+    288            },
+    289          
+    290            // *** Time Cluster Attribute ***
+    291            {
+    292              ZCL_CLUSTER_ID_GEN_TIME,
+    293              { // Attribute record
+    294                ATTRID_TIME_TIME,
+    295                ZCL_DATATYPE_UTC,
+    296                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    297                (void *)&espTime
+    298              }
+    299            },
+    300            {
+    301              ZCL_CLUSTER_ID_GEN_TIME,
+    302              { // Attribute record
+    303                ATTRID_TIME_STATUS,
+    304                ZCL_DATATYPE_BITMAP8,
+    305                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    306                (void *)&espTimeStatus
+    307              }
+    308            },
+    309            {
+    310              ZCL_CLUSTER_ID_GEN_TIME,
+    311              { // Attribute record
+    312                ATTRID_TIME_LAST_SET_TIME,
+    313                ZCL_DATATYPE_UTC,
+    314                ACCESS_CONTROL_READ,
+    315                (void *)&espLastSetTime
+    316              }
+    317            },
+    318            {
+    319              ZCL_CLUSTER_ID_GEN_TIME,
+    320              { // Attribute record
+    321                ATTRID_TIME_VALID_UNTIL_TIME,
+    322                ZCL_DATATYPE_UTC,
+    323                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    324                (void *)&espValidUntilTime
+    325              }
+    326            },
+    327          
+    328            // SE Attributes
+    329            {
+    330              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,          // Cluster IDs - defined in the profile (ie. se.h)
+    331              {  // Attribute record
+    332                ATTRID_SE_CURRENT_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    333                ZCL_DATATYPE_UINT48,                      // Data Type - found in zcl.h
+    334                ACCESS_CONTROL_READ,                      // Variable access control - found in zcl.h
+    335                (void *)espCurrentSummationDelivered      // Pointer to attribute variable
+    336              }
+    337            },
+    338            {
+    339              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,          // Cluster IDs - defined in the profile (ie. se.h)
+    340              {  // Attribute record
+    341                ATTRID_SE_CURRENT_SUMMATION_RECEIVED,     // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    342                ZCL_DATATYPE_UINT48,                      // Data Type - found in zcl.h
+    343                ACCESS_CONTROL_READ,                      // Variable access control - found in zcl.h
+    344                (void *)espCurrentSummationReceived       // Pointer to attribute variable
+    345              }
+    346            },
+    347            {
+    348              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,          // Cluster IDs - defined in the profile (ie. se.h)
+    349              {  // Attribute record
+    350                ATTRID_SE_CURRENT_MAX_DEMAND_DELIVERED,   // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    351                ZCL_DATATYPE_UINT48,                      // Data Type - found in zcl.h
+    352                ACCESS_CONTROL_READ,                      // Variable access control - found in zcl.h
+    353                (void *)espCurrentMaxDemandDelivered      // Pointer to attribute variable
+    354              }
+    355            },
+    356            {
+    357              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,          // Cluster IDs - defined in the profile (ie. se.h)
+    358              {  // Attribute record
+    359                ATTRID_SE_CURRENT_MAX_DEMAND_RECEIVED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    360                ZCL_DATATYPE_UINT48,                      // Data Type - found in zcl.h
+    361                ACCESS_CONTROL_READ,                      // Variable access control - found in zcl.h
+    362                (void *)espCurrentMaxDemandReceived       // Pointer to attribute variable
+    363              }
+    364            },
+    365            {
+    366              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,              // Cluster IDs - defined in the profile (ie. se.h)
+    367              {  // Attribute record
+    368                ATTRID_SE_CURRENT_TIER1_SUMMATION_DELIVERED,  // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    369                ZCL_DATATYPE_UINT48,                          // Data Type - found in zcl.h
+    370                ACCESS_CONTROL_READ,                          // Variable access control - found in zcl.h
+    371                (void *)espCurrentTier1SummationDelivered     // Pointer to attribute variable
+    372              }
+    373            },
+    374            {
+    375              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,              // Cluster IDs - defined in the profile (ie. se.h)
+    376              {  // Attribute record
+    377                ATTRID_SE_CURRENT_TIER1_SUMMATION_RECEIVED,   // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    378                ZCL_DATATYPE_UINT48,                          // Data Type - found in zcl.h
+    379                ACCESS_CONTROL_READ,                          // Variable access control - found in zcl.h
+    380                (void *)espCurrentTier1SummationReceived      // Pointer to attribute variable
+    381              }
+    382            },
+    383            {
+    384              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    385              {  // Attribute record
+    386                ATTRID_SE_CURRENT_TIER2_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    387                ZCL_DATATYPE_UINT48,                            // Data Type - found in zcl.h
+    388                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    389                (void *)espCurrentTier2SummationDelivered       // Pointer to attribute variable
+    390              }
+    391            },
+    392            {
+    393              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,              // Cluster IDs - defined in the profile (ie. se.h)
+    394              {  // Attribute record
+    395                ATTRID_SE_CURRENT_TIER2_SUMMATION_RECEIVED,   // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    396                ZCL_DATATYPE_UINT48,                          // Data Type - found in zcl.h
+    397                ACCESS_CONTROL_READ,                          // Variable access control - found in zcl.h
+    398                (void *)espCurrentTier2SummationReceived      // Pointer to attribute variable
+    399              }
+    400            },
+    401            {
+    402              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    403              {  // Attribute record
+    404                ATTRID_SE_CURRENT_TIER3_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    405                ZCL_DATATYPE_UINT48,                            // Data Type - found in zcl.h
+    406                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    407                (void *)espCurrentTier3SummationDelivered       // Pointer to attribute variable
+    408              }
+    409            },
+    410            {
+    411              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    412              {  // Attribute record
+    413                ATTRID_SE_CURRENT_TIER3_SUMMATION_RECEIVED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    414                ZCL_DATATYPE_UINT48,                           // Data Type - found in zcl.h
+    415                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    416                (void *)espCurrentTier3SummationReceived       // Pointer to attribute variable
+    417              }
+    418            },
+    419            {
+    420              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    421              {  // Attribute record
+    422                ATTRID_SE_CURRENT_TIER4_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    423                ZCL_DATATYPE_UINT48,                            // Data Type - found in zcl.h
+    424                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    425                (void *)espCurrentTier4SummationDelivered       // Pointer to attribute variable
+    426              }
+    427            },
+    428            {
+    429              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    430              {  // Attribute record
+    431                ATTRID_SE_CURRENT_TIER4_SUMMATION_RECEIVED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    432                ZCL_DATATYPE_UINT48,                           // Data Type - found in zcl.h
+    433                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    434                (void *)espCurrentTier4SummationReceived       // Pointer to attribute variable
+    435              }
+    436            },
+    437            {
+    438              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    439              {  // Attribute record
+    440                ATTRID_SE_CURRENT_TIER5_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    441                ZCL_DATATYPE_UINT48,                            // Data Type - found in zcl.h
+    442                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    443                (void *)espCurrentTier5SummationDelivered       // Pointer to attribute variable
+    444              }
+    445            },
+    446            {
+    447              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    448              {  // Attribute record
+    449                ATTRID_SE_CURRENT_TIER5_SUMMATION_RECEIVED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    450                ZCL_DATATYPE_UINT48,                           // Data Type - found in zcl.h
+    451                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    452                (void *)espCurrentTier5SummationReceived       // Pointer to attribute variable
+    453              }
+    454            },
+    455             {
+    456              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    457              {  // Attribute record
+    458                ATTRID_SE_CURRENT_TIER6_SUMMATION_DELIVERED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    459                ZCL_DATATYPE_UINT48,                            // Data Type - found in zcl.h
+    460                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    461                (void *)espCurrentTier6SummationDelivered       // Pointer to attribute variable
+    462              }
+    463            },
+    464            {
+    465              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    466              {  // Attribute record
+    467                ATTRID_SE_CURRENT_TIER6_SUMMATION_RECEIVED,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    468                ZCL_DATATYPE_UINT48,                           // Data Type - found in zcl.h
+    469                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    470                (void *)espCurrentTier6SummationReceived       // Pointer to attribute variable
+    471              }
+    472            },
+    473            {
+    474              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    475              {  // Attribute record
+    476                ATTRID_SE_DFT_SUMMATION,               // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    477                ZCL_DATATYPE_UINT48,                   // Data Type - found in zcl.h
+    478                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    479                (void *)espDFTSummation                // Pointer to attribute variable
+    480              }
+    481            },
+    482            {
+    483              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    484              {  // Attribute record
+    485                ATTRID_SE_DAILY_FREEZE_TIME,           // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    486                ZCL_DATATYPE_UINT16,                   // Data Type - found in zcl.h
+    487                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    488                (void *)&espDailyFreezeTime            // Pointer to attribute variable
+    489              }
+    490            },
+    491            {
+    492              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    493              {  // Attribute record
+    494                ATTRID_SE_POWER_FACTOR,                // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    495                ZCL_DATATYPE_INT8,                     // Data Type - found in zcl.h
+    496                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    497                (void *)&espPowerFactor                // Pointer to attribute variable
+    498              }
+    499            },
+    500            {
+    501              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    502              {  // Attribute record
+    503                ATTRID_SE_READING_SNAPSHOT_TIME,       // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    504                ZCL_DATATYPE_UTC,                      // Data Type - found in zcl.h
+    505                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    506                (void *)&espSnapshotTime               // Pointer to attribute variable
+    507              }
+    508            },
+    509            {
+    510              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    511              {  // Attribute record
+    512                ATTRID_SE_CURRENT_MAX_DEMAND_DELIVERD_TIME,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    513                ZCL_DATATYPE_UTC,                              // Data Type - found in zcl.h
+    514                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    515                (void *)&espMaxDemandDeliverdTime              // Pointer to attribute variable
+    516              }
+    517            },
+    518            {
+    519              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    520              {  // Attribute record
+    521                ATTRID_SE_CURRENT_MAX_DEMAND_RECEIVED_TIME,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    522                ZCL_DATATYPE_UTC,                              // Data Type - found in zcl.h
+    523                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    524                (void *)&espMaxDemandReceivedTime              // Pointer to attribute variable
+    525              }
+    526            },
+    527            {
+    528              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    529              {  // Attribute record
+    530                ATTRID_SE_DEFAULT_UPDATE_PERIOD,               // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    531                ZCL_DATATYPE_UINT8,                            // Data Type - found in zcl.h
+    532                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    533                (void *)&espDefaultUpdatePeriod                // Pointer to attribute variable
+    534              }
+    535            },
+    536            {
+    537              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,               // Cluster IDs - defined in the profile (ie. se.h)
+    538              {  // Attribute record
+    539                ATTRID_SE_FAST_POLL_UPDATE_PERIOD,             // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    540                ZCL_DATATYPE_UINT8,                            // Data Type - found in zcl.h
+    541                ACCESS_CONTROL_READ,                           // Variable access control - found in zcl.h
+    542                (void *)&espFastPollUpdatePeriod               // Pointer to attribute variable
+    543              }
+    544            },
+    545            {
+    546              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    547              {  // Attribute record
+    548                ATTRID_SE_STATUS,                      // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    549                ZCL_DATATYPE_BITMAP8,                  // Data Type - found in zcl.h
+    550                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    551                (void *)&espStatus                     // Pointer to attribute variable
+    552              }
+    553            },
+    554          
+    555            {
+    556              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    557              {  // Attribute record
+    558                ATTRID_SE_UNIT_OF_MEASURE,             // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    559                ZCL_DATATYPE_ENUM8,                    // Data Type - found in zcl.h
+    560                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    561                (void *)&espUnitOfMeasure              // Pointer to attribute variable
+    562              }
+    563            },
+    564            {
+    565              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    566              {  // Attribute record
+    567                ATTRID_SE_MULTIPLIER,                  // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    568                ZCL_DATATYPE_UINT24,                   // Data Type - found in zcl.h
+    569                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    570                (void *)&espMultiplier                 // Pointer to attribute variable
+    571              }
+    572            },
+    573            {
+    574              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,      // Cluster IDs - defined in the profile (ie. se.h)
+    575              {  // Attribute record
+    576                ATTRID_SE_DIVISOR,                    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    577                ZCL_DATATYPE_UINT24,                  // Data Type - found in zcl.h
+    578                ACCESS_CONTROL_READ,                  // Variable access control - found in zcl.h
+    579                (void *)&espDivisor                   // Pointer to attribute variable
+    580              }
+    581            },
+    582            {
+    583              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,      // Cluster IDs - defined in the profile (ie. se.h)
+    584              {  // Attribute record
+    585                ATTRID_SE_SUMMATION_FORMATTING,       // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    586                ZCL_DATATYPE_BITMAP8,                 // Data Type - found in zcl.h
+    587                ACCESS_CONTROL_READ,                  // Variable access control - found in zcl.h
+    588                (void *)&espSummationFormating        // Pointer to attribute variable
+    589              }
+    590            },
+    591            {
+    592              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,       // Cluster IDs - defined in the profile (ie. se.h)
+    593              {  // Attribute record
+    594                ATTRID_SE_DEMAND_FORMATTING,           // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    595                ZCL_DATATYPE_BITMAP8,                  // Data Type - found in zcl.h
+    596                ACCESS_CONTROL_READ,                   // Variable access control - found in zcl.h
+    597                (void *)&espDemandFormatting           // Pointer to attribute variable
+    598              }
+    599            },
+    600            {
+    601              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,                // Cluster IDs - defined in the profile (ie. se.h)
+    602              {  // Attribute record
+    603                ATTRID_SE_HISTORICAL_CONSUMPTION_FORMATTING,    // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    604                ZCL_DATATYPE_BITMAP8,                           // Data Type - found in zcl.h
+    605                ACCESS_CONTROL_READ,                            // Variable access control - found in zcl.h
+    606                (void *)&espHistoricalConsumptionFormatting     // Pointer to attribute variable
+    607              }
+    608            },
+    609            {
+    610              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    611              {  // Attribute record
+    612                ATTRID_SE_INSTANTANEOUS_DEMAND,
+    613                ZCL_DATATYPE_INT24,
+    614                ACCESS_CONTROL_READ,
+    615                (void *)&espInstanteneousDemand
+    616              }
+    617            },
+    618            {
+    619              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    620              {  // Attribute record
+    621                ATTRID_SE_CURRENTDAY_CONSUMPTION_DELIVERED,
+    622                ZCL_DATATYPE_UINT24,
+    623                ACCESS_CONTROL_READ,
+    624                (void *)&espCurrentdayConsumptionDelivered
+    625              }
+    626            },
+    627            {
+    628              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    629              {  // Attribute record
+    630                ATTRID_SE_CURRENTDAY_CONSUMPTION_RECEIVED,
+    631                ZCL_DATATYPE_UINT24,
+    632                ACCESS_CONTROL_READ,
+    633                (void *)&espCurrentdayConsumptionReceived
+    634              }
+    635            },
+    636            {
+    637              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    638              {  // Attribute record
+    639                ATTRID_SE_PREVIOUSDAY_CONSUMPTION_DELIVERED,
+    640                ZCL_DATATYPE_UINT24,
+    641                ACCESS_CONTROL_READ,
+    642                (void *)&espPreviousdayConsumptionDelivered
+    643              }
+    644            },
+    645            {
+    646              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    647              {  // Attribute record
+    648                ATTRID_SE_PREVIOUSDAY_CONSUMPTION_RECEIVED,
+    649                ZCL_DATATYPE_UINT24,
+    650                ACCESS_CONTROL_READ,
+    651                (void *)&espPreviousdayConsumtpionReceived
+    652              }
+    653            },
+    654            {
+    655              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    656              {  // Attribute record
+    657                ATTRID_SE_CUR_PART_PROFILE_INT_START_TIME_DELIVERED,
+    658                ZCL_DATATYPE_UTC,
+    659                ACCESS_CONTROL_READ,
+    660                (void *)&espCurPartProfileIntStartTimeDelivered
+    661              }
+    662            },
+    663            {
+    664              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    665              {  // Attribute record
+    666                ATTRID_SE_CUR_PART_PROFILE_INT_START_TIME_RECEIVED,
+    667                ZCL_DATATYPE_UTC,
+    668                ACCESS_CONTROL_READ,
+    669                (void *)&espCurPartProfileIntStartTimeReceived
+    670              }
+    671            },
+    672            {
+    673              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    674              {  // Attribute record
+    675                ATTRID_SE_CUR_PART_PROFILE_INT_VALUE_DELIVERED,
+    676                ZCL_DATATYPE_UINT24,
+    677                ACCESS_CONTROL_READ,
+    678                (void *)&espCurPartProfileIntValueDelivered
+    679              }
+    680            },
+    681            {
+    682              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    683              {  // Attribute record
+    684                ATTRID_SE_CUR_PART_PROFILE_INT_VALUE_RECEIVED,
+    685                ZCL_DATATYPE_UINT24,
+    686                ACCESS_CONTROL_READ,
+    687                (void *)&espCurPartProfileIntValueReceived
+    688              }
+    689            },
+    690          
+    691            {
+    692              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+    693              {  // Attribute record
+    694                ATTRID_SE_MAX_NUMBER_OF_PERIODS_DELIVERED,
+    695                ZCL_DATATYPE_UINT8,
+    696                ACCESS_CONTROL_READ,
+    697                (void *)&espMaxNumberOfPeriodsDelivered
+    698              }
+    699            },
+    700            {
+    701              ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+    702              {  // Attribute record
+    703                ATTRID_SE_UTILITY_DEFINED_GROUP,
+    704                ZCL_DATATYPE_UINT8,
+    705                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+    706                (void *)&espUtilityDefinedGroup
+    707              }
+    708            },
+    709            {
+    710              ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+    711              {  // Attribute record
+    712                ATTRID_SE_START_RANDOMIZE_MINUTES,
+    713                ZCL_DATATYPE_UINT8,
+    714                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+    715                (void *)&espStartRandomizeMinutes
+    716              }
+    717            },
+    718            {
+    719              ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+    720              {  // Attribute record
+    721                ATTRID_SE_STOP_RANDOMIZE_MINUTES,
+    722                ZCL_DATATYPE_UINT8,
+    723                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+    724                (void *)&espStopRandomizeMinutes
+    725              }
+    726            },
+    727            {
+    728              ZCL_CLUSTER_ID_GEN_KEY_ESTABLISHMENT,
+    729              {  // Attribute record
+    730                ATTRID_KEY_ESTABLISH_SUITE,
+    731                ZCL_DATATYPE_BITMAP16,
+    732                ACCESS_CONTROL_READ,
+    733                (void *)&espKeyEstablishmentSuite
+    734              }
+    735            },
+    736            {
+    737              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    738              {  // Attribute record
+    739                ATTRID_SE_PAYMENT_CONTROL,
+    740                ZCL_DATATYPE_BITMAP8,
+    741                ACCESS_CONTROL_READ,
+    742                (void *)&espPaymentControl
+    743              }
+    744            },
+    745            {
+    746              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    747              {  // Attribute record
+    748                ATTRID_SE_CREDIT_REMAINING,
+    749                ZCL_DATATYPE_INT32,
+    750                ACCESS_CONTROL_READ,
+    751                (void *)&espCreditRemaining
+    752              }
+    753            },
+    754            {
+    755              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    756              {  // Attribute record
+    757                ATTRID_SE_EMERGENCY_CREDIT_REMAINING,
+    758                ZCL_DATATYPE_INT32,
+    759                ACCESS_CONTROL_READ,
+    760                (void *)&espEmerCreditRemaining
+    761              }
+    762            },
+    763            {
+    764              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    765              {  // Attribute record
+    766                ATTRID_SE_CREDIT_STATUS,
+    767                ZCL_DATATYPE_BITMAP8,
+    768                ACCESS_CONTROL_READ,
+    769                (void *)&espCreditStatus
+    770              }
+    771            },
+    772            {
+    773              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    774              {  // Attribute record
+    775                ATTRID_SE_TOPUP_DATE_TIME_1,
+    776                ZCL_DATATYPE_UTC,
+    777                ACCESS_CONTROL_READ,
+    778                (void *)&espTopUpDateTime1
+    779              }
+    780            },
+    781            {
+    782              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    783              {  // Attribute record
+    784                ATTRID_SE_TOPUP_AMOUNT_1,
+    785                ZCL_DATATYPE_UINT48,
+    786                ACCESS_CONTROL_READ,
+    787                (void *)&espTopUpAmount1
+    788              }
+    789            },
+    790            {
+    791              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    792              {  // Attribute record
+    793                ATTRID_SE_ORIGINATING_DEVICE_1,
+    794                ZCL_DATATYPE_ENUM8,
+    795                ACCESS_CONTROL_READ,
+    796                (void *)&espOrigDev1
+    797              }
+    798            },
+    799            {
+    800              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    801              {  // Attribute record
+    802                ATTRID_SE_TOPUP_DATE_TIME_2,
+    803                ZCL_DATATYPE_UTC,
+    804                ACCESS_CONTROL_READ,
+    805                (void *)&espTopUpDateTime2
+    806              }
+    807            },
+    808            {
+    809              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    810              {  // Attribute record
+    811                ATTRID_SE_TOPUP_AMOUNT_2,
+    812                ZCL_DATATYPE_UINT48,
+    813                ACCESS_CONTROL_READ,
+    814                (void *)&espTopUpAmount2
+    815              }
+    816            },
+    817            {
+    818              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    819              {  // Attribute record
+    820                ATTRID_SE_ORIGINATING_DEVICE_2,
+    821                ZCL_DATATYPE_ENUM8,
+    822                ACCESS_CONTROL_READ,
+    823                (void *)&espOrigDev2
+    824              }
+    825            },
+    826            {
+    827              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    828              {  // Attribute record
+    829                ATTRID_SE_TOPUP_DATE_TIME_3,
+    830                ZCL_DATATYPE_UTC,
+    831                ACCESS_CONTROL_READ,
+    832                (void *)&espTopUpDateTime3
+    833              }
+    834            },
+    835            {
+    836              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    837              {  // Attribute record
+    838                ATTRID_SE_TOPUP_AMOUNT_3,
+    839                ZCL_DATATYPE_UINT48,
+    840                ACCESS_CONTROL_READ,
+    841                (void *)&espTopUpAmount3
+    842              }
+    843            },
+    844            {
+    845              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    846              {  // Attribute record
+    847                ATTRID_SE_ORIGINATING_DEVICE_3,
+    848                ZCL_DATATYPE_ENUM8,
+    849                ACCESS_CONTROL_READ,
+    850                (void *)&espOrigDev3
+    851              }
+    852            },
+    853            {
+    854              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    855              {  // Attribute record
+    856                ATTRID_SE_TOPUP_DATE_TIME_4,
+    857                ZCL_DATATYPE_UTC,
+    858                ACCESS_CONTROL_READ,
+    859                (void *)&espTopUpDateTime4
+    860              }
+    861            },
+    862            {
+    863              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    864              {  // Attribute record
+    865                ATTRID_SE_TOPUP_AMOUNT_4,
+    866                ZCL_DATATYPE_UINT48,
+    867                ACCESS_CONTROL_READ,
+    868                (void *)&espTopUpAmount4
+    869              }
+    870            },
+    871            {
+    872              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    873              {  // Attribute record
+    874                ATTRID_SE_ORIGINATING_DEVICE_4,
+    875                ZCL_DATATYPE_ENUM8,
+    876                ACCESS_CONTROL_READ,
+    877                (void *)&espOrigDev4
+    878              }
+    879            },
+    880            {
+    881              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    882              {  // Attribute record
+    883                ATTRID_SE_TOPUP_DATE_TIME_5,
+    884                ZCL_DATATYPE_UTC,
+    885                ACCESS_CONTROL_READ,
+    886                (void *)&espTopUpDateTime5
+    887              }
+    888            },
+    889            {
+    890              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    891              {  // Attribute record
+    892                ATTRID_SE_TOPUP_AMOUNT_5,
+    893                ZCL_DATATYPE_UINT48,
+    894                ACCESS_CONTROL_READ,
+    895                (void *)&espTopUpAmount5
+    896              }
+    897            },
+    898            {
+    899              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    900              {  // Attribute record
+    901                ATTRID_SE_ORIGINATING_DEVICE_5,
+    902                ZCL_DATATYPE_ENUM8,
+    903                ACCESS_CONTROL_READ,
+    904                (void *)&espOrigDev5
+    905              }
+    906            },
+    907            {
+    908              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    909              {  // Attribute record
+    910                ATTRID_SE_FUEL_DEBT_REMAINING,
+    911                ZCL_DATATYPE_UINT48,
+    912                ACCESS_CONTROL_READ,
+    913                (void *)&espFuelDebtRem
+    914              }
+    915            },
+    916            {
+    917              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    918              {  // Attribute record
+    919                ATTRID_SE_FUEL_DEBT_RECOVERY_RATE,
+    920                ZCL_DATATYPE_UINT32,
+    921                ACCESS_CONTROL_READ,
+    922                (void *)&espFuelDebtRecRate
+    923              }
+    924            },
+    925            {
+    926              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    927              {  // Attribute record
+    928                ATTRID_SE_FUEL_DEBT_RECOVERY_PERIOD,
+    929                ZCL_DATATYPE_ENUM8,
+    930                ACCESS_CONTROL_READ,
+    931                (void *)&espFuelDebtRecPeriod
+    932              }
+    933            },
+    934            {
+    935              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    936              {  // Attribute record
+    937                ATTRID_SE_NON_FUEL_DEBT_REMAINING,
+    938                ZCL_DATATYPE_UINT48,
+    939                ACCESS_CONTROL_READ,
+    940                (void *)&espNonFuelDebtRem
+    941              }
+    942            },
+    943            {
+    944              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    945              {  // Attribute record
+    946                ATTRID_SE_NON_FUEL_DEBT_RECOVERY_RATE,
+    947                ZCL_DATATYPE_UINT32,
+    948                ACCESS_CONTROL_READ,
+    949                (void *)&espNonFuelDebtRecRate
+    950              }
+    951            },
+    952            {
+    953              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    954              {  // Attribute record
+    955                ATTRID_SE_NON_FUEL_DEBT_RECOVERY_PERIOD,
+    956                ZCL_DATATYPE_ENUM8,
+    957                ACCESS_CONTROL_READ,
+    958                (void *)&espNonFuelDebtRecPeriod
+    959              }
+    960            },
+    961            {
+    962              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    963              {  // Attribute record
+    964                ATTRID_SE_PROPOSED_CHANGE_PROVIDER_ID,
+    965                ZCL_DATATYPE_UINT32,
+    966                ACCESS_CONTROL_READ,
+    967                (void *)&espPropChangeProviderId
+    968              }
+    969            },
+    970            {
+    971              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    972              {  // Attribute record
+    973                ATTRID_SE_PROPOSED_CHANGE_IMPLEMENTATION_TIME,
+    974                ZCL_DATATYPE_UTC,
+    975                ACCESS_CONTROL_READ,
+    976                (void *)&espPropChangeImplemTime
+    977              }
+    978            },
+    979            {
+    980              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    981              {  // Attribute record
+    982                ATTRID_SE_PROPOSED_CHANGE_SUPPLY_STATUS,
+    983                ZCL_DATATYPE_ENUM8,
+    984                ACCESS_CONTROL_READ,
+    985                (void *)&espPropChangeSupplyStatus
+    986              }
+    987            },
+    988            {
+    989              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    990              {  // Attribute record
+    991                ATTRID_SE_DELAYED_SUPPLY_INTERRUPT_VALUE_REMAINING,
+    992                ZCL_DATATYPE_UINT16,
+    993                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+    994                (void *)&espDelayedSuppIntValueRem
+    995              }
+    996            },
+    997            {
+    998              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+    999              {  // Attribute record
+   1000                ATTRID_SE_DELAYED_SUPPLY_INTERRUPT_VALUE_TYPE,
+   1001                ZCL_DATATYPE_ENUM8,
+   1002                ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE,
+   1003                (void *)&espDelayedSuppIntValueType
+   1004              }
+   1005            }
+   1006          };
+   1007          
+   1008          /*********************************************************************
+   1009           * CLUSTER OPTION DEFINITIONS
+   1010           */
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+   1011          zclOptionRec_t espOptions[ESP_MAX_OPTIONS] =
+   \                     espOptions:
+   \   000000                DS8 28
+   \   00001C                REQUIRE `?<Initializer for espOptions>`
+   1012          {
+   1013            // *** General Cluster Options ***
+   1014            {
+   1015              ZCL_CLUSTER_ID_GEN_TIME,                     // Cluster IDs - defined in the foundation (ie. zcl.h)
+   1016              ( AF_EN_SECURITY /*| AF_ACK_REQUEST*/ ),     // Options - Found in AF header (ie. AF.h)
+   1017            },
+   1018          
+   1019            // *** Smart Energy Cluster Options ***
+   1020            {
+   1021              ZCL_CLUSTER_ID_SE_PRICING,
+   1022              ( AF_EN_SECURITY ),
+   1023            },
+   1024            {
+   1025              ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+   1026              ( AF_EN_SECURITY ),
+   1027            },
+   1028            {
+   1029              ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+   1030              ( AF_EN_SECURITY ),
+   1031            },
+   1032            {
+   1033              ZCL_CLUSTER_ID_SE_MESSAGE,
+   1034              ( AF_EN_SECURITY ),
+   1035            },
+   1036            {
+   1037              ZCL_CLUSTER_ID_SE_SE_TUNNELING,
+   1038              ( AF_EN_SECURITY ),
+   1039            },
+   1040            {
+   1041              ZCL_CLUSTER_ID_SE_PREPAYMENT,
+   1042              ( AF_EN_SECURITY ),
+   1043            },
+   1044          };
+   1045          
+   1046          /*********************************************************************
+   1047           * SIMPLE DESCRIPTOR
+   1048           */
+   1049          // This is the Cluster ID List and should be filled with Application
+   1050          // specific cluster IDs.
+   1051          #define ESP_MAX_INCLUSTERS       8
+
+   \                                 In  segment DATA16_C, align 2, align-sorted
+   1052          const cId_t espInClusterList[ESP_MAX_INCLUSTERS] =
+   \                     espInClusterList:
+   \   000000   000003000A00 DC16 0, 3, 10, 1792, 1793, 1794, 1795, 1797
+   \            000701070207
+   \            03070507    
+   1053          {
+   1054            ZCL_CLUSTER_ID_GEN_BASIC,
+   1055            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+   1056            ZCL_CLUSTER_ID_GEN_TIME,
+   1057            ZCL_CLUSTER_ID_SE_PRICING,
+   1058            ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+   1059            ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+   1060            ZCL_CLUSTER_ID_SE_MESSAGE,
+   1061            ZCL_CLUSTER_ID_SE_PREPAYMENT
+   1062          };
+   1063          
+   1064          #define ESP_MAX_OUTCLUSTERS       8
+
+   \                                 In  segment DATA16_C, align 2, align-sorted
+   1065          const cId_t espOutClusterList[ESP_MAX_OUTCLUSTERS] =
+   \                     espOutClusterList:
+   \   000000   000003000A00 DC16 0, 3, 10, 1792, 1793, 1794, 1795, 1797
+   \            000701070207
+   \            03070507    
+   1066          {
+   1067            ZCL_CLUSTER_ID_GEN_BASIC,
+   1068            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+   1069            ZCL_CLUSTER_ID_GEN_TIME,
+   1070            ZCL_CLUSTER_ID_SE_PRICING,
+   1071            ZCL_CLUSTER_ID_SE_LOAD_CONTROL,
+   1072            ZCL_CLUSTER_ID_SE_SIMPLE_METERING,
+   1073            ZCL_CLUSTER_ID_SE_MESSAGE,
+   1074            ZCL_CLUSTER_ID_SE_PREPAYMENT
+   1075          };
+   1076          
+
+   \                                 In  segment DATA16_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy
+   1077          SimpleDescriptionFormat_t espSimpleDesc =
+   \                     espSimpleDesc:
+   \   000000                DS8 14
+   \   00000E                REQUIRE `?<Initializer for espSimpleDesc>`
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espLocationDescription>`:
+   \   000000   102020202020 DC8 16, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32
+   \            202020202020
+   \            2020202020  
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espDeviceEnabled>`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTimeStatus>`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentSummationDelivered`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentSummationReceived>`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentMaxDemandDelivered`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentMaxDemandReceived>`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier1SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier1SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier2SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier2SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier3SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier3SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier4SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier4SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier5SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier5SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier6SummationDeli`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espCurrentTier6SummationRece`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espDFTSummation>`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espDailyFreezeTime>`:
+   \   000000   0100         DC16 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espPowerFactor>`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espDefaultUpdatePeriod>`:
+   \   000000   1E           DC8 30
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espFastPollUpdatePeriod>`:
+   \   000000   05           DC8 5
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espStatus>`:
+   \   000000   12           DC8 18
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espMultiplier>`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espDivisor>`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espSummationFormating>`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espDemandFormatting>`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espHistoricalConsumptionForm`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espInstanteneousDemand>`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurrentdayConsumptionDeli`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurrentdayConsumptionRece`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espPreviousdayConsumptionDel`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espPreviousdayConsumtpionRec`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurPartProfileIntStartTim`:
+   \   000000   00100000     DC32 4096
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurPartProfileIntStartTim_1`:
+   \   000000   00200000     DC32 8192
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurPartProfileIntValueDel`:
+   \   000000   01000000     DC32 1
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espCurPartProfileIntValueRec`:
+   \   000000   02000000     DC32 2
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espMaxNumberOfPeriodsDeliver`:
+   \   000000   01           DC8 1
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espSignature>`:
+   \   000000   000102030405 DC8 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+   \            060708090A0B
+   \            0C0D0E0F    
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTopUpAmount1>`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTopUpAmount2>`:
+   \   000000   223344556677 DC8 34, 51, 68, 85, 102, 119
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTopUpAmount3>`:
+   \   000000   334455667788 DC8 51, 68, 85, 102, 119, 136
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTopUpAmount4>`:
+   \   000000   445566778899 DC8 68, 85, 102, 119, 136, 153
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espTopUpAmount5>`:
+   \   000000   5566778899AA DC8 85, 102, 119, 136, 153, 170
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espFuelDebtRem>`:
+   \   000000   112233445566 DC8 17, 34, 51, 68, 85, 102
+
+   \                                 In  segment DATA16_ID, align 1, align-sorted
+   \                     `?<Initializer for espNonFuelDebtRem>`:
+   \   000000   223344556677 DC8 34, 51, 68, 85, 102, 119
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espOptions>`:
+   \   000000   0A00         DC16 10
+   \   000002   4000         DC8 64, 0
+   \   000004   0007         DC16 1792
+   \   000006   4000         DC8 64, 0
+   \   000008   0107         DC16 1793
+   \   00000A   4000         DC8 64, 0
+   \   00000C   0207         DC16 1794
+   \   00000E   4000         DC8 64, 0
+   \   000010   0307         DC16 1795
+   \   000012   4000         DC8 64, 0
+   \   000014   0407         DC16 1796
+   \   000016   4000         DC8 64, 0
+   \   000018   0507         DC16 1797
+   \   00001A   4000         DC8 64, 0
+
+   \                                 In  segment DATA16_ID, align 2, align-sorted
+   \                     `?<Initializer for espSimpleDesc>`:
+   \   000000   0900         DC8 9, 0
+   \   000002   09010005     DC16 265, 1280
+   \   000006   0008         DC8 0, 8
+   \   000008   ....         DC16 espInClusterList
+   \   00000A   0800         DC8 8, 0
+   \   00000C   ....         DC16 espOutClusterList
+   1078          {
+   1079            ESP_ENDPOINT,                   //  uint8 Endpoint;
+   1080            ZCL_SE_PROFILE_ID,              //  uint16 AppProfId[2];
+   1081            ZCL_SE_DEVICEID_ESP,            //  uint16 AppDeviceId[2];
+   1082            ESP_DEVICE_VERSION,             //  int   AppDevVer:4;
+   1083            ESP_FLAGS,                      //  int   AppFlags:4;
+   1084            ESP_MAX_INCLUSTERS,             //  uint8  AppNumInClusters;
+   1085            (cId_t *)espInClusterList,      //  cId_t *pAppInClusterList;
+   1086            ESP_MAX_OUTCLUSTERS,            //  uint8  AppNumInClusters;
+   1087            (cId_t *)espOutClusterList      //  cId_t *pAppInClusterList;
+   1088          };
+   1089          
+   1090          /*********************************************************************
+   1091           * GLOBAL FUNCTIONS
+   1092           */
+   1093          
+   1094          /*********************************************************************
+   1095           * LOCAL FUNCTIONS
+   1096           */
+   1097          
+   1098          /****************************************************************************
+   1099          ****************************************************************************/
+   1100          
+   1101          
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ?<Initializer for espCurPartProfileIntStartTim
+       4  ?<Initializer for espCurPartProfileIntStartTim_1
+       4  ?<Initializer for espCurPartProfileIntValueDel
+       4  ?<Initializer for espCurPartProfileIntValueRec
+       6  ?<Initializer for espCurrentMaxDemandDelivered
+       6  ?<Initializer for espCurrentMaxDemandReceived>
+       6  ?<Initializer for espCurrentSummationDelivered
+       6  ?<Initializer for espCurrentSummationReceived>
+       6  ?<Initializer for espCurrentTier1SummationDeli
+       6  ?<Initializer for espCurrentTier1SummationRece
+       6  ?<Initializer for espCurrentTier2SummationDeli
+       6  ?<Initializer for espCurrentTier2SummationRece
+       6  ?<Initializer for espCurrentTier3SummationDeli
+       6  ?<Initializer for espCurrentTier3SummationRece
+       6  ?<Initializer for espCurrentTier4SummationDeli
+       6  ?<Initializer for espCurrentTier4SummationRece
+       6  ?<Initializer for espCurrentTier5SummationDeli
+       6  ?<Initializer for espCurrentTier5SummationRece
+       6  ?<Initializer for espCurrentTier6SummationDeli
+       6  ?<Initializer for espCurrentTier6SummationRece
+       4  ?<Initializer for espCurrentdayConsumptionDeli
+       4  ?<Initializer for espCurrentdayConsumptionRece
+       6  ?<Initializer for espDFTSummation>
+       2  ?<Initializer for espDailyFreezeTime>
+       1  ?<Initializer for espDefaultUpdatePeriod>
+       1  ?<Initializer for espDemandFormatting>
+       1  ?<Initializer for espDeviceEnabled>
+       4  ?<Initializer for espDivisor>
+       1  ?<Initializer for espFastPollUpdatePeriod>
+       6  ?<Initializer for espFuelDebtRem>
+       1  ?<Initializer for espHistoricalConsumptionForm
+       4  ?<Initializer for espInstanteneousDemand>
+      17  ?<Initializer for espLocationDescription>
+       1  ?<Initializer for espMaxNumberOfPeriodsDeliver
+       4  ?<Initializer for espMultiplier>
+       6  ?<Initializer for espNonFuelDebtRem>
+      28  ?<Initializer for espOptions>
+       1  ?<Initializer for espPowerFactor>
+       4  ?<Initializer for espPreviousdayConsumptionDel
+       4  ?<Initializer for espPreviousdayConsumtpionRec
+      16  ?<Initializer for espSignature>
+      14  ?<Initializer for espSimpleDesc>
+       1  ?<Initializer for espStatus>
+       1  ?<Initializer for espSummationFormating>
+       1  ?<Initializer for espTimeStatus>
+       6  ?<Initializer for espTopUpAmount1>
+       6  ?<Initializer for espTopUpAmount2>
+       6  ?<Initializer for espTopUpAmount3>
+       6  ?<Initializer for espTopUpAmount4>
+       6  ?<Initializer for espTopUpAmount5>
+     712  espAttrs
+       4  espCreditRemaining
+       1  espCreditStatus
+       4  espCurPartProfileIntStartTimeDelivered
+       4  espCurPartProfileIntStartTimeReceived
+       4  espCurPartProfileIntValueDelivered
+       4  espCurPartProfileIntValueReceived
+       6  espCurrentMaxDemandDelivered
+       6  espCurrentMaxDemandReceived
+       6  espCurrentSummationDelivered
+       6  espCurrentSummationReceived
+       6  espCurrentTier1SummationDelivered
+       6  espCurrentTier1SummationReceived
+       6  espCurrentTier2SummationDelivered
+       6  espCurrentTier2SummationReceived
+       6  espCurrentTier3SummationDelivered
+       6  espCurrentTier3SummationReceived
+       6  espCurrentTier4SummationDelivered
+       6  espCurrentTier4SummationReceived
+       6  espCurrentTier5SummationDelivered
+       6  espCurrentTier5SummationReceived
+       6  espCurrentTier6SummationDelivered
+       6  espCurrentTier6SummationReceived
+       4  espCurrentdayConsumptionDelivered
+       4  espCurrentdayConsumptionReceived
+       6  espDFTSummation
+       2  espDailyFreezeTime
+      17  espDateCode
+       1  espDefaultUpdatePeriod
+       2  espDelayedSuppIntValueRem
+       1  espDelayedSuppIntValueType
+       1  espDemandFormatting
+       1  espDeviceEnabled
+       4  espDivisor
+       4  espEmerCreditRemaining
+       1  espFastPollUpdatePeriod
+       1  espFuelDebtRecPeriod
+       4  espFuelDebtRecRate
+       6  espFuelDebtRem
+       1  espHWVersion
+       1  espHistoricalConsumptionFormatting
+       2  espIdentifyTime
+      16  espInClusterList
+       4  espInstanteneousDemand
+       2  espKeyEstablishmentSuite
+       4  espLastSetTime
+      17  espLocationDescription
+      17  espManufacturerName
+       4  espMaxDemandDeliverdTime
+       4  espMaxDemandReceivedTime
+       1  espMaxNumberOfPeriodsDelivered
+      17  espModelId
+       4  espMultiplier
+       1  espNonFuelDebtRecPeriod
+       4  espNonFuelDebtRecRate
+       6  espNonFuelDebtRem
+      28  espOptions
+       1  espOrigDev1
+       1  espOrigDev2
+       1  espOrigDev3
+       1  espOrigDev4
+       1  espOrigDev5
+      16  espOutClusterList
+       1  espPaymentControl
+       1  espPhysicalEnvironment
+       1  espPowerFactor
+       1  espPowerSource
+       4  espPreviousdayConsumptionDelivered
+       4  espPreviousdayConsumtpionReceived
+       4  espPropChangeImplemTime
+       4  espPropChangeProviderId
+       1  espPropChangeSupplyStatus
+      16  espSignature
+      14  espSimpleDesc
+       4  espSnapshotTime
+       1  espStartRandomizeMinutes
+       1  espStatus
+       1  espStopRandomizeMinutes
+       1  espSummationFormating
+       4  espTime
+       1  espTimeStatus
+       6  espTopUpAmount1
+       6  espTopUpAmount2
+       6  espTopUpAmount3
+       6  espTopUpAmount4
+       6  espTopUpAmount5
+       4  espTopUpDateTime1
+       4  espTopUpDateTime2
+       4  espTopUpDateTime3
+       4  espTopUpDateTime4
+       4  espTopUpDateTime5
+       1  espUnitOfMeasure
+       1  espUtilityDefinedGroup
+       4  espValidUntilTime
+       1  espZCLVersion
+
+ 
+ 798 bytes in segment DATA16_C
+ 275 bytes in segment DATA16_I
+ 275 bytes in segment DATA16_ID
+  90 bytes in segment DATA16_Z
+ 
+ 1 073 bytes of CONST memory
+   365 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,493 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      29/Jan/2012  16:16:34 /
+// IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  small                                                  /
+//    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\Source\zap_certs.c                                 /
+//    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"     /
+//                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI           /
+//                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE            /
+//                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE              /
+//                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE              /
+//                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                 /
+//                     -DZAP_AF_DATA_REQ_FRAG=FALSE                           /
+//                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG           /
+//                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC              /
+//                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC         /
+//                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0        /
+//                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                /
+//                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000          /
+//                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f  /
+//                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack /
+//                     \ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZC /
+//                     L.cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC             /
+//                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH        /
+//                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4         /
+//                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10        /
+//                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10       /
+//                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING               /
+//                     -DZCL_PRICING -DZCL_MESSAGE) "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\Sourc /
+//                     e\zap_certs.c" -D ZAP_DEVICETYPE=ZG_DEVICETYPE_COORDIN /
+//                     ATOR -D TC_LINKKEY_JOIN -D ZCL_REPORT -D INTER_PAN     /
+//                     -lC "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zs /
+//                     tack\ZAP\SE-SampleApp\EXP5438\ESP -                    /
+//                     Coordinator\List\" -lA "C:\Texas                       /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\ESP - Coordinator\List\" --remarks     /
+//                     --diag_suppress Pe001,Pe193,Pe236,Pe826 -o "C:\Texas   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\ESP - Coordinator\Obj\" --debug        /
+//                     -D__MSP430F5438A__ -e --double=32 --clib -I "C:\Texas  /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\" -I "C:\Texas                         /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\Source\" -I "C:\Texas               /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\Source\" -I "C:\Texas            /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\hal\target\M /
+//                     SP5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ /
+//                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\. /
+//                     .\Components\hal\include\" -I "C:\Texas                /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\mac\include\ /
+//                     " -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z /
+//                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen /
+//                     ts\mt\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\osal\include\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp /
+//                     430\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projec /
+//                     ts\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Comp /
+//                     onents\services\saddr\" -I "C:\Texas                   /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\services\sda /
+//                     ta\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Project /
+//                     s\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Compo /
+//                     nents\stack\af\" -I "C:\Texas                          /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\nwk\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sapi\" -I "C:\Texas                             /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\sec\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \stack\sys\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0 /
+//                     \Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\ /
+//                     ..\Components\stack\zcl\" -I "C:\Texas                 /
+//                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sa /
+//                     mpleApp\EXP5438\..\..\..\..\..\Components\stack\zdo\"  /
+//                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zst /
+//                     ack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components /
+//                     \zmac\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Proj /
+//                     ects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co /
+//                     mponents\zmac\f8w\" --core=430X --data_model=small     /
+//                     -Ohz --multiplier=32 --multiplier_location=4C0         /
+//                     --require_prototypes --hw_workaround=CPU40             /
+//    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ /
+//                     ZAP\SE-SampleApp\EXP5438\ESP -                         /
+//                     Coordinator\List\zap_certs.s43                         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zap_certs
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC certData0x69
+        PUBLIC certData0x6A
+        PUBLIC certData0x6B
+        PUBLIC certIEEE
+        PUBLIC zapCertSync
+        FUNCTION zapCertSync,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 6, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H 0
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H 0
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H 0
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H 0
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H 0
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H 0
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H 0
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H 0
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN znp_nv_write
+        FUNCTION znp_nv_write,0202H
+        EXTERN zapAppPort
+        EXTERN zapPhyWait
+        FUNCTION zapPhyWait,0202H
+
+// C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\Source\zap_certs.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zap_certs.c
+//    3   Revised:        $Date: 2010-03-18 11:11:36 -0700 (Thu, 18 Mar 2010) $
+//    4   Revision:       $Revision: 21931 $
+//    5 
+//    6   Description:
+//    7 
+//    8   This file defines the ZAP Application Processor special support for Certificate Data
+//    9   for ECC SECURITY.
+//   10 
+//   11 
+//   12   Copyright 2009-2010 Texas Instruments Incorporated. All rights reserved.
+//   13 
+//   14   IMPORTANT: Your use of this Software is limited to those specific rights
+//   15   granted under the terms of a software license agreement between the user
+//   16   who downloaded the software, his/her employer (which must be your employer)
+//   17   and Texas Instruments Incorporated (the "License").  You may not use this
+//   18   Software unless you agree to abide by the terms of the License. The License
+//   19   limits your use, and you acknowledge, that the Software may not be modified,
+//   20   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   21   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   22   frequency transceiver, which is integrated into your product.  Other than for
+//   23   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   24   works of, modify, distribute, perform, display or sell this Software and/or
+//   25   its documentation for any purpose.
+//   26 
+//   27   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   28   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   29   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   30   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   31   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   32   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   33   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   34   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   35   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   36   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   37   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   38 
+//   39   Should you have any questions regarding your right to use this Software,
+//   40   contact Texas Instruments Incorporated at www.TI.com.
+//   41 
+//   42 **************************************************************************************************/
+//   43 
+//   44 /* ------------------------------------------------------------------------------------------------
+//   45  *                                          Includes
+//   46  * ------------------------------------------------------------------------------------------------
+//   47  */
+//   48 
+//   49 #include "hal_board.h"
+//   50 #include "zap_app.h"
+//   51 #include "zap_phy.h"
+//   52 #include "zap_znp.h"
+//   53 
+//   54 #if defined TC_LINKKEY_JOIN
+//   55 /* ------------------------------------------------------------------------------------------------
+//   56  *                                           Constants
+//   57  * ------------------------------------------------------------------------------------------------
+//   58  */
+//   59 
+//   60 // The unique IEEE is mangled into the following 3 certificates using
+//   61 // the certificate generation tool from Certicom.
+//   62 #if (ZG_DEVICETYPE_COORDINATOR == ZAP_DEVICETYPE)
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   63 const uint8 certIEEE[] = {
+certIEEE:
+        DC8 1, 0, 0, 0, 0, 75, 18, 0
+//   64   0x01, 0x00, 0x00, 0x00, 0x00, 0x4b, 0x12, 0x00
+//   65 };
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   66 const uint8 certData0x69[] = {
+certData0x69:
+        DC8 3, 7, 140, 69, 222, 165, 6, 208, 127, 27, 130, 33, 34, 181, 163, 30
+        DC8 176, 160, 214, 41, 85, 219, 0, 18, 75, 0, 0, 0, 0, 1, 84, 69, 83
+        DC8 84, 83, 69, 67, 65, 1, 9, 0, 8, 0, 0, 0, 0, 0, 0
+//   67   0x03, 0x07, 0x8c, 0x45, 0xde, 0xa5, 0x06, 0xd0,
+//   68   0x7f, 0x1b, 0x82, 0x21, 0x22, 0xb5, 0xa3, 0x1e,
+//   69   0xb0, 0xa0, 0xd6, 0x29, 0x55, 0xdb, 0x00, 0x12,
+//   70   0x4b, 0x00, 0x00, 0x00, 0x00, 0x01, 0x54, 0x45,
+//   71   0x53, 0x54, 0x53, 0x45, 0x43, 0x41, 0x01, 0x09,
+//   72   0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+//   73 };
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   74 const uint8 certData0x6A[] = {
+certData0x6A:
+        DC8 2, 40, 74, 86, 63, 2, 242, 200, 189, 167, 87, 249, 97, 187, 140
+        DC8 180, 251, 110, 144, 237, 66
+//   75   0x02, 0x28, 0x4a, 0x56, 0x3f, 0x02, 0xf2, 0xc8,
+//   76   0xbd, 0xa7, 0x57, 0xf9, 0x61, 0xbb, 0x8c, 0xb4,
+//   77   0xfb, 0x6e, 0x90, 0xed, 0x42
+//   78 };
+
+        RSEG DATA16_C:CONST:SORT:NOROOT(0)
+//   79 const uint8 certData0x6B[] = {
+certData0x6B:
+        DC8 2, 0, 253, 232, 167, 243, 209, 8, 66, 36, 150, 42, 78, 124, 84, 230
+        DC8 154, 195, 240, 77, 166, 184
+//   80   0x02, 0x00, 0xfd, 0xe8, 0xa7, 0xf3, 0xd1, 0x08,
+//   81   0x42, 0x24, 0x96, 0x2a, 0x4e, 0x7c, 0x54, 0xe6,
+//   82   0x9a, 0xc3, 0xf0, 0x4d, 0xa6, 0xb8
+//   83 };
+//   84 #elif (ZG_DEVICETYPE_ROUTER == ZAP_DEVICETYPE)
+//   85 const uint8 certIEEE[] = {
+//   86   0x02, 0x00, 0x00, 0x00, 0x00, 0x4b, 0x12, 0x00
+//   87 };
+//   88 const uint8 certData0x69[] = {
+//   89   0x03, 0x06, 0x9b, 0xc9, 0x8f, 0x75, 0x1f, 0xba,
+//   90   0x22, 0xdb, 0xca, 0xd6, 0x4a, 0x7d, 0x46, 0x2c,
+//   91   0x20, 0x9c, 0x2e, 0xd9, 0x01, 0x5f, 0x00, 0x12,
+//   92   0x4b, 0x00, 0x00, 0x00, 0x00, 0x02, 0x54, 0x45,
+//   93   0x53, 0x54, 0x53, 0x45, 0x43, 0x41, 0x01, 0x09,
+//   94   0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+//   95 };
+//   96 const uint8 certData0x6A[] = {
+//   97   0x03, 0x7a, 0xd5, 0x45, 0xab, 0xa5, 0xf7, 0x47,
+//   98   0xe4, 0x0a, 0x24, 0xea, 0x85, 0x50, 0x4c, 0x47,
+//   99   0x39, 0x8c, 0x97, 0xf4, 0x96
+//  100 };
+//  101 const uint8 certData0x6B[] = {
+//  102   0x02, 0x00, 0xfd, 0xe8, 0xa7, 0xf3, 0xd1, 0x08,
+//  103   0x42, 0x24, 0x96, 0x2a, 0x4e, 0x7c, 0x54, 0xe6,
+//  104   0x9a, 0xc3, 0xf0, 0x4d, 0xa6, 0xb8
+//  105 };
+//  106 #elif (ZG_DEVICETYPE_ENDDEVICE == ZAP_DEVICETYPE)
+//  107 const uint8 certIEEE[] = {
+//  108   0x03, 0x00, 0x00, 0x00, 0x00, 0x4b, 0x12, 0x00
+//  109 };
+//  110 const uint8 certData0x69[] = {
+//  111   0x02, 0x04, 0xac, 0x2c, 0x26, 0x56, 0xf1, 0xee,
+//  112   0xa4, 0xff, 0x5d, 0xac, 0x4e, 0xdd, 0xa1, 0x76,
+//  113   0xbf, 0xe4, 0xfa, 0x70, 0xd9, 0x56, 0x00, 0x12,
+//  114   0x4b, 0x00, 0x00, 0x00, 0x00, 0x03, 0x54, 0x45,
+//  115   0x53, 0x54, 0x53, 0x45, 0x43, 0x41, 0x01, 0x09,
+//  116   0x00, 0x01, 0x00, 0x00, 0x01, 0x09, 0x10, 0x03
+//  117 };
+//  118 const uint8 certData0x6A[] = {
+//  119   0x03, 0x4b, 0xc3, 0x7a, 0x72, 0x10, 0xb7, 0x40,
+//  120   0x7a, 0x51, 0xdc, 0x11, 0xe5, 0xae, 0xba, 0xf2,
+//  121   0xe1, 0x50, 0x3f, 0x69, 0x55
+//  122 };
+//  123 const uint8 certData0x6B[] = {
+//  124   0x02, 0x00, 0xfd, 0xe8, 0xa7, 0xf3, 0xd1, 0x08,
+//  125   0x42, 0x24, 0x96, 0x2a, 0x4e, 0x7c, 0x54, 0xe6,
+//  126   0x9a, 0xc3, 0xf0, 0x4d, 0xa6, 0xb8
+//  127 };
+//  128 #else
+//  129 #error Add data for this device type.
+//  130 #endif
+//  131 
+//  132 /* ------------------------------------------------------------------------------------------------
+//  133  *                                           Macros
+//  134  * ------------------------------------------------------------------------------------------------
+//  135  */
+//  136 
+//  137 /* ------------------------------------------------------------------------------------------------
+//  138  *                                           Global Variables
+//  139  * ------------------------------------------------------------------------------------------------
+//  140  */
+//  141 
+//  142 /* ------------------------------------------------------------------------------------------------
+//  143  *                                           Local Variables
+//  144  * ------------------------------------------------------------------------------------------------
+//  145  */
+//  146 
+//  147 /* ------------------------------------------------------------------------------------------------
+//  148  *                                           Local Functions
+//  149  * ------------------------------------------------------------------------------------------------
+//  150  */
+//  151 
+//  152 /**************************************************************************************************
+//  153  * @fn          zapCertSync
+//  154  *
+//  155  * @brief       This function syncs the Certificate data with the ZNP.
+//  156  *
+//  157  * input parameters
+//  158  *
+//  159  * None.
+//  160  *
+//  161  * output parameters
+//  162  *
+//  163  * None.
+//  164  *
+//  165  * @return      None.
+//  166  **************************************************************************************************
+//  167  */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  168 void zapCertSync(void)
+zapCertSync:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zapCertSync
+//  169 {
+        FUNCALL zapCertSync, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zapCertSync, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zapCertSync, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zapCertSync, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zapCertSync, znp_nv_write
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL zapCertSync, zapPhyWait
+        LOCFRAME CSTACK, 6, STACK
+        SUB.W   #0x2, SP
+          CFI CFA SP+6
+//  170 #if (ZG_DEVICETYPE_ENDDEVICE == ZAP_DEVICETYPE)
+//  171   uint8 tmp = 20;
+//  172   (void)znp_nv_write(ZCD_NV_POLL_FAILURE_RETRIES, 0, 1, &tmp);
+//  173 #else
+//  174   uint8 tmp = 10;
+        MOV.B   #0xa, 0(SP)
+//  175   (void)znp_nv_write(ZCD_NV_INDIRECT_MSG_TIMEOUT, 0, 1, &tmp);
+        MOV.W   SP, R15
+        MOV.B   #0x1, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x2b, R12
+        CALLA   #znp_nv_write
+//  176 #endif
+//  177   // Program the necessary certificate data (done in Z-Stack apps by Z-Tool).
+//  178   (void)znp_nv_write(ZCD_NV_IMPLICIT_CERTIFICATE,  0, sizeof(certData0x69), (uint8 *)certData0x69);
+        MOV.W   #certData0x69, R15
+        MOV.B   #0x30, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x69, R12
+        CALLA   #znp_nv_write
+//  179   (void)znp_nv_write(ZCD_NV_DEVICE_PRIVATE_KEY, 0, sizeof(certData0x6A), (uint8 *)certData0x6A);
+        MOV.W   #certData0x6A, R15
+        MOV.B   #0x15, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x6a, R12
+        CALLA   #znp_nv_write
+//  180   (void)znp_nv_write(ZCD_NV_CA_PUBLIC_KEY,      0, sizeof(certData0x6B), (uint8 *)certData0x6B);
+        MOV.W   #certData0x6B, R15
+        MOV.B   #0x16, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x6b, R12
+        CALLA   #znp_nv_write
+//  181   (void)znp_nv_write(ZCD_NV_EXTADDR,            0, sizeof(certIEEE),     (uint8 *)certIEEE);
+        MOV.W   #certIEEE, R15
+        MOV.B   #0x8, R14
+        MOV.B   #0x0, R13
+        MOV.W   #0x1, R12
+        CALLA   #znp_nv_write
+//  182 
+//  183   // The ZAP can never know when the ZNP is being requested to crunch an ecc key, so the max wait
+//  184   // time must be permanently super-extended.
+//  185   zapPhyWait(zapAppPort, ZCL_KEY_EST_INIT_EST_WAIT);
+        MOV.W   #0x7530, R13
+        MOV.B   &zapAppPort, R12
+        CALLA   #zapPhyWait
+//  186 }
+        ADD.W   #0x2, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  187 #endif
+//  188 
+//  189 /**************************************************************************************************
+//  190 */
+// 
+// 106 bytes in segment CODE
+//  99 bytes in segment DATA16_C
+// 
+// 106 bytes of CODE  memory
+//  99 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

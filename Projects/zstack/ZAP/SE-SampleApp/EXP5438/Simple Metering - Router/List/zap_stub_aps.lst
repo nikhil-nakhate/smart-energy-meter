@@ -1,0 +1,324 @@
+###############################################################################
+#                                                                             #
+#                                                       29/Jan/2012  18:16:03 #
+# IAR C/C++ Compiler V5.40.2.20380/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  small                                                   #
+#    Source file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\Source\zap_stub_aps.c                                #
+#    Command line  =  -f "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\Source\zap.cfg"       #
+#                     (-DZAP_PHY_SPI=1 -DZAP_PHY_UART=!ZAP_PHY_SPI            #
+#                     -DZAP_PHY_RESET_ZNP=TRUE -DZAP_ZNP_MT=FALSE             #
+#                     -DZAP_APP_MSG=FALSE -DZAP_SBL_PROXY=FALSE               #
+#                     -DZAP_AUTO_CFG=TRUE -DZAP_AUTO_START=TRUE               #
+#                     -DZAP_NV_RESTORE=FALSE -DLCD_SUPPORTED                  #
+#                     -DZAP_AF_DATA_REQ_FRAG=FALSE                            #
+#                     -DZAP_AF_DATA_REQ_AREQ=!ZAP_AF_DATA_REQ_FRAG            #
+#                     -DZAP_ZDO_STARTUP_AREQ=TRUE -DZAP_AF_FUNC               #
+#                     -DZAP_SAPI_FUNC -DZAP_SYS_FUNC -DZAP_UTIL_FUNC          #
+#                     -DZAP_ZDO_FUNC -DSECURE=0 -DZG_SECURE_DYNAMIC=0         #
+#                     "-DDEFAULT_CHANLIST=(uint32)0x00000800"                 #
+#                     -DZDAPP_CONFIG_PAN_ID=0xFFFF -DPOLL_RATE=1000           #
+#                     -DNWK_START_DELAY=100 -DMAX_BINDING_CLUSTER_IDS=4) -f   #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\..\..\..\Tools\MSP5438\f8wZCL. #
+#                     cfg" (-DZCL_READ -DZCL_WRITE -DZCL_BASIC                #
+#                     -DZCL_IDENTIFY -DZCL_ON_OFF -DZCL_KEY_ESTABLISH         #
+#                     -DZCL_KEY_ESTABLISHMENT_KEY_GENERATE_TIMEOUT=4          #
+#                     -DZCL_KEY_ESTABLISHMENT_MAC_GENERATE_TIMEOUT=10         #
+#                     -DZCL_KEY_ESTABLISHMENT_EKEY_GENERATE_TIMEOUT=10        #
+#                     -DZCL_LOAD_CONTROL -DZCL_SIMPLE_METERING -DZCL_PRICING  #
+#                     -DZCL_MESSAGE) "C:\Texas Instruments\ZAP-MSP430-2.5.0\P #
+#                     rojects\zstack\ZAP\Source\zap_stub_aps.c" -D            #
+#                     ZAP_DEVICETYPE=ZG_DEVICETYPE_ROUTER -D TC_LINKKEY_JOIN  #
+#                     -D ZCL_REPORT -lC "C:\Texas                             #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\Simple Metering - Router\List\" -lA      #
+#                     "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ #
+#                     ZAP\SE-SampleApp\EXP5438\Simple Metering -              #
+#                     Router\List\" --remarks --diag_suppress                 #
+#                     Pe001,Pe193,Pe236,Pe826 -o "C:\Texas                    #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\Simple Metering - Router\Obj\" --debug   #
+#                     -D__MSP430F5438A__ -e --double=32 --clib -I "C:\Texas   #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\" -I "C:\Texas                           #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\Source\" -I "C:\Texas                 #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\Source\" -I "C:\Texas              #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\hal\target\MSP #
+#                     5438ZAP\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pro #
+#                     jects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Co #
+#                     mponents\hal\include\" -I "C:\Texas                     #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\mac\include\"  #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\m #
+#                     t\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\ #
+#                     zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen #
+#                     ts\osal\include\" -I "C:\Texas                          #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\osal\mcu\msp43 #
+#                     0\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\ #
+#                     zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Componen #
+#                     ts\services\saddr\" -I "C:\Texas                        #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\services\sdata #
+#                     \" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\z #
+#                     stack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Component #
+#                     s\stack\af\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\ #
+#                     Projects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\.. #
+#                     \Components\stack\nwk\" -I "C:\Texas                    #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\stack\sapi\"   #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\s #
+#                     tack\sec\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pr #
+#                     ojects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\C #
+#                     omponents\stack\sys\" -I "C:\Texas                      #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\stack\zcl\"    #
+#                     -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zsta #
+#                     ck\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\Components\s #
+#                     tack\zdo\" -I "C:\Texas Instruments\ZAP-MSP430-2.5.0\Pr #
+#                     ojects\zstack\ZAP\SE-SampleApp\EXP5438\..\..\..\..\..\C #
+#                     omponents\zmac\" -I "C:\Texas                           #
+#                     Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\SE-Sam #
+#                     pleApp\EXP5438\..\..\..\..\..\Components\zmac\f8w\"     #
+#                     --core=430X --data_model=small -Ohz --multiplier=32     #
+#                     --multiplier_location=4C0 --require_prototypes          #
+#                     --hw_workaround=CPU40                                   #
+#    List file     =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\SE-SampleApp\EXP5438\Simple Metering -               #
+#                     Router\List\zap_stub_aps.lst                            #
+#    Object file   =  C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\Z #
+#                     AP\SE-SampleApp\EXP5438\Simple Metering -               #
+#                     Router\Obj\zap_stub_aps.r43                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZAP-MSP430-2.5.0\Projects\zstack\ZAP\Source\zap_stub_aps.c
+      1          /**************************************************************************************************
+      2            Filename:       zap_stub_aps.c
+      3            Revised:        $Date: 2010-01-18 12:20:01 -0800 (Mon, 18 Jan 2010) $
+      4            Revision:       $Revision: 21540 $
+      5          
+      6            Description:
+      7          
+      8            This file defines the ZNP Application Processor API to the ZNP ZMAC layer.
+      9          
+     10            
+     11            Copyright 2009 Texas Instruments Incorporated. All rights reserved.
+     12          
+     13            IMPORTANT: Your use of this Software is limited to those specific rights
+     14            granted under the terms of a software license agreement between the user
+     15            who downloaded the software, his/her employer (which must be your employer)
+     16            and Texas Instruments Incorporated (the "License").  You may not use this
+     17            Software unless you agree to abide by the terms of the License. The License
+     18            limits your use, and you acknowledge, that the Software may not be modified,
+     19            copied or distributed unless embedded on a Texas Instruments microcontroller
+     20            or used solely and exclusively in conjunction with a Texas Instruments radio
+     21            frequency transceiver, which is integrated into your product.  Other than for
+     22            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     23            works of, modify, distribute, perform, display or sell this Software and/or
+     24            its documentation for any purpose.
+     25          
+     26            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     27            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     28            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     29            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     30            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     31            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     32            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     33            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     34            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     35            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     36            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     37          
+     38            Should you have any questions regarding your right to use this Software,
+     39            contact Texas Instruments Incorporated at www.TI.com.
+     40          
+     41          **************************************************************************************************/
+     42          
+     43          /* ------------------------------------------------------------------------------------------------
+     44           *                                          Includes
+     45           * ------------------------------------------------------------------------------------------------
+     46           */
+     47          
+     48          #include "mt.h"
+     49          #include "mt_af.h"
+     50          #include "mt_rpc.h"
+     51          #include "stub_aps.h"
+     52          #include "zap_app.h"
+     53          #include "zap_phy.h"
+     54          
+     55          #if defined INTER_PAN
+     56          /* ------------------------------------------------------------------------------------------------
+     57           *                                           Constants
+     58           * ------------------------------------------------------------------------------------------------
+     59           */
+     60          
+     61          /* ------------------------------------------------------------------------------------------------
+     62           *                                           Macros
+     63           * ------------------------------------------------------------------------------------------------
+     64           */
+     65          
+     66          /* ------------------------------------------------------------------------------------------------
+     67           *                                           Global Variables
+     68           * ------------------------------------------------------------------------------------------------
+     69           */
+     70          
+     71          /* ------------------------------------------------------------------------------------------------
+     72           *                                           Local Variables
+     73           * ------------------------------------------------------------------------------------------------
+     74           */
+     75          
+     76          static uint8 appEndPoint = 0;   // Application endpoint.
+     77          
+     78          /* ------------------------------------------------------------------------------------------------
+     79           *                                           Local Functions
+     80           * ------------------------------------------------------------------------------------------------
+     81           */
+     82          
+     83          static uint8 StubAPS_InterPanReq(uint8 len, uint8 *req);
+     84          
+     85          /**************************************************************************************************
+     86           * @fn          StubAPS_InterPanReq
+     87           *
+     88           * @brief       This function proxies a request to the MT_AfInterPanCtl.
+     89           *
+     90           * input parameters
+     91           *
+     92           * @param       len - Length of the request.
+     93           * @param       req - Inter-Pan control command request according to the InterPanParam_t.
+     94           *
+     95           * output parameters
+     96           *
+     97           * None.
+     98           *
+     99           * @return      TRUE if the Inter-PAN control command suceeded, FALSE otherwise
+    100           **************************************************************************************************
+    101           */
+    102          static uint8 StubAPS_InterPanReq(uint8 len, uint8 *req)
+    103          {
+    104            uint8 *pBuf = zap_msg_allocate(len, (uint8)MT_RPC_SYS_AF | (uint8)MT_RPC_CMD_SREQ,
+    105                                                                       (uint8)MT_AF_INTER_PAN_CTL);
+    106            uint8 rtrn = FALSE;
+    107          
+    108            if (NULL != pBuf)
+    109            {
+    110              (void)osal_memcpy(pBuf, req, len);
+    111              zapPhySend(zapAppPort, pBuf);
+    112              rtrn = *pBuf;
+    113              zap_msg_deallocate(&pBuf);
+    114            }
+    115          
+    116            return rtrn;
+    117          }
+    118          
+    119          /**************************************************************************************************
+    120           * @fn          StubAPS_InterPan
+    121           *
+    122           * @brief       This function checks to see if a PAN is an Inter-PAN.
+    123           *
+    124           * input parameters
+    125           *
+    126           * @param       panId - PAN ID
+    127           * @param       endPoint - endpoint
+    128           *
+    129           * output parameters
+    130           *
+    131           * None.
+    132           *
+    133           * @return      TRUE if PAN is Inter-PAN, FALSE otherwise
+    134           **************************************************************************************************
+    135           */
+    136          uint8 StubAPS_InterPan( uint16 panId, uint8 endPoint )
+    137          {
+    138            uint8 req[4];
+    139            req[0] = InterPanChk;
+    140            req[1] = LO_UINT16(panId);
+    141            req[2] = HI_UINT16(panId);
+    142            req[3] = endPoint;
+    143            return !StubAPS_InterPanReq(4, req);
+    144          }
+    145          
+    146          /**************************************************************************************************
+    147           * @fn          StubAPS_RegisterApp
+    148           *
+    149           * @brief       This function registers the Application with the Stub APS layer.
+    150           *
+    151           *              NOTE: Since Stub APS messages don't include the application endpoint,
+    152           *                    the application has to register its endpoint with Stub APS.
+    153           *
+    154           * input parameters
+    155           *
+    156           * @param       epDesc - application's endpoint descriptor
+    157           *
+    158           * output parameters
+    159           *
+    160           * None.
+    161           *
+    162           * @return      None.
+    163           **************************************************************************************************
+    164           */
+    165          void StubAPS_RegisterApp(endPointDesc_t *epDesc)
+    166          {
+    167            uint8 req[2];
+    168            req[0] = InterPanReg;
+    169            req[1] = epDesc->endPoint;
+    170            if (StubAPS_InterPanReq(2, req) == SUCCESS)
+    171            {
+    172              appEndPoint = epDesc->endPoint;
+    173            }
+    174          }
+    175          
+    176          /**************************************************************************************************
+    177           * @fn          zapStubAPS_Sync
+    178           *
+    179           * @brief       This function syncs the AF registered endpoints (which are not NV restored on ZNP.)
+    180           *
+    181           * input parameters
+    182           *
+    183           * None.
+    184           *
+    185           * output parameters
+    186           *
+    187           * None.
+    188           *
+    189           * @return      None.
+    190           **************************************************************************************************
+    191           */
+    192          void zapStubAPS_Sync(void)
+    193          {
+    194            endPointDesc_t *pEP;
+    195          
+    196            if ((appEndPoint != 0) && ((pEP = afFindEndPointDesc(appEndPoint))))
+    197            {
+    198              StubAPS_RegisterApp(pEP);
+    199            }
+    200          }
+    201          #endif
+    202          
+    203          /**************************************************************************************************
+    204          */
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none
